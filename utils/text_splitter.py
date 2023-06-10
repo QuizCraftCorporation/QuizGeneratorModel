@@ -7,7 +7,7 @@ class TextSplitter:
 
     def __init__(self, text: str) -> None:
         self._text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=2000,
+            chunk_size=1700,
             chunk_overlap=400,
             separators=['\n\n', '\n', ' ', '']
         )

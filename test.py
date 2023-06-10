@@ -1,13 +1,10 @@
 from generate_quiz import generate_quiz
+from utils.file_reader import FileReader
 
-MATERIAL_TEXT_FILE_PATH = "./data/material.txt"
+MATERIAL_TEXT_FILE_PATH = "./data/example.pdf"
 RESULT_FILE_PATH = "./output/result.txt"
 
-material_file = open(MATERIAL_TEXT_FILE_PATH, "r", encoding="utf-8")
-material_text = material_file.read()
-material_file.close()
-
-result = generate_quiz(material_text, debug=True)
+result = generate_quiz(MATERIAL_TEXT_FILE_PATH, debug=True)
 
 output_str = ""
 for q in result:

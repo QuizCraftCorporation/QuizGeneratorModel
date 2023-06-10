@@ -1,12 +1,42 @@
- What is the main function of an operating system?
-managing the computer’s resources|creating, writing, reading, and deleting files|dealing with theinterface between user programs and the operating system| providing abstractions to user programs
+ What is the maximum score for plagiarism?
+40%|10%|0%| 100%
 
- What is the first parameter of the readsystem call?
-pointing to the buffer|giving the number of bytes to read|specifying the number of bytes to read| specifying the file
+ What is the score for the well-structured and informative report?
+40%|10%|10%| 30%
 
- What is the first parameter to printf called?
-by reference|byformat|bynumber| byvalue
+ What is the time signature of a MIDI file?
+4/4 aka C|4/4 aka C|4/4 aka C| 4/4
 
- What is the first way the TRAP instruction differs from the procedure-call instruction?
-it jumps to an arbitrary address|it gives an 8-bit field in the instruction|it jumps to a single fixed location| it switches into kernel mode
+ What is the name of the unique sound that a note can have on different instruments?
+MIDI|bar|octave| timbre
+
+ What is the key in Western music notation?
+tonic|MIDI values|timbre| scale degrees
+
+ What is the purpose of using chords with melody notes but in lower octaves?
+accompaniment generation|analysis|dissonance| fitness function
+
+ What is the mathematical equivalent of a major scale?
+minor|enharmonic|m| major
+
+ What is the problem with chord progressions?
+to find popular chord progressions on the Internet|to find valid sequences of chord numbers|to find valid sequences of chord numbers| to understand which of the existing chord progressions should be applied for a given melody
+
+ What is the problem with chord progressions?
+chord progressions are not valid for a given melody|chord progressions are not easy to understand|chord progressions are not valid for a given melody| chord progression does not define the duration of chords and the number of their repetitions
+
+ What is the ratio of tonic and dominant frequencies?
+3:4|1:1|1:1| 2:3
+
+ What is the ratio between tonic and dominant frequencies?
+3:4|4:5|3:4| 2:3
+
+ What is the most probable candidate for being chosen as a key?
+E key|G#m key|F#m key| C#m key
+
+ What is the only chord that does not belong to the C#m key?
+Bsus3|Bsus5|Bsus6| Bsus4
+
+ What is recommended for a better understanding of musical theory?
+using only 4 quarter 11 duration chords in each bar|using only 4 quarter 11 duration chords in each bar|using only 4 quarter 11 duration chords in each bar| spending more time watching some extra videos and reading articles
 
