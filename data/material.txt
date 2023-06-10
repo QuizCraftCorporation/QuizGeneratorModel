@@ -1,0 +1,109 @@
+We have seen that operating systems have two main functions: providing
+abstractions to user programs and managing the computer’s resources. For the most
+part, the interaction between user programs and the operating system deals with the
+former; for example, creating, writing, reading, and deleting files. The re-
+source-management part is largely transparent to the users and done automatically.
+Thus, the interface between user programs and the operating system is primarily
+about dealing with the abstractions. To really understand what operating systems
+do, we must examine this interface closely. The system calls available in the inter-
+face vary from one operating system to another (although the underlying concepts
+tend to be similar).
+We are thus forced to make a choice between (1) vague generalities (‘‘operat-
+ing systems have system calls for reading files’’) and (2) some specific system
+(‘‘UNIX has a read system call with three parameters: one to specify the file, one
+to tell where the data are to be put, and one to tell how many bytes to read’’).
+We have chosen the latter approach. It’s more work that way, but it gives more
+insight into what operating systems really do. Although this discussion specifically
+refers to POSIX (International Standard 9945-1), hence also to UNIX, System V,
+BSD, Linux, MINIX 3, and so on, most other modern operating systems have sys-
+tem calls that perform the same functions, even if the details differ. Since the actual
+SEC. 1.6 SYSTEM CALLS 51
+mechanics of issuing a system call are highly machine dependent and often must
+be expressed in assembly code, a procedure library is provided to make it possible
+to make system calls from C programs and often from other languages as well.
+It is useful to keep the following in mind. Any single-CPU computer can ex-
+ecute only one instruction at a time. If a process is running a user program in user
+mode and needs a system service, such as reading data from a file, it has to execute
+a trap instruction to transfer control to the operating system. The operating system
+then figures out what the calling process wants by inspecting the parameters. Then
+it carries out the system call and returns control to the instruction following the
+system call. In a sense, making a system call is like making a special kind of pro-
+cedure call, only system calls enter the kernel and procedure calls do not.
+To make the system-call mechanism clearer, let us take a quick look at the read
+system call. As mentioned above, it has three parameters: the first one specifying
+the file, the second one pointing to the buffer, and the third one giving the number
+of bytes to read. Like nearly all system calls, it is invoked from C programs by cal-
+ling a library procedure with the same name as the system call: read. A call from a
+C program might look like this:
+count = read(fd, buffer, nbytes);
+The system call (and the library procedure) return the number of bytes actually
+read in count. This value is normally the same as nbytes, but may be smaller, if,
+for example, end-of-file is encountered while reading.
+If the system call cannot be carried out owing to an invalid parameter or a disk
+error, count is set to −1, and the error number is put in a global variable, errno.
+Programs should always check the results of a system call to see if an error oc-
+curred.
+System calls are performed in a series of steps. To make this concept clearer,
+let us examine the read call discussed above. In preparation for calling the read li-
+brary procedure, which actually makes the read system call, the calling program
+first pushes the parameters onto the stack, as shown in steps 1–3 in Fig. 1-17.
+C and C++ compilers push the parameters onto the stack in reverse order for
+historical reasons (having to do with making the first parameter to printf, the for-
+mat string, appear on top of the stack). The first and third parameters are called by
+value, but the second parameter is passed by reference, meaning that the address of
+the buffer (indicated by &) is passed, not the contents of the buffer. Then comes the
+actual call to the library procedure (step 4). This instruction is the normal proce-
+dure-call instruction used to call all procedures.
+The library procedure, possibly written in assembly language, typically puts
+the system-call number in a place where the operating system expects it, such as a
+register (step 5). Then it executes a TRAP instruction to switch from user mode to
+kernel mode and start execution at a fixed address within the kernel (step 6). The
+TRAP instruction is actually fairly similar to the procedure-call instruction in the
+52 INTRODUCTION CHAP. 1
+Return to caller
+4 10
+6
+0
+9
+7 8
+3
+2
+1
+11
+Dispatch Sys call
+handler
+Address
+0xFFFFFFFF
+User space
+Kernel space
+(Operating system)
+Library
+procedure
+read
+User program
+calling read
+Trap to the kernel
+Put code for read in register
+Increment SP
+Call read
+Push fd
+Push &buffer
+Push nbytes
+5
+Figure 1-17. The 11 steps in making the system call read(fd, buffer, nbytes).
+sense that the instruction following it is taken from a distant location and the return
+address is saved on the stack for use later.
+Nevertheless, the TRAP instruction also differs from the procedure-call instruc-
+tion in two fundamental ways. First, as a side effect, it switches into kernel mode.
+The procedure call instruction does not change the mode. Second, rather than giv-
+ing a relative or absolute address where the procedure is located, the TRAP instruc-
+tion cannot jump to an arbitrary address. Depending on the architecture, either it
+jumps to a single fixed location or there is an 8-bit field in the instruction giving
+the index into a table in memory containing jump addresses, or equivalent.
+The kernel code that starts following the TRAP examines the system-call num-
+ber and then dispatches to the correct system-call handler, usually via a table of
+pointers to system-call handlers indexed on system-call number (step 7). At that
+point the system-call handler runs (step 8). Once it has completed its work, control
+may be returned to the user-space library procedure at the instruction following the
+TRAP instruction (step 9). This procedure then returns to the user program in the
+usual way procedure calls return (step 10)

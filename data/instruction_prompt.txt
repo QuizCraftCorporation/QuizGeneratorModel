@@ -1,0 +1,7 @@
+Create 1 multiple choice question with 4 choices that highlight the main idea of given text.
+Respond in format:
+Question text
+1. Answer A
+2. Answer B
+3. Answer C
+4. Answer D
