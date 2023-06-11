@@ -43,3 +43,19 @@ from generate_quiz import generate_quiz
 result = generate_quiz("path/to/text.txt", debug=False)
 # Set debug=True if you want to see generation progress logs
 ```
+
+## Quiz format
+```python
+[
+    [
+        "Question text", 
+        ["option 1", "option 2", ...]
+    ],
+    [
+        "Question text", 
+        ["option 1", "option 2", ...]
+    ],,
+    ...
+]
+```
+Just python array
