@@ -54,7 +54,7 @@ result = generate_quiz("path/to/text.txt", debug=False)
     [
         "Question text", 
         ["option 1", "option 2", ...]
-    ],,
+    ],
     ...
 ]
 ```
