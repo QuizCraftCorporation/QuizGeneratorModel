@@ -41,7 +41,8 @@ Do not include repository root folder!
 from generate_quiz import generate_quiz
 
 result = generate_quiz("path/to/text.txt", debug=False)
-# Set debug=True if you want to see generation progress logs
+# Support .pdf and .txt at this moment.
+# Set debug=True if you want to see generation progress logs.
 ```
 
 ## Quiz format
@@ -59,3 +60,5 @@ result = generate_quiz("path/to/text.txt", debug=False)
 ]
 ```
 Just python array
+
+### P-s-s-s questions are very bad lol)
