@@ -1,7 +1,7 @@
 from generate_quiz import generate_quiz
 from utils.file_reader import FileReader
 
-MATERIAL_TEXT_FILE_PATH = "./data/example.pdf"
+MATERIAL_TEXT_FILE_PATH = "./data/ts_tut.pdf"
 RESULT_FILE_PATH = "./output/result.txt"
 
 result = generate_quiz(MATERIAL_TEXT_FILE_PATH, debug=True)
