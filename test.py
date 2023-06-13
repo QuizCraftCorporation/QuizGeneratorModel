@@ -1,5 +1,4 @@
 from quiz_generator import QuizGenerator
-from utils.file_reader import FileReader
 
 MATERIAL_TEXT_FILE_PATH = "./data/material.txt"
 RESULT_FILE_PATH = "./output/result.txt"
