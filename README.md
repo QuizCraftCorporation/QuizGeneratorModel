@@ -38,11 +38,14 @@ Do not include repository root folder!
 
 ## How to use
 ```python
-from generate_quiz import generate_quiz
+from quiz_generator import QuizGenerator
 
-result = generate_quiz("path/to/text.txt", debug=False)
-# Support .pdf and .txt at this moment.
+quiz_gen = QuizGenerator(debug=False)
 # Set debug=True if you want to see generation progress logs.
+
+result = quiz_gen.create_questions_from_file("path/to/text.txt")
+# Support .pdf and .txt at this moment.
+
 ```
 
 ## Quiz format
