@@ -7,6 +7,10 @@ from utils.file_reader import FileReader
 class QuizGenerator():
 
     def __init__(self, debug=False) -> None:
+        """
+        Loads all models and intialize splitter.
+        """
+        
         if debug:    
             logging.basicConfig(level=logging.INFO)
 
@@ -19,10 +23,18 @@ class QuizGenerator():
 
 
     def create_questions_from_file(self, file_path: str):
+        """
+        Create questions from specified file.
+        """
+        
         text_data = FileReader(file_path).get_content()
         return self.create_questions(text_data)
 
     def create_questions(self, text: str):
+        """
+        Create questions from plain text.
+        """
+        
         logging.info("Splitting text")
         text_chunks = self.text_splitter.split_text(text)
         logging.info(f"Text splitted into {len(text_chunks)} chunks")
