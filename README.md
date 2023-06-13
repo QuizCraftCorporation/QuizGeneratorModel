@@ -1,6 +1,6 @@
 # Quiz Generation model
 ## Requirements
-* 6 GB of RAM for models
+* 6 GB of RAM for models (can be more in future)
 
 ## Installation
 
