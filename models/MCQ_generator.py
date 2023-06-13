@@ -24,4 +24,11 @@ class MCQGenerator:
         distractors = self.distract_tokenizer.decode(outputs[0], skip_special_tokens=False)
         distractors = distractors.replace(self.distract_tokenizer.pad_token, "").replace(self.distract_tokenizer.eos_token, "")
         distractors = [y.strip() for y in distractors.split(self.distract_tokenizer.sep_token)]
-        return distractors
+        return self._filter_same_distractors(distractors)
+    
+    def _filter_same_distractors(self, options: list[str]):
+        filtered_distractors = []
+        for option in options:
+            if not option in filtered_distractors:
+                filtered_distractors.append(option)
+        return filtered_distractors

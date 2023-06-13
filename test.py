@@ -1,10 +1,11 @@
-from generate_quiz import generate_quiz
+from quiz_generator import QuizGenerator
 from utils.file_reader import FileReader
 
-MATERIAL_TEXT_FILE_PATH = "./data/ts_tut.pdf"
+MATERIAL_TEXT_FILE_PATH = "./data/material.txt"
 RESULT_FILE_PATH = "./output/result.txt"
 
-result = generate_quiz(MATERIAL_TEXT_FILE_PATH, debug=True)
+q_gen = QuizGenerator(debug=True)
+result = q_gen.create_questions_from_file(MATERIAL_TEXT_FILE_PATH)
 
 output_str = ""
 for q in result:
