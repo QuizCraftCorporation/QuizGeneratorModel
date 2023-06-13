@@ -1,12 +1,96 @@
-What was the name of Hitler's mother?
-Alois|Adolf|Hitler|Klara
+What is the name of the algorithm that generates an estimate of the beta-Bernoullibandit?
+Algorithm 2|Algorithm 3|Algorithm 1
 
-What was the name of the German Workers' Party?
-National Socialist German Workers Party|Nazi Party|German National Party|German Workers’ Party
+What is the probability that the random estimate drawn for an action exceeds those drawn for other actions?
+0.82|0.23|0.18
 
-What was the name of the book Hitler wrote in his early twenties?
-Beer Hall Putsch|The Sturmabteilung|The National Revolution|Mein Kampf
+What is the probability that the corresponding action is optimal?
+based on the priordistribution|based on the simulated behavior|conditioned on observed history
 
-What was the name of Hitler's second book?
-The Bible|Mein Kampf|Hitler's Secret Book|The Zweites Buch
+What is the expected mean reward of action 3?
+0.7|1|0.5
+
+What is the reason for the smaller regret in early time periods?
+it takes longer to differentiate actions|the regret of randomly selected actions is smaller|mean rewards arecloser than for a typical randomly sampled <unk>
+
+What is the shortest pathproblem?
+Example 4.1|Example 1.3|Example 1.4|Example 1.2
+
+How many stages are in the graph?
+ten|six|184,756|twenty
+
+What is the plot of regret?
+/epsilon1-greedy exploration is not judicious in howit selects paths to explore|the performance of TS con-verges quickly to optimal
+
+What is the marginal distribution of yt,e?
+independent of that of Example 4.1|different from that of Example 4.2|identical to that of Example 4.1
+
+What is the common factor that causes correlations among travel times in the binomial bridge?
+random events|the day’s weather|the day’s traffic conditions|common factors
+
+What is the difference between the two models?
+log-Gaussian distribution|observation generation|model differences
+
+What is the reward in the model?
+shortestpath|feedbackyt|rating rt=yt
+
+What is the feedback from the driver?
+whether the driver was satisfied|whether the route was desirable
+
+What is the limiting distribution of a Markov chain?
+its posterior distribution|its stationary distribution
+
+What is the prevailing vector taken to be?
+AfterGibbs sampling|AfterGaussiandistribution|AfterNofsweeps
+
+What is the term for the approximation of g?
+Bayes rule|Taylor approximation|Laplace approximation
+
+What is the behavior of the Laplace approximation not invariant to?
+a smooth densities|a sharply peaked around its mode|asubstitution of variables
+
+What is the Langevin Monte Carlo method?
+uses a log-concave probability density function|uses a Euler discretization|uses a Gaussian distribution|uses gradient information about the target distribution
+
+What is the name of the method that uses sampled minibatches of data to compute approximate rather than exact gradients?
+Markov chain|Gradient ascent|Welling and Teh|Langevin Monte Carlo
+
+What is the logposterior density?
+is the same as that of the prior chain|is the same as that of the posterior chain|becomes ill-conditioned in later time periods
+
+What is the method intended to overcome?
+the agent’s prior into account|the agent’s uncertainty in initial periods|the agent’s real un-certainty in initial periods
+
+What is the probability of the prior sample?
+covariance|argmax|likelihood
+
+What is the advantage of the bootstrap approach?
+it is nontrivial|it is regular|it is efficient|it is nonparametric
+
+What is the problem for which results from application of greedy and TS algorithms were reported in Figure 3.2(b)?
+online shortest path problem|dation problem|three-armed beta-Bernoulli bandit problem
+
+What is the difference between Gibbs sampling, Langevin Monte Carlo, and bootstrap?
+the computation time required per time period is fixed|the computation time required per time period grows as time progresses
+
+What is the algorithm a type of?
+bootstrap|Laplace approximation|online newton method
+
+What is the posterior interpreted as?
+a random distribution of models|a finite set of statistically plausible models|a finite set of models|a distribution of “statistically plau-sible” models
+
+What is the prior?
+a prior|a prior
+
+What is the prior that is consistent in this sense called?
+uniform|misspecified|coherent
+
+What is the only requirement to modify Algorithm 4?
+limit the number of admissible action sets Xt|limit the history of observations|constrain the maximization problem in Line 6
+
+What is the reason for the slow decay of regret?
+the fact that each agent’s learning is accelerated by shared observations|the number of actions taken so far by the collective of agents
+
+What is the name of the problem where an agent can alter an action based on recent experience of other agents?
+online shortest path problem|online shortest path problem
 

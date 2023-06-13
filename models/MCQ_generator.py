@@ -16,6 +16,10 @@ class MCQGenerator:
         question, answer = question_answer.split(self.create_tokenizer.sep_token)
         answer = answer.strip()
         question = question.strip()
+        
+        if "<unk>" in question:
+            return ["", []]
+        
         distractions = self._get_distractions(text, question, answer)
         return [question, distractions + [answer]]
 
@@ -31,6 +35,8 @@ class MCQGenerator:
     def _filter_same_distractors(self, options: list[str]):
         filtered_distractors = []
         for option in options:
+            if "<unk>" in option:
+                continue
             if not option in filtered_distractors:
                 filtered_distractors.append(option)
         return filtered_distractors
