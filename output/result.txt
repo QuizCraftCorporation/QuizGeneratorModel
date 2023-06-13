@@ -1,96 +1,66 @@
-What is the name of the algorithm that generates an estimate of the beta-Bernoullibandit?
-Algorithm 2|Algorithm 3|Algorithm 1
+What is the name of the file that has to be uploaded to Moodle?
+NameSurname.py|NameSurname.pdf|NameSurnameOutputN-DetectedKey.mid
 
-What is the probability that the random estimate drawn for an action exceeds those drawn for other actions?
-0.82|0.23|0.18
+What is the maximum percentage of plagiarism that can be assessed?
+100%|50%|80%|0%
 
-What is the probability that the corresponding action is optimal?
-based on the priordistribution|based on the simulated behavior|conditioned on observed history
+What percentage of the score is assigned to any submission suspected of plagiarism?
+0|30%|40%|10%
 
-What is the expected mean reward of action 3?
-0.7|1|0.5
+What is the minimum number of notes in each chord?
+exactly three|exactly four|exactly five|exactly two
 
-What is the reason for the smaller regret in early time periods?
-it takes longer to differentiate actions|the regret of randomly selected actions is smaller|mean rewards arecloser than for a typical randomly sampled <unk>
+What is the default time signature for the original melody?
+4/4|4/8|4/3|4/9
 
-What is the shortest pathproblem?
-Example 4.1|Example 1.3|Example 1.4|Example 1.2
+What is the name of the symbol that indicates a rest?
+MIDI|MIDI-B.|MIDI-C.|MIDI-A.
 
-How many stages are in the graph?
-ten|six|184,756|twenty
+What is the name of the unique sound that a note can have on different instruments?
+timbre|MIDI|bar|octave
 
-What is the plot of regret?
-/epsilon1-greedy exploration is not judicious in howit selects paths to explore|the performance of TS con-verges quickly to optimal
+What is the key in Western notation?
+scale degrees|tonic|scale
 
-What is the marginal distribution of yt,e?
-independent of that of Example 4.1|different from that of Example 4.2|identical to that of Example 4.1
+What is the mathematical term for a set of musical notes ordered by pitch?
+Scale degrees|Scale steps|Scale notes
 
-What is the common factor that causes correlations among travel times in the binomial bridge?
-random events|the day’s weather|the day’s traffic conditions|common factors
+What is the representation of a major triad?
+integer notation|a key
 
-What is the difference between the two models?
-log-Gaussian distribution|observation generation|model differences
+What is the first inversion of a major or minor chord?
+putting the lowest note of the chord one octave above|putting the original middle note of the chord one octave above|putting the lowest note of the chord one octave below
 
-What is the reward in the model?
-shortestpath|feedbackyt|rating rt=yt
+What is the notation used for SUS2 chords?
+integer notation|DIM notation|o sign
 
-What is the feedback from the driver?
-whether the driver was satisfied|whether the route was desirable
+What is the name of the approach that may be applied in addition to key detection?
+chord progression|key detection|skeleton
 
-What is the limiting distribution of a Markov chain?
-its posterior distribution|its stationary distribution
+What is not defined by chord progressions?
+durations|rests
 
-What is the prevailing vector taken to be?
-AfterGibbs sampling|AfterGaussiandistribution|AfterNofsweeps
+What is the most popular case of finding the key tonic?
+Ending by tonic|Ending by chord root|Ending by mediant|Ending by dominant
 
-What is the term for the approximation of g?
-Bayes rule|Taylor approximation|Laplace approximation
+What is the ratio of tonic and dominant frequencies?
+2:3|3:4|1:1
 
-What is the behavior of the Laplace approximation not invariant to?
-a smooth densities|a sharply peaked around its mode|asubstitution of variables
+What is the ratio between the subdominant and the tonic of the next octave?
+2:3|4:5|2:1|1:1
 
-What is the Langevin Monte Carlo method?
-uses a log-concave probability density function|uses a Euler discretization|uses a Gaussian distribution|uses gradient information about the target distribution
+What is the dominant note for C#m?
+F#|A|G#
 
-What is the name of the method that uses sampled minibatches of data to compute approximate rather than exact gradients?
-Markov chain|Gradient ascent|Welling and Teh|Langevin Monte Carlo
+What is a less reliable approach to consider the number of repetitions of melody notes?
+the number of repetitions of melody notes|the number of notes in melody
 
-What is the logposterior density?
-is the same as that of the prior chain|is the same as that of the posterior chain|becomes ill-conditioned in later time periods
+What is the only note that was not from the 2nd octave?
+B|F#m|C|E
 
-What is the method intended to overcome?
-the agent’s prior into account|the agent’s uncertainty in initial periods|the agent’s real un-certainty in initial periods
+What key does Bsus4 belong to?
+C#m|F#|C#
 
-What is the probability of the prior sample?
-covariance|argmax|likelihood
-
-What is the advantage of the bootstrap approach?
-it is nontrivial|it is regular|it is efficient|it is nonparametric
-
-What is the problem for which results from application of greedy and TS algorithms were reported in Figure 3.2(b)?
-online shortest path problem|dation problem|three-armed beta-Bernoulli bandit problem
-
-What is the difference between Gibbs sampling, Langevin Monte Carlo, and bootstrap?
-the computation time required per time period is fixed|the computation time required per time period grows as time progresses
-
-What is the algorithm a type of?
-bootstrap|Laplace approximation|online newton method
-
-What is the posterior interpreted as?
-a random distribution of models|a finite set of statistically plausible models|a finite set of models|a distribution of “statistically plau-sible” models
-
-What is the prior?
-a prior|a prior
-
-What is the prior that is consistent in this sense called?
-uniform|misspecified|coherent
-
-What is the only requirement to modify Algorithm 4?
-limit the number of admissible action sets Xt|limit the history of observations|constrain the maximization problem in Line 6
-
-What is the reason for the slow decay of regret?
-the fact that each agent’s learning is accelerated by shared observations|the number of actions taken so far by the collective of agents
-
-What is the name of the problem where an agent can alter an action based on recent experience of other agents?
-online shortest path problem|online shortest path problem
+What is recommended for a better understanding of musical theory?
+spending more time watching some extra videos and reading articles|using only 4 quarter 11 duration chords in each bar
 

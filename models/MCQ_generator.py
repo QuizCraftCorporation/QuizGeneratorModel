@@ -21,7 +21,8 @@ class MCQGenerator:
             return ["", []]
         
         distractions = self._get_distractions(text, question, answer)
-        return [question, distractions + [answer]]
+        options = self._filter_same_options([answer] + distractions)
+        return [question, options]
 
     def _get_distractions(self, context: str, question: str, answer: str):
         input_text = " ".join([question, self.distract_tokenizer.sep_token, answer, self.distract_tokenizer.sep_token, context])
@@ -30,9 +31,9 @@ class MCQGenerator:
         distractors = self.distract_tokenizer.decode(outputs[0], skip_special_tokens=False)
         distractors = distractors.replace(self.distract_tokenizer.pad_token, "").replace(self.distract_tokenizer.eos_token, "")
         distractors = [y.strip() for y in distractors.split(self.distract_tokenizer.sep_token)]
-        return self._filter_same_distractors(distractors)
+        return distractors
     
-    def _filter_same_distractors(self, options: list[str]):
+    def _filter_same_options(self, options: list[str]):
         filtered_distractors = []
         for option in options:
             if "<unk>" in option:
