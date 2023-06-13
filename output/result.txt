@@ -1,14 +1,14 @@
  What is the main function of an operating system?
-managing the computer’s resources|creating, writing, reading, and deleting files|creating, writing, reading, and deleting files| providing abstractions to user programs
+managing the computer’s resources|creating, writing, reading, and deleting files| providing abstractions to user programs
 
  What is the first parameter of a readsystem call?
-specifies the number of bytes to read|specifies the buffer|specifies the number of bytes to read| specifies the file
+specifies the number of bytes to read|specifies the buffer| specifies the file
 
  What is the first parameter to printf called?
 byreference|byformat|bycount| byvalue
 
  What is the name of the instruction that switches into kernel mode?
-procedure-call instruction|procedure-call instruction|procedure-call instruction| TRAP instruction
+procedure-call instruction| TRAP instruction
 
  What does the kernel code that starts following the TRAP examine?
 the jump addresses|the system-call handler|the index into a table| the system-call num-ber
