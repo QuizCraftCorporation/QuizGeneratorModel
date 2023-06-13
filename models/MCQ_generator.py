@@ -7,7 +7,7 @@ class MCQGenerator:
         self.distract_tokenizer = AutoTokenizer.from_pretrained("./resources/t5MCQ_dis/")
         self.distract_model = AutoModelForSeq2SeqLM.from_pretrained("./resources/t5MCQ_dis/")
 
-    def generate_questions(self, text: str):
+    def generate_question(self, text: str):
         inputs = self.create_tokenizer(text, return_tensors="pt")
         outputs = self.create_model.generate(**inputs, max_length=100)
         #Почему 1? Есть несколько вопросов?
