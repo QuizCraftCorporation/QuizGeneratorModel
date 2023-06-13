@@ -1,12 +1,12 @@
- What was the name of Hitler's mother?
-Alois|Adolf|Hitler| Klara
+What was the name of Hitler's mother?
+Alois|Adolf|Hitler|Klara
 
- What was the name of the German Workers' Party?
-National Socialist German Workers Party|Nazi Party|German National Party| German Workers’ Party
+What was the name of the German Workers' Party?
+National Socialist German Workers Party|Nazi Party|German National Party|German Workers’ Party
 
- What was the name of the book Hitler wrote in his early twenties?
-Beer Hall Putsch|The Sturmabteilung|The National Revolution| Mein Kampf
+What was the name of the book Hitler wrote in his early twenties?
+Beer Hall Putsch|The Sturmabteilung|The National Revolution|Mein Kampf
 
- What was the name of Hitler's second book?
-The Bible|Mein Kampf|Hitler's Secret Book| The Zweites Buch
+What was the name of Hitler's second book?
+The Bible|Mein Kampf|Hitler's Secret Book|The Zweites Buch
 

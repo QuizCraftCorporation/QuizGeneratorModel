@@ -14,6 +14,8 @@ class MCQGenerator:
         question_answer = self.create_tokenizer.decode(outputs[0], skip_special_tokens=False)
         question_answer = question_answer.replace(self.create_tokenizer.pad_token, "").replace(self.create_tokenizer.eos_token, "")
         question, answer = question_answer.split(self.create_tokenizer.sep_token)
+        answer = answer.strip()
+        question = question.strip()
         distractions = self._get_distractions(text, question, answer)
         return [question, distractions + [answer]]
 

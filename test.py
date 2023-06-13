@@ -1,3 +1,4 @@
+from pprint import pprint
 from quiz_generator import QuizGenerator
 
 MATERIAL_TEXT_FILE_PATH = "./data/hitler.txt"
@@ -5,6 +6,8 @@ RESULT_FILE_PATH = "./output/result.txt"
 
 q_gen = QuizGenerator(debug=True)
 result = q_gen.create_questions_from_file(MATERIAL_TEXT_FILE_PATH)
+
+pprint(result)
 
 output_str = ""
 for q in result:
