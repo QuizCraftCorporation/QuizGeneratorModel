@@ -1,15 +1,12 @@
- What is the main function of an operating system?
-managing the computer’s resources|creating, writing, reading, and deleting files| providing abstractions to user programs
+ What was the name of Hitler's mother?
+Alois|Adolf|Hitler| Klara
 
- What is the first parameter of a readsystem call?
-specifies the number of bytes to read|specifies the buffer| specifies the file
+ What was the name of the German Workers' Party?
+National Socialist German Workers Party|Nazi Party|German National Party| German Workers’ Party
 
- What is the first parameter to printf called?
-byreference|byformat|bycount| byvalue
+ What was the name of the book Hitler wrote in his early twenties?
+Beer Hall Putsch|The Sturmabteilung|The National Revolution| Mein Kampf
 
- What is the name of the instruction that switches into kernel mode?
-procedure-call instruction| TRAP instruction
-
- What does the kernel code that starts following the TRAP examine?
-the jump addresses|the system-call handler|the index into a table| the system-call num-ber
+ What was the name of Hitler's second book?
+The Bible|Mein Kampf|Hitler's Secret Book| The Zweites Buch
 
