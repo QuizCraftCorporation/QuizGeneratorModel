@@ -1,7 +1,7 @@
 import logging
-from models.MCQ_generator import MCQGenerator
-from utils.text_splitter import TextSplitter
-from utils.file_reader import FileReader
+from .models.MCQ_generator import MCQGenerator
+from .utils.text_splitter import TextSplitter
+from .utils.file_reader import FileReader
 
 
 class QuizGenerator():
