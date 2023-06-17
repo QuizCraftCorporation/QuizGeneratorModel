@@ -41,7 +41,9 @@ Do not include repository root folder!
 
 ## How to use
 ```python
-from quiz_generator import QuizGenerator
+# If you save everything in folder QuizGeneratorModel
+# If not then use from folder_name.quiz_generator import QuizGenerator
+from QuizGeneratorModel.quiz_generator import QuizGenerator
 
 quiz_gen = QuizGenerator(debug=False)
 # Set debug=True if you want to see generation progress logs.
