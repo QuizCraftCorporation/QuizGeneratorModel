@@ -1,66 +1,15 @@
-What is the name of the file that has to be uploaded to Moodle?
-NameSurname.py|NameSurname.pdf|NameSurnameOutputN-DetectedKey.mid
+What is the main function of an operating system?
+providing abstractions to user programs|managing the computer’s resources|creating, writing, reading, and deleting files
 
-What is the maximum percentage of plagiarism that can be assessed?
-100%|50%|80%|0%
+What is the first parameter of a readsystem call?
+specifies the file|specifies the number of bytes to read|specifies the buffer
 
-What percentage of the score is assigned to any submission suspected of plagiarism?
-0|30%|40%|10%
+What is the first parameter to printf called?
+byvalue|byreference|byformat|bycount
 
-What is the minimum number of notes in each chord?
-exactly three|exactly four|exactly five|exactly two
+What is the name of the instruction that switches into kernel mode?
+TRAP instruction|procedure-call instruction
 
-What is the default time signature for the original melody?
-4/4|4/8|4/3|4/9
-
-What is the name of the symbol that indicates a rest?
-MIDI|MIDI-B.|MIDI-C.|MIDI-A.
-
-What is the name of the unique sound that a note can have on different instruments?
-timbre|MIDI|bar|octave
-
-What is the key in Western notation?
-scale degrees|tonic|scale
-
-What is the mathematical term for a set of musical notes ordered by pitch?
-Scale degrees|Scale steps|Scale notes
-
-What is the representation of a major triad?
-integer notation|a key
-
-What is the first inversion of a major or minor chord?
-putting the lowest note of the chord one octave above|putting the original middle note of the chord one octave above|putting the lowest note of the chord one octave below
-
-What is the notation used for SUS2 chords?
-integer notation|DIM notation|o sign
-
-What is the name of the approach that may be applied in addition to key detection?
-chord progression|key detection|skeleton
-
-What is not defined by chord progressions?
-durations|rests
-
-What is the most popular case of finding the key tonic?
-Ending by tonic|Ending by chord root|Ending by mediant|Ending by dominant
-
-What is the ratio of tonic and dominant frequencies?
-2:3|3:4|1:1
-
-What is the ratio between the subdominant and the tonic of the next octave?
-2:3|4:5|2:1|1:1
-
-What is the dominant note for C#m?
-F#|A|G#
-
-What is a less reliable approach to consider the number of repetitions of melody notes?
-the number of repetitions of melody notes|the number of notes in melody
-
-What is the only note that was not from the 2nd octave?
-B|F#m|C|E
-
-What key does Bsus4 belong to?
-C#m|F#|C#
-
-What is recommended for a better understanding of musical theory?
-spending more time watching some extra videos and reading articles|using only 4 quarter 11 duration chords in each bar
+What does the kernel code that starts following the TRAP examine?
+the system-call num-ber|the jump addresses|the system-call handler|the index into a table
 

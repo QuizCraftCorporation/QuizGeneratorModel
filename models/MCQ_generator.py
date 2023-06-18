@@ -2,8 +2,8 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 class MCQGenerator:
     def __init__(self) -> None:
-        self.create_tokenizer = AutoTokenizer.from_pretrained("./resources/t5MCQ_gen/")
-        self.create_model = AutoModelForSeq2SeqLM.from_pretrained("./resources/t5MCQ_gen/")
+        self.create_tokenizer = AutoTokenizer.from_pretrained("./resources/t5-large-generation-squad-QuestionAnswer/")
+        self.create_model = AutoModelForSeq2SeqLM.from_pretrained("./resources/t5-large-generation-squad-QuestionAnswer/")
         self.distract_tokenizer = AutoTokenizer.from_pretrained("./resources/t5MCQ_dis/")
         self.distract_model = AutoModelForSeq2SeqLM.from_pretrained("./resources/t5MCQ_dis/")
 
