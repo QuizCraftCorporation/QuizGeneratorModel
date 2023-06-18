@@ -1,0 +1,3 @@
+[submodule "resources/t5-large-generation-squad-QuestionAnswer"]
+	path = resources/t5-large-generation-squad-QuestionAnswer
+	url = https://huggingface.co/potsawee/t5-large-generation-squad-QuestionAnswer
