@@ -1,5 +1,5 @@
 from pprint import pprint
-from quiz_generator import QuizGenerator
+from quiz_craft_package.quiz_generator import QuizGenerator
 
 MATERIAL_TEXT_FILE_PATH = "./data/example.pdf"
 RESULT_FILE_PATH = "./output/result.txt"
