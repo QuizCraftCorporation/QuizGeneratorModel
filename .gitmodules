@@ -5,3 +5,9 @@
 [submodule "resources/t5MCQ_dis"]
 	path = resources/t5MCQ_dis
 	url = https://huggingface.co/potsawee/t5-large-generation-squad-QuestionAnswer
+[submodule "quiz_craft_package/resources/t5-large-generation-squad-QuestionAnswer"]
+	path = quiz_craft_package/resources/t5-large-generation-squad-QuestionAnswer
+	url = https://huggingface.co/potsawee/t5-large-generation-squad-QuestionAnswer
+[submodule "quiz_craft_package/resources/t5-large-generation-race-Distractor"]
+	path = quiz_craft_package/resources/t5-large-generation-race-Distractor
+	url = https://huggingface.co/potsawee/t5-large-generation-race-Distractor
