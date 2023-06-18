@@ -1,11 +1,14 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from pathlib import Path
+
 
 class MCQGenerator:
     def __init__(self) -> None:
-        self.create_tokenizer = AutoTokenizer.from_pretrained("./resources/t5-large-generation-squad-QuestionAnswer/")
-        self.create_model = AutoModelForSeq2SeqLM.from_pretrained("./resources/t5-large-generation-squad-QuestionAnswer/")
-        self.distract_tokenizer = AutoTokenizer.from_pretrained("./resources/t5-large-generation-race-Distractor/")
-        self.distract_model = AutoModelForSeq2SeqLM.from_pretrained("./resources/t5-large-generation-race-Distractor/")
+        quiz_craft_path_root = str(Path(__file__).parent.parent)
+        self.create_tokenizer = AutoTokenizer.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-squad-QuestionAnswer")
+        self.create_model = AutoModelForSeq2SeqLM.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-squad-QuestionAnswer")
+        self.distract_tokenizer = AutoTokenizer.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-race-Distractor\\")
+        self.distract_model = AutoModelForSeq2SeqLM.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-race-Distractor\\")
 
     def generate_question(self, text: str):
         inputs = self.create_tokenizer(text, return_tensors="pt")
