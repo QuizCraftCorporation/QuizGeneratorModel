@@ -22,13 +22,16 @@ class QuizGenerator():
 
 
 
-    def create_questions_from_file(self, file_path: str):
+    def create_questions_from_files(self, file_paths: list[str]):
         """
-        Create questions from specified file.
+        Create questions from specified files.
         """
-        
-        text_data = FileReader(file_path).get_content()
-        return self.create_questions(text_data)
+        complex_quiz = []
+        for file_path in file_paths:
+            logging.info(f"PROCESSING FILE {file_path}")
+            text_data = FileReader(file_path).get_content()
+            complex_quiz += self.create_questions(text_data)
+        return complex_quiz
 
     def create_questions(self, text: str):
         """
@@ -49,6 +52,7 @@ class QuizGenerator():
                 result += questions
                 time.sleep(10)
             except:
+                logging.info("Failed to parse cluster of questions :c")
                 continue
 
         return result

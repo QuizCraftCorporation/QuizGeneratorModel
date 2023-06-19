@@ -13,7 +13,6 @@ class MCQGenerator:
             Example:
             ["Question text", ["option A", "option B", "option C", "option D"], [0, 2]]
         """
-        self.alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     def generate_question(self, text: str):
         output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])
