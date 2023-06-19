@@ -1,5 +1,5 @@
 Where was Adolf Hitler born?
-Braunau am Inn|Linz|Munich|Berlin
+Braunau am Inn|Linz|Vienna|Munich
 [0]
 
 
@@ -8,58 +8,78 @@ Civil service|Art|Politics|Military career
 [1]
 
 
+In which city did Adolf Hitler develop many of the ideas that would shape Nazi ideology?
+Braunau am Inn|Linz|Vienna|Munich
+[2]
+
+
 What was the highest military decoration that Adolf Hitler won during World War I?
-Iron Cross Second Class|Iron Cross First Class|Victoria Cross|Medal of Honor
+Iron Cross Second Class|Iron Cross First Class|Knight's Cross of the Iron Cross|Grand Cross of the Iron Cross
 [1]
 
 
-In which battle was Adolf Hitler wounded in the leg during World War I?
-Battle of the Somme|Battle of Ypres|Battle of Verdun|Battle of Passchendaele
-[0]
-
-
-What was the myth that Hitler believed caused Germany's defeat in World War I?
-The Allies had superior military tactics|The country was undermined by traitors at home|Germany lacked resources to win the war|The German army was not well-trained
+How many times was Adolf Hitler wounded during World War I?
+Once|Twice|Three times|Four times
 [1]
 
 
-What was the name of the political party that Hitler joined in 1918?
-German Workers' Party|National Socialist Party|Weimar Republic Party|Munich Army Party
+What was the name of the party that Hitler joined in 1918?
+German Workers' Party|Nazi Party|Socialist Party|Communist Party
 [0]
 
 
-What was the symbol that the Nazi Party adopted as its emblem?
-A red circle on a white background|A black eagle on a yellow background|A white circle on a red background with a swastika|A blue circle on a green background
+What was the emblem of the Nazi Party?
+Hammer and Sickle|Star of David|Swastika|Crescent Moon
 [2]
 
 
-What was the name of the group that Ernst Röhm recruited for the Nazi Party?
-The German Army|The Sturmabteilung (SA)|The Weimar Republic|The Beer Hall Putsch
-[1]
-
-
-What happened on November 8, 1923, that involved Hitler and the SA?
-They forced their way into a beer hall and attacked a left-wing leader|They led a march to the center of Munich and got into a gun battle with police|They formed a new political party to challenge the Weimar Republic|They negotiated a peace treaty with the Allies to end World War I
-[1]
-
-
-What is the title of Hitler's book that he wrote while in prison?
-"Mein Kampf"|"The Zweites Buch"|"Hitler's Secret Book"|"My Struggle"
+What was the name of the squads that Hitler used to protect party meetings and attack opponents?
+Sturmabteilung|Schutzstaffel|Wehrmacht|Luftwaffe
 [0]
 
 
-What was Hitler's vision for the unity of the German people?
-Democratic government|Parliamentary government|One supreme leader, or Führer|A council of leaders
-[2]
+What happened on November 8, 1923?
+Hitler joined the Nazi Party|Hitler led a march to the center of Munich|Hitler was arrested after a gun battle with police|Hitler proclaimed the beginning of a national revolution
+[3]
 
 
-What was the concept of Lebensraum in "Mein Kampf"?
-The need for more living space for the German people|The need for more living space for the Slavic people|The need for more living space for the Jewish people|The need for more living space for the British people
+What was the name of Hitler's book that he wrote while in prison?
+Mein Kampf|The Zweites Buch|Hitler's Secret Book|My Struggle
 [0]
 
 
-According to "Mein Kampf", which lands should Germany take over to fulfill its destiny?
-Austria and Poland|Austria and Russia|The Sudetenland and Poland|The Sudetenland and Russia
+What did Hitler lay out plans for in his book 'Mein Kampf'?
+The Germany he sought to create when he came to power|The world he sought to create when he came to power|The Europe he sought to create when he came to power|The Asia he sought to create when he came to power
+[0, 1]
+
+
+What was the name of Hitler's second book?
+Mein Kampf|The Zweites Buch|Hitler's Secret Book|My Struggle
+[1]
+
+
+What did Hitler see as the truest incarnation of the unity of the German people?
+Democratic government|Parliamentary government|One supreme leader, or Führer|Communism
 [2]
+
+
+What is the concept of Lebensraum in Mein Kampf?
+A desire for more living space for the German people|A plan to conquer the United States|A belief in the superiority of the Slavic peoples|A call for peace and cooperation with neighboring countries
+[0]
+
+
+Which countries did Hitler believe should be taken over to fulfill Germany's destiny?
+France and Belgium|Austria and Czechoslovakia|Spain and Portugal|Italy and Greece
+[1]
+
+
+What was Hitler's opinion of the Slavic peoples occupying the lands to the east?
+He believed they were equal to the German people|He believed they were superior to the German people|He believed they were inferior to the German people|He did not have an opinion on the Slavic peoples
+[2]
+
+
+What is the title of the book that discusses the concept of Lebensraum?
+The Communist Manifesto|Mein Kampf|The Wealth of Nations|The Art of War
+[1]
 
 

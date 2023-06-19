@@ -1,0 +1,120 @@
+The first group of calls in Fig. 1-18 deals with process management. Fork is a
+good place to start the discussion. Fork is the only way to create a new process in
+POSIX. It creates an exact duplicate of the original process, including all the file
+descriptors, registers—everything. After the fork, the original process and the copy
+(the parent and child) go their separate ways. All the variables have identical val-
+ues at the time of the fork, but since the parent’s data are copied to create the child,
+subsequent changes in one of them do not affect the other one. (The program text,
+which is unchangeable, is shared between parent and child.) The fork call returns a
+value, which is zero in the child and equal to the child’s PID (Process IDentifier)
+in the parent. Using the returned PID, the two processes can see which one is the
+parent process and which one is the child process.
+54 INTRODUCTION CHAP. 1
+Process management
+Call Description
+pid = fork( ) Create a child process identical to the parent
+pid = waitpid(pid, &statloc, options) Wait for a child to terminate
+s = execve(name, argv, environp) Replace a process’ core image
+exit(status) Terminate process execution and return status
+File management
+Call Description
+fd = open(file, how, ...) Open a file for reading, writing, or both
+s = close(fd) Close an open file
+n = read(fd, buffer, nbytes) Read data from a file into a buffer
+n = write(fd, buffer, nbytes) Write data from a buffer into a file
+position = lseek(fd, offset, whence) Move the file pointer
+s = stat(name, &buf) Get a file’s status information
+Directory- and file-system management
+Call Description
+s = mkdir(name, mode) Create a new directory
+s = rmdir(name) Remove an empty directory
+s = link(name1, name2) Create a new entry, name2, pointing to name1
+s = unlink(name) Remove a directory entry
+s = mount(special, name, flag) Mount a file system
+s = umount(special) Unmount a file system
+Miscellaneous
+Call Description
+s = chdir(dirname) Change the working directory
+s = chmod(name, mode) Change a file’s protection bits
+s = kill(pid, signal) Send a signal to a process
+seconds = time(&seconds) Get the elapsed time since Jan. 1, 1970
+Figure 1-18. Some of the major POSIX system calls. The return code s is −1 if
+an error has occurred. The return codes are as follows: pid is a process id, fd is a
+file descriptor, n is a byte count, position is an offset within the file, and seconds
+is the elapsed time. The parameters are explained in the text.
+In most cases, after a fork, the child will need to execute different code from
+the parent. Consider the case of the shell. It reads a command from the terminal,
+forks off a child process, waits for the child to execute the command, and then
+reads the next command when the child terminates. To wait for the child to finish,
+SEC. 1.6 SYSTEM CALLS 55
+the parent executes a waitpid system call, which just waits until the child terminates
+(any child if more than one exists). Waitpid can wait for a specific child, or for any
+old child by setting the first parameter to −1. When waitpid completes, the address
+pointed to by the second parameter, statloc, will be set to the child process’ exit
+status (normal or abnormal termination and exit value). Various options are also
+provided, specified by the third parameter. For example, returning immediately if
+no child has already exited.
+Now consider how fork is used by the shell. When a command is typed, the
+shell forks off a new process. This child process must execute the user command.
+It does this by using the execve system call, which causes its entire core image to
+be replaced by the file named in its first parameter. (Actually, the system call itself
+is exec, but several library procedures call it with different parameters and slightly
+different names. We will treat these as system calls here.) A highly simplified shell
+illustrating the use of fork, waitpid, and execve is shown in Fig. 1-19.
+#define TRUE 1
+while (TRUE) { /* repeat forever */
+type prompt( ); /* display prompt on the screen */
+read command(command, parameters); /* read input from terminal */
+if (fork( ) != 0) { /* fork off child process */
+/ * Parent code. */
+waitpid(−1, &status, 0); /* wait for child to exit * /
+} else {
+/ * Child code. * /
+execve(command, parameters, 0); /* execute command */
+}
+}
+Figure 1-19. A stripped-down shell. Throughout this book, TRUE is assumed to
+be defined as 1.
+In the most general case, execve has three parameters: the name of the file to
+be executed, a pointer to the argument array, and a pointer to the environment
+array. These will be described shortly. Various library routines, including execl,
+execv, execle, and execve, are provided to allow the parameters to be omitted or
+specified in various ways. Throughout this book we will use the name exec to
+represent the system call invoked by all of these.
+Let us consider the case of a command such as
+cp file1 file2
+used to copy file1 to file2. After the shell has forked, the child process locates and
+executes the file cp and passes to it the names of the source and target files.
+56 INTRODUCTION CHAP. 1
+The main program of cp (and main program of most other C programs) con-
+tains the declaration
+main(argc, argv, envp)
+where argc is a count of the number of items on the command line, including the
+program name. For the example above, argc is 3.
+The second parameter, argv, is a pointer to an array. Element i of that array is a
+pointer to the ith string on the command line. In our example, argv[0] would point
+to the string ‘‘cp’’, argv[1] would point to the string ‘‘file1’’, and argv[2] would
+point to the string ‘‘file2’’.
+The third parameter of main, envp, is a pointer to the environment, an array of
+strings containing assignments of the form name = value used to pass information
+such as the terminal type and home directory name to programs. There are library
+procedures that programs can call to get the environment variables, which are often
+used to customize how a user wants to perform certain tasks (e.g., the default print-
+er to use). In Fig. 1-19, no environment is passed to the child, so the third parame-
+ter of execve is a zero.
+If exec seems complicated, do not despair; it is (semantically) the most com-
+plex of all the POSIX system calls. All the other ones are much simpler. As an ex-
+ample of a simple one, consider exit, which processes should use when they are
+finished executing. It has one parameter, the exit status (0 to 255), which is re-
+turned to the parent via statloc in the waitpid system call.
+Processes in UNIX have their memory divided up into three segments: the text
+segment (i.e., the program code), the data segment (i.e., the variables), and the
+stack segment. The data segment grows upward and the stack grows downward,
+as shown in Fig. 1-20. Between them is a gap of unused address space. The stack
+grows into the gap automatically, as needed, but expansion of the data segment is
+done explicitly by using a system call, brk, which specifies the new address where
+the data segment is to end. This call, however, is not defined by the POSIX stan-
+dard, since programmers are encouraged to use the malloc library procedure for
+dynamically allocating storage, and the underlying implementation of malloc was
+not thought to be a suitable subject for standardization since few programmers use
+it directly and it is doubtful that anyone even notices that brk is not in POSIX.
