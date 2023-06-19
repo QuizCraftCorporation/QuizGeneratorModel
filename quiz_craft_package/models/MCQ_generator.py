@@ -16,11 +16,13 @@ class MCQGenerator:
             C: Answer C
             D: Answer D (You can add more options if required just add other english alphabet letters)
             Answer: AB (enumerate all right answer letters without spaces or write just 1 letter if only 1 answer is true)
+            (Do not add line break between answer options and true answer enumeration.)
         """
+        self.alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     def generate_question(self, text: str):
         output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])
-        #print(output.content)
+        print(output.content)
         output = output.content.split("\n\n")
         questions = []
         for question_raw in output:
@@ -29,5 +31,10 @@ class MCQGenerator:
             options = []
             for i in range(1, len(question_splitted)-1):
                 options.append(question_splitted[i][3:])
-            questions.append([question, options])
+            letters = question_splitted[-1].split(": ")[1]
+            true_answers = []
+            for letter in letters:
+                true_answers.append(self.alphabet.find(letter))
+            questions.append([question, options, true_answers])
+            
         return questions

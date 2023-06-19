@@ -12,7 +12,8 @@ pprint(result)
 output_str = ""
 for q in result:
     output_str += q[0] + '\n'
-    output_str += '|'.join(q[1])
+    output_str += '|'.join(q[1]) + '\n'
+    output_str += str(q[2]) + "\n"
     output_str += '\n\n'
 
 result_file = open(RESULT_FILE_PATH, "w", encoding="utf8")
