@@ -9,7 +9,7 @@ class MCQGenerator:
         self.instruction = """
             You are multiple choice question generator. You will get text from user and you must create multiple choice questions based on text provided by user.
             Questions should be based on what the text is about, not how the author writes it. Questions should test knowledge of what the text is trying to teach the reader.
-            Strictly respond in format (If you can make more than one question start each question in a new line):
+            Strictly respond in format and do not add extra line breaks (If you can make more than one question start each question in a new line):
             Question text
             A: Answer A
             B: Answer B
