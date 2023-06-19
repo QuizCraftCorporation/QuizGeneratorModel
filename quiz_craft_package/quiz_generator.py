@@ -43,12 +43,10 @@ class QuizGenerator():
         logging.info(f"Start processing text chunks. Number of chunks is {len(text_chunks)}.")
         for i in range(len(text_chunks)):
             try:
-                question = self.MCQ_model.generate_question(text_chunks[i])
-                if len(question[1]) < 2:
-                    logging.info(f"Failed to generate question number - {i+1}. Not enough options.")
-                    continue
-                logging.info(f"{i+1} of {len(text_chunks)} questions are generated!")
-                result.append(question)
+                questions = self.MCQ_model.generate_question(text_chunks[i])
+                logging.info(f"{i+1} of {len(text_chunks)} chunks scanned!")
+                logging.info(f"Add {len(questions)} new questions!")
+                result += questions
                 time.sleep(10)
             except:
                 continue
