@@ -1,15 +1,12 @@
-What is the main function of an operating system?
-providing abstractions to user programs|managing the computer’s resources|creating, writing, reading, and deleting files
+What is the primary function of the interface between user programs and the operating system?
+|Managing the computer's resources|Providing abstractions to user programs|Both A and B
 
-What is the first parameter of a readsystem call?
-specifies the file|specifies the number of bytes to read|specifies the buffer
+which of the following is NOT true about making a system call?
+|A process running a user program in user mode needs to execute a trap instruction to transfer control to the operating system.|System calls are like making a special kind of procedure call, only system calls enter the kernel and procedure calls do not.|System calls are invoked from C programs by calling a library procedure with the same name as the system call.
 
-What is the first parameter to printf called?
-byvalue|byreference|byformat|bycount
+What is the purpose of pushing parameters onto the stack before calling the read library procedure?
+To pass the parameters by value|To pass the parameters by reference|To prepare for the system call|To switch from user mode to kernel mode
 
-What is the name of the instruction that switches into kernel mode?
-TRAP instruction|procedure-call instruction
-
-What does the kernel code that starts following the TRAP examine?
-the system-call num-ber|the jump addresses|the system-call handler|the index into a table
+What is the side effect of the TRAP instruction?
+It switches into kernel mode|It changes the mode of the procedure call instruction|It jumps to an arbitrary address|It returns control to the user program
 

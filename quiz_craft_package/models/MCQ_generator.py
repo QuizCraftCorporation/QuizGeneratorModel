@@ -1,46 +1,24 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-from pathlib import Path
+from langchain.schema import HumanMessage
+from langchain.chat_models import ChatOpenAI
 
 
 class MCQGenerator:
     def __init__(self) -> None:
-        quiz_craft_path_root = str(Path(__file__).parent.parent)
-        self.create_tokenizer = AutoTokenizer.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-squad-QuestionAnswer")
-        self.create_model = AutoModelForSeq2SeqLM.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-squad-QuestionAnswer")
-        self.distract_tokenizer = AutoTokenizer.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-race-Distractor\\")
-        self.distract_model = AutoModelForSeq2SeqLM.from_pretrained(quiz_craft_path_root + "\\resources\\t5-large-generation-race-Distractor\\")
+        OPEN_AI_KEY = "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" 
+        self.llm = ChatOpenAI(openai_api_key=OPEN_AI_KEY, temperature=0, model="gpt-3.5-turbo")
+        self.instruction = """
+            Create Multiple choice question.
+            Respond in format:
+            Question
+            A: Answer A
+            B: Answer B
+            C: Answer C
+            D: Answer D
+        """
 
     def generate_question(self, text: str):
-        inputs = self.create_tokenizer(text, return_tensors="pt")
-        outputs = self.create_model.generate(**inputs, max_length=100)
-        #Почему 1? Есть несколько вопросов?
-        question_answer = self.create_tokenizer.decode(outputs[0], skip_special_tokens=False)
-        question_answer = question_answer.replace(self.create_tokenizer.pad_token, "").replace(self.create_tokenizer.eos_token, "")
-        question, answer = question_answer.split(self.create_tokenizer.sep_token)
-        answer = answer.strip()
-        question = question.strip()
-        
-        if "<unk>" in question:
-            return ["", []]
-        
-        distractions = self._get_distractions(text, question, answer)
-        options = self._filter_same_options([answer] + distractions)
+        output = self.llm([HumanMessage(content=self.instruction + text)])
+        output = output.content.split("\n")
+        question = output[0]
+        options = [output[1][3:], output[2][3:], output[3][3:], output[4][3:]]
         return [question, options]
-
-    def _get_distractions(self, context: str, question: str, answer: str):
-        input_text = " ".join([question, self.distract_tokenizer.sep_token, answer, self.distract_tokenizer.sep_token, context])
-        inputs = self.distract_tokenizer(input_text, return_tensors="pt")
-        outputs = self.distract_model.generate(**inputs, max_new_tokens=128)
-        distractors = self.distract_tokenizer.decode(outputs[0], skip_special_tokens=False)
-        distractors = distractors.replace(self.distract_tokenizer.pad_token, "").replace(self.distract_tokenizer.eos_token, "")
-        distractors = [y.strip() for y in distractors.split(self.distract_tokenizer.sep_token)]
-        return distractors
-    
-    def _filter_same_options(self, options: list[str]):
-        filtered_distractors = []
-        for option in options:
-            if "<unk>" in option:
-                continue
-            if not option in filtered_distractors:
-                filtered_distractors.append(option)
-        return filtered_distractors

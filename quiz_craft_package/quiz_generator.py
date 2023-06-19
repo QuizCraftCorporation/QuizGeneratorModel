@@ -2,7 +2,7 @@ import logging
 from .models.MCQ_generator import MCQGenerator
 from .utils.text_splitter import TextSplitter
 from .utils.file_reader import FileReader
-
+import time
 
 class QuizGenerator():
 
@@ -18,7 +18,7 @@ class QuizGenerator():
         self.MCQ_model = MCQGenerator()
         logging.info("Models loaded succesfully")
         
-        self.text_splitter = TextSplitter(self.MCQ_model.create_tokenizer)
+        self.text_splitter = TextSplitter()
 
 
 
@@ -49,6 +49,7 @@ class QuizGenerator():
                     continue
                 logging.info(f"{i+1} of {len(text_chunks)} questions are generated!")
                 result.append(question)
+                time.sleep(10)
             except:
                 continue
 

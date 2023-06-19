@@ -1,3 +1,4 @@
+import tiktoken
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 class TextSplitter:
@@ -5,8 +6,7 @@ class TextSplitter:
     Class that compress text data for tutorial creation model.
     """
 
-    def __init__(self, tokenizer) -> None:
-        self._tokenizer = tokenizer
+    def __init__(self) -> None:
         self._text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=400,
             chunk_overlap=20,
@@ -15,8 +15,8 @@ class TextSplitter:
         )
 
     def _token_len(self, text: str):
-        tokens = self._tokenizer(text, return_tensors="pt")
-        return tokens.input_ids.shape[1]
+        enc = tiktoken.get_encoding("cl100k_base")
+        return len(enc.encode(text))
 
     def split_text(self, text: str):
         text_chunks = self._text_splitter.split_text(text)
