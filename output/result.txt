@@ -1,260 +1,385 @@
-What are the two main functions of operating systems?
-Providing abstractions to user programs and managing the computer's resources|Creating, writing, reading, and deleting files|Issuing system calls and managing the computer's resources|Providing abstractions to user programs and creating files
+What is the deadline for the Accompaniment Generation assignment?
+Week 14 (29.11.22 23:59)|Week 15 (06.12.22 23:59)|Week 13 (22.11.22 23:59)|Week 16 (13.12.22 23:59)
 [0]
 
 
-What is the primary interface between user programs and the operating system?
-Dealing with abstractions|Managing computer resources|Issuing system calls|Writing and deleting files
-[0]
-
-
-What is the difference between vague generalities and a specific system approach when discussing operating systems?
-The latter approach gives more insight into what operating systems really do|The former approach is more work|The latter approach is less machine dependent|The former approach is more commonly used
-[0]
-
-
-What is the purpose of a procedure library in relation to system calls?
-To make it possible to make system calls from C programs and often from other languages as well|To manage the computer's resources|To create, write, read, and delete files|To provide abstractions to user programs
-[0]
-
-
-What is a system call?
-A type of procedure call|A way to transfer control to the operating system|A way to execute multiple instructions at once|A way to read data from a file
+What is the required programming language for the Accompaniment Generation assignment?
+Python 2.7|Python 3.7+|Java|C++
 [1]
 
 
-What happens when a process needs a system service?
-It executes a trap instruction to transfer control to the operating system|It continues executing the user program|It terminates the program|It enters kernel mode
-[0]
-
-
-What is the purpose of a system call?
-To request a service from the operating system|To execute a user program|To terminate a process|To enter kernel mode
-[0]
-
-
-How is a system call invoked from a C program?
-By calling a library procedure with the same name as the system call|By executing a trap instruction|By entering kernel mode|By executing a special kind of procedure call
-[0]
-
-
-What is the read system call?
-A system call used to read data from a file|A library procedure used to read data from a file|A way to execute multiple instructions at once|A way to transfer control to the operating system
-[0]
-
-
-What happens if a system call cannot be carried out?
-Count is set to -1 and the error number is put in a global variable, errno|Count is set to 0 and the error number is put in a global variable, errno|Count is set to 1 and the error number is put in a global variable, errno|The program terminates
-[0]
-
-
-Why should programs always check the results of a system call?
-To see if an error occurred|To execute the next instruction|To terminate the program|To enter kernel mode
-[0]
-
-
-What is the purpose of pushing parameters onto the stack before making a system call?
-To prepare for calling the library procedure that makes the system call|To switch from user mode to kernel mode|To pass the contents of the buffer as a parameter|To execute a TRAP instruction
-[0]
-
-
-In what order are the parameters pushed onto the stack when making a system call in C and C++ compilers?
-In reverse order|In the order they are listed in the function call|Random order|Alphabetical order
-[0]
-
-
-How is the second parameter (buffer) passed when making a system call?
-By reference|By value|By pointer|By copy
-[0]
-
-
-What does the library procedure do before executing a TRAP instruction?
-Puts the system-call number in a place where the operating system expects it|Executes a procedure-call instruction|Switches from kernel mode to user mode|Increments the stack pointer
-[0]
-
-
-What instruction is used to switch from user mode to kernel mode and start execution at a fixed address within the kernel?
-TRAP instruction|Procedure-call instruction|Return instruction|Jump instruction
-[0]
-
-
-What is the purpose of the TRAP instruction in making a system call?
-To switch into kernel mode and jump to a fixed location or index into a table of jump addresses|To save the return address on the stack and switch into kernel mode|To give a relative or absolute address where the procedure is located|To dispatch to the correct system-call handler
-[0]
-
-
-What is the difference between the TRAP instruction and a procedure call instruction?
-The TRAP instruction switches into kernel mode and cannot jump to an arbitrary address, while the procedure call instruction does not change the mode and can jump to any address|The TRAP instruction saves the return address on the stack and the procedure call instruction does not|The TRAP instruction gives a relative or absolute address where the procedure is located, while the procedure call instruction cannot|The TRAP instruction and the procedure call instruction are the same
-[0]
-
-
-What does the kernel code do following the TRAP instruction?
-Examines the system-call number and dispatches to the correct system-call handler|Saves the return address on the stack and switches into kernel mode|Jumps to a fixed location or index into a table of jump addresses|Returns control to the user-space library procedure
-[0]
-
-
-How does the system-call handler run?
-It runs after the kernel code dispatches to the correct system-call handler|It runs before the kernel code dispatches to the correct system-call handler|It runs after the user-space library procedure returns|It runs before the TRAP instruction
-[0]
-
-
-What is the purpose of the fork call in POSIX?
-To create a new process|To terminate process execution|To open a file|To get a file's status information
-[0]
-
-
-What happens to the original process and its copy after a fork call?
-They go their separate ways|They merge into one process|The original process terminates|The copy terminates
-[0]
-
-
-What is the value returned by a fork call?
-Zero in the child and equal to the child's PID in the parent|Zero in the parent and equal to the parent's PID in the child|The same value in both parent and child|A random value
-[0]
-
-
-What is shared between parent and child after a fork call?
-The program text|All the variables|The file descriptors|The registers
-[0]
-
-
-What is the purpose of the waitpid call?
-To wait for a child to terminate|To create a child process|To open a file|To get a file's status information
-[0]
-
-
-What is the purpose of the execve call?
-To replace a process' core image|To terminate process execution|To open a file|To get a file's status information
-[0]
-
-
-What is the purpose of the exit call?
-To terminate process execution and return status|To create a child process|To open a file|To get a file's status information
-[0]
-
-
-What is the purpose of the open call?
-To open a file for reading, writing, or both|To create a child process|To wait for a child to terminate|To get a file's status information
-[0]
-
-
-What is the purpose of the close call?
-To close an open file|To create a child process|To wait for a child to terminate|To get a file's status information
-[0]
-
-
-What is the purpose of the read call?
-To read data from a file into a buffer|To create a child process|To wait for a child to terminate|To get a file's status information
-[0]
-
-
-What is the purpose of the write call?
-To write data from a buffer into a file|To create a child process|To wait for a child to terminate|To get a file's status information
-[0]
-
-
-What is the purpose of the lseek call?
-To move the file pointer|To create a child process|To wait for a child to terminate|To get a file's status information
-[0]
-
-
-What is the purpose of the stat call?
-To get a file's status information|To create a child process|To wait for a child to terminate|To open a file
-[0]
-
-
-What is the purpose of the mkdir system call?
-To create a new directory|To remove an empty directory|To change the working directory|To mount a file system
-[0]
-
-
-What is the return code for system calls if an error has occurred?
--1|0|1|2
-[0]
-
-
-What is the purpose of the chdir system call?
-To change the working directory|To create a new directory|To remove an empty directory|To mount a file system
-[0]
-
-
-What is the purpose of the waitpid system call?
-To wait for a child process to terminate|To send a signal to a process|To get the elapsed time since Jan. 1, 1970|To change a file's protection bits
-[0]
-
-
-What is the purpose of the time system call?
-To get the elapsed time since Jan. 1, 1970|To create a new directory|To remove an empty directory|To mount a file system
-[0]
-
-
-What is the purpose of the waitpid system call?
-To wait for a child process to exit|To execute a user command|To replace the core image of a process|To display a prompt on the screen
-[0]
-
-
-What system call is used by the child process to execute the user command?
-fork|waitpid|execve|read
+What is the penalty for submitting the assignment after the deadline?
+No penalty|At most 50%|At most 100%|At most 25%
 [2]
 
 
-How does the shell use the fork system call?
-To execute a user command|To wait for a child process to exit|To display a prompt on the screen|To replace the core image of a process
+What is the grading criteria for the Accompaniment Generation assignment?
+40% for the code correctness, 10% for correctly identified music key, 10% for readability of code and comments, 10% for the beauty and quality of the generated music, 30% for the well-structured and informative report|50% for the code correctness, 20% for correctly identified music key, 10% for readability of code and comments, 10% for the beauty and quality of the generated music, 10% for the well-structured and informative report|30% for the code correctness, 30% for correctly identified music key, 20% for readability of code and comments, 10% for the beauty and quality of the generated music, 10% for the well-structured and informative report|40% for the code correctness, 20% for correctly identified music key, 20% for readability of code and comments, 10% for the beauty and quality of the generated music, 10% for the well-structured and informative report
 [0]
 
 
-What are the three parameters of the execve system call?
-The name of the file to be executed, a pointer to the argument array, and a pointer to the environment|The name of the file to be executed, a pointer to the argument array, and a pointer to the parent process|The name of the file to be executed, a pointer to the child process, and a pointer to the environment|The name of the file to be executed, a pointer to the parent process, and a pointer to the environment
+What is the goal of the given task?
+To generate an accompaniment for given monophonic melodies using an evolutionary algorithm|To modify the original melody to create a new composition|To analyze the structure of given monophonic melodies|To create a report on the types of chords used in given monophonic melodies
 [0]
 
 
-What is the purpose of the exec system call?
-To execute a new program in the current process|To create a new process|To terminate the current process|To wait for a child process to terminate
+What types of chords should be considered for generating accompaniment?
+Major and minor triads|Major and minor triads with first and second inversions|Diminished chords|Suspended second and fourth chords|All of the above
+[4]
+
+
+What should be the duration of each chord in the accompaniment?
+Half duration|Quarter duration|Eighth duration|Sixteenth duration
+[1]
+
+
+Can the original melody be modified?
+Yes|No
+[1]
+
+
+What should be included in the output MIDI file?
+Only the generated accompaniment|Only the original unmodified melody|Both the original unmodified melody and the generated accompaniment|None of the above
+[2]
+
+
+What is the time signature of the bars in the picture?
+2/4|3/4|4/4|5/4
+[2]
+
+
+How many notes are played simultaneously in the accompaniment?
+1|2|3|4
+[2]
+
+
+What is a rest in music?
+A piece of the batch when nothing is played|A type of chord|A type of note|A type of rhythm
 [0]
 
 
-What is the main function of most C programs?
-To declare variables|To execute system calls|To print output to the console|To define the program's behavior
+What is the purpose of using rests in music?
+To create silence and add rhythmic interest|To make the music louder|To make the music faster|To make the music more complex
+[0]
+
+
+What do the symbols used for indicating rests look like?
+They vary depending on the duration of the rest|They are always the same symbol|They are the same as note symbols|They are the same as chord symbols
+[0]
+
+
+What is the focus of this text?
+Western music notation|Musical instruments|Octaves|Note frequencies
+[0]
+
+
+How many notes are there in an octave in Western music?
+5|7|10|12
+[1]
+
+
+What is the mathematical correlation between each note frequency?
+There is no correlation|It is weak|It is moderate|It is strong
 [3]
 
 
-What is the purpose of the argc parameter in the main function?
-To count the number of items on the command line|To specify the name of the program|To pass environment variables to the program|To specify the behavior of the program
+What is the value range of each note in MIDI?
+0 to 64|0 to 100|0 to 128|0 to 256
+[2]
+
+
+What is the unique sound of a note played on different instruments called?
+Frequency|Octave|Timbre|Pitch
+[2]
+
+
+What is a key in music composition?
+A set of notes that are used in a composition|A specific note that is used as a starting point in a composition|A type of chord progression used in a composition|A type of rhythm used in a composition
+[1]
+
+
+What is the tonic in a key?
+The note in the first position of a key|The note in the last position of a key|The note that is played the loudest in a key|The note that is played the softest in a key
 [0]
 
 
-What is the purpose of the argv parameter in the main function?
-To provide a pointer to an array of strings containing the command line arguments|To specify the behavior of the program|To pass environment variables to the program|To count the number of items on the command line
+What is the difference between melodies with a non-changing key and melodies with an alteration of the key?
+It is easier to make chord progressions in melodies with a non-changing key|Melodies with an alteration of the key require more analysis for a valid accompaniment generation|Melodies with a non-changing key are always in a major scale|Melodies with an alteration of the key are always in a minor scale
+[1]
+
+
+What are dissonant notes in music?
+Notes that are played too loudly|Notes that are played too softly|Notes that sound harsh or unpleasant when played at the same time|Notes that are not part of the key
+[2]
+
+
+What is one way to avoid dissonances between the chord and melody note?
+To play the dissonant notes simultaneously|To use chords containing the melody notes but in higher octaves|To use chords containing the melody notes but in lower octaves|To use chords that are not part of the key
+[2]
+
+
+What is a scale in music theory?
+A set of musical notes ordered by pitch|A set of musical notes ordered by duration|A set of musical notes ordered by loudness|A set of musical notes ordered by timbre
 [0]
 
 
-What is the purpose of the envp parameter in the main function?
-To provide a pointer to an array of strings containing environment variables|To specify the behavior of the program|To count the number of items on the command line|To pass command line arguments to the program
+What is the difference between major and minor scales?
+Major scales lead to cheerful emotion, while minor scales lead to sadness|Major scales have more notes than minor scales|Major scales are played faster than minor scales|There is no difference between major and minor scales
 [0]
 
 
-What is the purpose of the execve system call?
-To execute a new program in the current process|To create a new process|To pass environment variables to a child process|To allocate memory for a new process
+How are major and minor scales represented mathematically?
+As integer offsets between scale steps|As fractions between scale steps|As percentages between scale steps|As irrational numbers between scale steps
 [0]
 
 
-What is the purpose of the exit system call?
-To allocate memory for a new process|To create a new process|To execute a new program in the current process|To indicate that a process has finished executing
-[3]
-
-
-What are the three segments of memory in a UNIX process?
-Text, data, and stack|Code, variables, and heap|Heap, stack, and data|Text, heap, and stack
+What is the offset between scale steps in a major scale?
+2, 2, 1, 2, 2, 2, 1|2, 1, 2, 2, 1, 2, 2|1, 2, 2, 2, 1, 2, 2|2, 2, 2, 1, 2, 2, 1
 [0]
 
 
-How does the data segment differ from the stack segment?
-The data segment contains variables, while the stack segment contains function call information|The data segment grows downward, while the stack segment grows upward|The data segment is fixed in size, while the stack segment can grow as needed|The data segment is used for program code, while the stack segment is used for variables
+What is the offset between scale steps in a minor scale?
+2, 1, 2, 2, 1, 2, 2|2, 2, 1, 2, 2, 2, 1|1, 2, 2, 2, 1, 2, 2|2, 2, 2, 1, 2, 2, 1
 [0]
 
 
-What is the purpose of the brk system call?
-To allocate memory for the data segment|To allocate memory for the stack segment|To allocate memory for the heap segment|To allocate memory for the text segment
+What is a tone in music theory?
+An offset of 2 between scale steps|An offset of 1 between scale steps|A musical interval of a perfect fifth|A musical interval of a perfect fourth
 [0]
+
+
+What is a semitone in music theory?
+An offset of 1 between scale steps|An offset of 2 between scale steps|A musical interval of a major third|A musical interval of a minor third
+[0]
+
+
+How many natural major and minor keys are considered in this text?
+24|12|6|48
+[0]
+
+
+Why are enharmonic keys excluded from consideration?
+Because they include the same physical notes and sequence of MIDI values in the same order|Because they are not used in music theory|Because they are too difficult to play on musical instruments|Because they are not pleasant to listen to
+[0]
+
+
+All major and minor chords applicable in each key
+Major and minor scales|Different types of musical instruments|Famous musicians throughout history|The history of music notation
+[0]
+
+
+{0, 4, 7}
+{0, 3, 7}|{0, 5, 9}|{0, 2, 7}
+[0]
+
+
+To find required chords because chords are based on notes allowed in the key
+To make the music sound louder|To make the music sound softer|To find the right tempo for the music
+[0]
+
+
+What are the offsets in MIDI?
+8 numbers|scale steps|chord progressions|octave positions
+[0]
+
+
+What is the first inversion of a major or minor chord?
+putting the lowest note of the chord one octave above|putting the highest note of the chord one octave above|putting the middle note of the chord one octave above|putting the lowest note of the chord two octaves above
+[0]
+
+
+What is the second inversion of a major or minor chord?
+the same as the first inversion, but also with the original middle note of the chord put one octave above|putting the lowest note of the chord one octave above|putting the highest note of the chord one octave above|putting the middle note of the chord two octaves above
+[0]
+
+
+What type of chords have to be used instead of major and minor triads from the VIIth step of major scales and IInd step of minor scales?
+diminished (DIM) chords|augmented (AUG) chords|suspended (SUS) chords|dominant (DOM) chords
+[0]
+
+
+How can SUS2 chords be represented by integer notation?
+{0, 2, 7}|{0, 3, 6}|{0, 5, 7}|{0, 4, 7}
+[0]
+
+
+From which steps of major and minor keys should SUS2 chords be forbidden?
+IIIrd and VIIth steps of major keys and the IInd and Vth steps of minor keys|IVth and VIIth steps of major keys and the IInd and VIth steps of minor keys|Ist and Vth steps of major keys and the IIIrd and VIth steps of minor keys|Ist and IVth steps of major keys and the IIIrd and VIIth steps of minor keys
+[0]
+
+
+How can SUS4 chords be represented by integer notation?
+{0, 5, 7}|{0, 2, 7}|{0, 3, 6}|{0, 4, 7}
+[0]
+
+
+From which steps of major and minor keys should SUS4 chords be forbidden?
+IVth and VIIth steps of major keys and the IInd and VIth steps of minor keys|IIIrd and VIIth steps of major keys and the IInd and Vth steps of minor keys|Ist and Vth steps of major keys and the IIIrd and VIth steps of minor keys|Ist and IVth steps of major keys and the IIIrd and VIIth steps of minor keys
+[0]
+
+
+What is a chord progression?
+a high-level approach to chord generation based on the key and one of the existing sequences of chord numbers|a low-level approach to chord generation based on the key and one of the existing sequences of chord numbers|a method of determining the duration of chords and the number of their repetitions|a method of determining the tempo of a song
+[0]
+
+
+What does a chord progression define?
+a valid sequence of chords based on the key and one of the existing sequences of chord numbers|the duration of chords and the number of their repetitions|the tempo of a song|the key of a song
+[0]
+
+
+Where can popular chord progressions be found?
+on the Internet|in music theory textbooks|in music notation software|in music production studios
+[0]
+
+
+What is a chord progression?
+A sequence of notes played one after the other|A skeleton that defines the order of chords in a song|A set of chords played simultaneously|A type of musical instrument
+[1]
+
+
+Why does a chord progression not define the duration of chords and the number of their repetitions?
+Because it is only a skeleton|Because it is played too fast|Because it is played too slow|Because it is not important
+[0]
+
+
+Can a correctly generated chord progression always provide valid accompaniment?
+Yes|No
+[1]
+
+
+What is the note representation of the 'Aqua - Barbie Girl' MIDI file?
+G#5 E5 G#5 C#6 A5 F#5 D#5 F#5 B5 G#5 F#5 E5 E5 C#5 F#5 C#5 F#5 E5 G#5 F#5
+[0]
+
+
+What is the capital of France?
+Paris|London|Berlin|Madrid
+[0]
+
+
+What is Paris known for?
+Eiffel Tower|Big Ben|Statue of Liberty|Golden Gate Bridge
+[0]
+
+
+Which museums are located in Paris?
+Louvre and Musée d'Orsay|Metropolitan Museum of Art and Guggenheim|National Gallery and British Museum|Uffizi Gallery and Vatican Museums
+[0, 1]
+
+
+What is the unique ordered set of notes without octave number in the given text?
+C# D# E F# G# A B|C D E F G A B|C# D E F G A B|C D# E F# G A B
+[0]
+
+
+What are the two candidate keys that satisfy the notes in the given text?
+C#m and E|C and F|D#m and G#|A# and D
+[0]
+
+
+What is the difference between the C#m and E keys in terms of scale steps?
+For the C#m key the tonic note is C# and for the E key the tonic is E|For the C#m key the tonic note is E and for the E key the tonic is C#|For the C#m key the tonic note is G# and for the E key the tonic is B|For the C#m key the tonic note is B and for the E key the tonic is G#
+[0]
+
+
+What is the most popular approach to finding the key tonic in a composition?
+Considering the last note (or chord root) of the composition|Considering the first note (or chord root) of the composition|Considering the highest note of the composition|Considering the lowest note of the composition
+[0]
+
+
+What are the stable notes that a melody can end with?
+Tonic, mediant or dominant|Supertonic, subdominant or submediant|Leading tone, subtonic or submediant|Dominant, subdominant or leading tone
+[0]
+
+
+What is the ratio of tonic and dominant frequencies in a key?
+Approximately 2:3|Approximately 3:4|Approximately 4:5|Approximately 5:6
+[0]
+
+
+What is the ratio between tonic and dominant notes in any key?
+2:3|3:4|4:5|5:6
+[0]
+
+
+Which note is considered unstable in a key?
+tonic|dominant|subdominant|mediant
+[2]
+
+
+What is the ratio between subdominant and tonic of the next octave?
+2:3|3:4|4:5|5:6
+[0]
+
+
+Which note is the most stable after tonic and dominant?
+subdominant|mediant|leading tone|supertonic
+[1]
+
+
+What is the first note of the melody in the example?
+G#|F#|C#m|E
+[0]
+
+
+Which note is more stable, dominant or mediant?
+dominant|mediant|they are equally stable|it depends on the key
+[0]
+
+
+What is the number of stable notes in the melody for C#m?
+17|10|5|3
+[0]
+
+
+What is the main topic of this text?
+Musical keys|Chord progressions|Melody composition|Accompaniment generation
+[0]
+
+
+What is the difference between C#m and E in terms of the number of notes in the melody?
+C#m has 17 notes and E has 10 notes|C#m has 10 notes and E has 17 notes|C#m has 7 notes and E has 7 notes|C#m has 3 notes and E has 3 notes
+[0]
+
+
+What is the significance of the number of notes in the melody for determining the key?
+The key with more notes in the melody is more probable|The key with less notes in the melody is more probable|The number of notes in the melody has no significance for determining the key|The key is always determined by the first note in the melody
+[0]
+
+
+What is the purpose of considering different approaches for determining the key?
+To increase the accuracy of the key determination|To make the process more complicated|To confuse the listener|To make the melody sound more interesting
+[0]
+
+
+Which chords in the accompaniment belong to the C#m key?
+C#m, F#m, B, E|C#m, F#m, B, Bsus4|C#m, F#m, E, Bsus4|C#m, B, E, Bsus4
+[0, 1, 2]
+
+
+What is the difference between Bsus4 and other chords in the accompaniment?
+Bsus4 does not belong to major or minor scale|Bsus4 is the only chord with a sustained note|Bsus4 is the only chord with a root note from the 2nd octave|Bsus4 is the only chord with a diminished fifth
+[0]
+
+
+What is the recommended number of notes in a chord for simplification as accompaniment?
+Two notes|Three notes|Four notes|Five notes
+[1]
+
+
+How many quarter duration chords are recommended to use in each bar?
+Two chords|Three chords|Four chords|Five chords
+[2]
+
+
+What is the reason for recommending to spend more time understanding musical theory?
+To achieve good results|To increase the search area|To create some limitations|To use more complicated chords
+[0]
+
+
+Which of the following is a useful link for creating midi files in Python?
+https://onlinesequencer.net|https://mido.readthedocs.io/en/latest/|https://www.python.org/|https://www.w3schools.com/python/
+[1]
 
 
