@@ -19,42 +19,82 @@ To make it possible to make system calls from C programs and often from other la
 
 
 What is a system call?
-A special kind of procedure call that enters the kernel|A regular function call in user mode|A way to execute multiple instructions at once|A way to transfer control to the operating system
-[0]
+A type of procedure call|A way to transfer control to the operating system|A way to execute multiple instructions at once|A way to read data from a file
+[1]
 
 
 What happens when a process needs a system service?
-It executes a trap instruction to transfer control to the operating system|It continues executing the user program|It waits for the operating system to initiate the system call|It terminates the program
+It executes a trap instruction to transfer control to the operating system|It continues executing the user program|It terminates the program|It enters kernel mode
 [0]
 
 
-What does the operating system do when a system call is executed?
-It inspects the parameters to figure out what the calling process wants|It terminates the calling process|It executes the user program|It returns control to the instruction before the system call
-[0]
-
-
-What is the purpose of the read system call?
-To read data from a file|To write data to a file|To create a new file|To delete a file
+What is the difference between a system call and a procedure call?
+System calls enter the kernel and procedure calls do not|Procedure calls enter the kernel and system calls do not|System calls and procedure calls are the same thing|System calls are used for reading data from a file, while procedure calls are not
 [0]
 
 
 How is the read system call invoked from a C program?
-By calling a library procedure with the same name as the system call|By calling a special kernel function|By executing a trap instruction|By using a system-specific API
+By calling a library procedure with the same name as the system call|By executing a trap instruction|By entering kernel mode|By executing multiple instructions at once
 [0]
 
 
 What does the read system call return?
-The number of bytes actually read|The number of bytes requested to read|The number of bytes remaining to read|The number of bytes written to the file
+The number of bytes actually read|The number of bytes to read|The file descriptor|The buffer pointer
 [0]
 
 
-What happens if the system call cannot be carried out?
-Count is set to -1 and the error number is put in a global variable, errno|Count is set to 0 and the error number is put in a local variable|The program terminates|The system call is retried
+What happens if a system call cannot be carried out?
+Count is set to -1 and the error number is put in a global variable, errno|Count is set to 0 and the error number is put in a global variable, errno|Count is set to the number of bytes actually read|The program terminates
 [0]
 
 
 Why should programs always check the results of a system call?
-To see if an error occurred|To speed up the execution of the program|To avoid making additional system calls|To ensure that the program is running in user mode
+To see if an error occurred|To speed up the program|To avoid entering kernel mode|To execute multiple instructions at once
+[0]
+
+
+What is the purpose of pushing parameters onto the stack before making a system call?
+To prepare for calling the library procedure that makes the system call|To switch from user mode to kernel mode|To pass the contents of the buffer as a parameter|To execute a TRAP instruction
+[0]
+
+
+In what order are the parameters pushed onto the stack when making a system call in C and C++ compilers?
+In reverse order|In the order they are listed in the function call|Random order|Alphabetical order
+[0]
+
+
+How is the second parameter (buffer) passed when making a system call?
+By reference|By value|By pointer|By copy
+[0]
+
+
+What does the library procedure do before executing a TRAP instruction?
+Puts the system-call number in a place where the operating system expects it|Executes a procedure-call instruction|Switches from kernel mode to user mode|Increments the stack pointer
+[0]
+
+
+What instruction is used to switch from user mode to kernel mode and start execution at a fixed address within the kernel?
+TRAP instruction|Procedure-call instruction|Return instruction|Jump instruction
+[0]
+
+
+What is the purpose of the TRAP instruction in making a system call?
+To switch into kernel mode and jump to a fixed location or index into a table of jump addresses|To save the return address on the stack and switch into kernel mode|To give a relative or absolute address where the procedure is located|To dispatch to the correct system-call handler
+[0]
+
+
+What is the difference between the TRAP instruction and a procedure call instruction?
+The TRAP instruction switches into kernel mode and cannot jump to an arbitrary address, while the procedure call instruction does not change the mode and can jump to any address|The TRAP instruction saves the return address on the stack and the procedure call instruction does not|The TRAP instruction gives a relative or absolute address where the procedure is located, while the procedure call instruction cannot|The TRAP instruction and the procedure call instruction are the same
+[0]
+
+
+What does the kernel code do following the TRAP instruction in making a system call?
+Examines the system-call number and dispatches to the correct system-call handler|Saves the return address on the stack and switches into kernel mode|Jumps to a fixed location or index into a table of jump addresses|Returns control to the user-space library procedure
+[0]
+
+
+How does the system-call handler run in making a system call?
+It runs after the kernel code dispatches to the correct system-call handler|It runs before the kernel code examines the system-call number|It runs after the user-space library procedure returns|It runs before the TRAP instruction is executed
 [0]
 
 
@@ -64,17 +104,22 @@ To create a new process|To terminate process execution|To open a file|To get a f
 
 
 What happens to the original process and its copy after a fork call?
-They go their separate ways|They merge into one process|The original process terminates|The copy process terminates
+They go their separate ways|They merge into one process|The original process terminates|The copy terminates
 [0]
 
 
-What is the value returned by the fork call?
-Zero in the child and equal to the child's PID in the parent|Zero in the parent and equal to the parent's PID in the child|Equal to the parent's PID in both parent and child|Equal to the child's PID in both parent and child
+What is the value returned by a fork call?
+Zero in the child and equal to the child's PID in the parent|Zero in the parent and equal to the parent's PID in the child|The same value in both parent and child|A random value
+[0]
+
+
+What is shared between parent and child after a fork call?
+The program text|All the variables|The file descriptors|The registers
 [0]
 
 
 What is the purpose of the waitpid call?
-To wait for a child process to terminate|To create a new process|To open a file|To get a file's status information
+To wait for a child to terminate|To create a child process|To open a file|To get a file's status information
 [0]
 
 
@@ -84,42 +129,42 @@ To replace a process' core image|To terminate process execution|To open a file|T
 
 
 What is the purpose of the exit call?
-To terminate process execution and return status|To create a new process|To open a file|To get a file's status information
+To terminate process execution and return status|To create a child process|To open a file|To get a file's status information
 [0]
 
 
 What is the purpose of the open call?
-To open a file for reading, writing, or both|To create a new process|To terminate process execution|To get a file's status information
+To open a file for reading, writing, or both|To create a child process|To wait for a child to terminate|To get a file's status information
 [0]
 
 
 What is the purpose of the close call?
-To close an open file|To create a new process|To terminate process execution|To get a file's status information
+To close an open file|To create a child process|To wait for a child to terminate|To get a file's status information
 [0]
 
 
 What is the purpose of the read call?
-To read data from a file into a buffer|To create a new process|To terminate process execution|To get a file's status information
+To read data from a file into a buffer|To create a child process|To wait for a child to terminate|To get a file's status information
 [0]
 
 
 What is the purpose of the write call?
-To write data from a buffer into a file|To create a new process|To terminate process execution|To get a file's status information
+To write data from a buffer into a file|To create a child process|To wait for a child to terminate|To get a file's status information
 [0]
 
 
 What is the purpose of the lseek call?
-To move the file pointer|To create a new process|To terminate process execution|To get a file's status information
+To move the file pointer|To create a child process|To wait for a child to terminate|To get a file's status information
 [0]
 
 
 What is the purpose of the stat call?
-To get a file's status information|To create a new process|To terminate process execution|To open a file
+To get a file's status information|To create a child process|To wait for a child to terminate|To open a file
 [0]
 
 
 What is the purpose of the mkdir system call?
-To create a new directory|To remove an empty directory|To mount a file system|To change the working directory
+To create a new directory|To remove an empty directory|To change the working directory|To mount a file system
 [0]
 
 
@@ -134,7 +179,7 @@ To change the working directory|To create a new directory|To remove an empty dir
 
 
 What is the purpose of the waitpid system call?
-To wait for a child process to terminate|To create a new directory|To remove an empty directory|To mount a file system
+To wait for a child process to terminate|To send a signal to a process|To get the elapsed time since Jan. 1, 1970|To change a file's protection bits
 [0]
 
 
@@ -143,28 +188,73 @@ To get the elapsed time since Jan. 1, 1970|To create a new directory|To remove a
 [0]
 
 
-What is the purpose of the execve system call?
-To execute a new program in the current process|To create a new process|To pass environment variables to a child process|To allocate memory for a new process
+What is the purpose of the waitpid system call?
+To wait for a child process to exit|To execute a user command|To replace the core image of a process|To display a prompt on the screen
 [0]
 
 
-What is the purpose of the exit system call?
-To allocate memory for a new process|To create a new process|To execute a new program in the current process|To indicate that a process has finished executing
+What system call is used by the child process to execute the user command?
+fork|waitpid|execve|read
+[2]
+
+
+How does the shell use the fork system call?
+To execute a user command|To wait for a child process to exit|To display a prompt on the screen|To replace the core image of a process
+[0]
+
+
+What are the three parameters of the execve system call?
+The name of the file to be executed, a pointer to the argument array, and a pointer to the environment|The name of the file to be executed, a pointer to the argument array, and a pointer to the parent process|The name of the file to be executed, a pointer to the child process, and a pointer to the environment|The name of the file to be executed, a pointer to the parent process, and a pointer to the environment
+[0]
+
+
+What is the purpose of the exec system call?
+To execute a new program in the current process|To create a new process|To terminate the current process|To wait for a child process to terminate
+[0]
+
+
+What is the main function of most C programs?
+To declare variables|To execute system calls|To print output to the console|To define the program's behavior
 [3]
 
 
-What are the three segments of memory in a UNIX process?
-Code, data, and stack|Heap, data, and stack|Code, heap, and stack|Code, data, and heap
+What is the purpose of the argc parameter in the main function?
+To count the number of items on the command line|To specify the name of the program|To pass environment variables to the program|To specify the behavior of the program
 [0]
 
 
-How is the data segment of a process expanded?
-Automatically as needed|By using the brk system call|By using the malloc library procedure|By using the exit system call
+What is the purpose of the argv parameter in the main function?
+To provide a pointer to an array of strings|To specify the behavior of the program|To pass environment variables to the program|To count the number of items on the command line
+[0]
+
+
+What is the purpose of the envp parameter in the main function?
+To provide a pointer to an array of environment variables|To specify the behavior of the program|To count the number of items on the command line|To pass arguments to the program
+[0]
+
+
+What is the purpose of the execve system call?
+To execute a new program in the current process|To create a new process|To customize user tasks|To allocate memory
+[0]
+
+
+What is the parameter passed to the exit system call?
+The process ID|The exit status|The environment|The file descriptor
 [1]
 
 
-Why is the brk system call not defined by the POSIX standard?
-Programmers are encouraged to use the malloc library procedure instead|It is too complex to standardize|It is not used frequently enough to warrant standardization|It is only used by low-level system processes
+What are the three segments of memory in a UNIX process?
+Text, data, and stack|Code, variables, and heap|Heap, stack, and registers|Data, heap, and registers
+[0]
+
+
+How does the data segment differ from the stack segment?
+The data segment grows upward and the stack grows downward|The data segment grows downward and the stack grows upward|The data segment and stack segment are the same|The data segment and stack segment are not used in UNIX processes
+[0]
+
+
+What is the purpose of the brk system call?
+To expand the data segment|To allocate memory for a new process|To execute a new program|To customize user tasks
 [0]
 
 

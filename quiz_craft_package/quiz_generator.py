@@ -45,14 +45,10 @@ class QuizGenerator():
         result = []
         logging.info(f"Start processing text chunks. Number of chunks is {len(text_chunks)}.")
         for i in range(len(text_chunks)):
-            try:
-                questions = self.MCQ_model.generate_question(text_chunks[i])
-                logging.info(f"{i+1} of {len(text_chunks)} chunks scanned!")
-                logging.info(f"Add {len(questions)} new questions!")
-                result += questions
-                time.sleep(10)
-            except:
-                logging.info("Failed to parse cluster of questions :c")
-                continue
+            questions = self.MCQ_model.generate_question(text_chunks[i])
+            logging.info(f"{i+1} of {len(text_chunks)} chunks scanned!")
+            logging.info(f"Add {len(questions)} new questions!")
+            result += questions
+            time.sleep(10)
 
         return result
