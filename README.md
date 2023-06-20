@@ -21,34 +21,17 @@ venv\Scripts\activate
 ```console
 pip install -r requirements.txt
 ```
-4. Make sure that you have installed **lfs**
-```console
-git lfs install
-```
-
-5. Download models
-```console
-git clone https://huggingface.co/potsawee/t5-large-generation-squad-QuestionAnswer
-```
-(Move all files of this repository to **resources/t5MCQ_gen**)
-
-```console
-git clone https://huggingface.co/potsawee/t5-large-generation-race-Distractor
-```
-(Move all files of this repository to **resources/t5MCQ_dis**)
-<br/>
-Do not include repository root folder!
 
 ## How to use
 ```python
 # If you save everything in folder QuizGeneratorModel
 # If not then use from folder_name.quiz_generator import QuizGenerator
-from QuizGeneratorModel.quiz_generator import QuizGenerator
+from QuizGeneratorModel.quiz_craft_package.quiz_generator import QuizGenerator
 
 quiz_gen = QuizGenerator(debug=False)
 # Set debug=True if you want to see generation progress logs.
 
-result = quiz_gen.create_questions_from_file("path/to/text.txt")
+result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text2.txt"])
 # Support .pdf and .txt at this moment.
 
 ```
@@ -58,15 +41,17 @@ result = quiz_gen.create_questions_from_file("path/to/text.txt")
 [
     [
         "Question text", 
-        ["option 1", "option 2", ...]
+        ["option 1", "option 2", ...],
+        [0] #Indexes of true options
     ],
     [
         "Question text", 
-        ["option 1", "option 2", ...]
+        ["option 1", "option 2", ...],
+        [0, 2]
     ],
     ...
 ]
 ```
 Just python array
 
-### P-s-s-s questions are very bad lol)
+### Questions are good. Nothing can be better than ChatGPT
