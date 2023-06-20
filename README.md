@@ -28,7 +28,8 @@ from QuizGeneratorModel.quiz_craft_package.quiz_generator import QuizGenerator
 quiz_gen = QuizGenerator(debug=False)
 # Set debug=True if you want to see generation progress logs.
 
-result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text2.txt"])
+result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text2.pdf"])
+# Argument is a list of files
 # Support .pdf and .txt at this moment.
 
 ```
