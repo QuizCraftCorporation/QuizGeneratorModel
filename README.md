@@ -1,7 +1,4 @@
 # Quiz Generation model
-## Requirements
-* 6 GB of RAM for models (can be more in future)
-
 ## Installation
 
 1. Clone repository
