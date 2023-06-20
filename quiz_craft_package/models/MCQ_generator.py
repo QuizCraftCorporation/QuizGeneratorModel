@@ -26,7 +26,7 @@ class MCQGenerator:
                 if self._check_if_question_is_valid(generated_question):
                     questions.append(generated_question)
                 else:
-                    print(generated_question)
+                    continue
             except:
                 continue
         return questions
