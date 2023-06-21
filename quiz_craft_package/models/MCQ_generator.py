@@ -1,9 +1,8 @@
-from langchain.schema import HumanMessage, SystemMessage
+from .abstract_generator import AbstractGenerator
 
-
-class MCQGenerator:
+class MCQGenerator(AbstractGenerator):
     def __init__(self, language_model) -> None:
-        self.llm = language_model
+        super().__init__(language_model)
         self.instruction = """
             You are multiple choice question generator. You will get text from user and you must create multiple choice questions based on text provided by user.
             Questions should be based on what the text is about, not how the author writes it. Questions should test knowledge of what the text is trying to teach the reader.
@@ -12,22 +11,6 @@ class MCQGenerator:
             Example:
             ["Question text", ["option A", "option B", "option C", "option D"], [0, 2]]
         """
-
-    def generate_question(self, text: str):
-        output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])
-        #print(output.content)
-        output = output.content.replace("\n\n", "\n").split("\n")
-        questions = []
-        for question_raw in output:
-            try:
-                generated_question = eval(question_raw)
-                if self._check_if_question_is_valid(generated_question):
-                    questions.append(generated_question)
-                else:
-                    continue
-            except:
-                continue
-        return questions
 
     def _check_if_question_is_valid(self, question: list):
         if type(question) is list:
