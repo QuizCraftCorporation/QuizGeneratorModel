@@ -1,4 +1,5 @@
 import logging
+from langchain.chat_models import ChatOpenAI
 from .models.MCQ_generator import MCQGenerator
 from .utils.text_splitter import TextSplitter
 from .utils.file_reader import FileReader
@@ -6,7 +7,7 @@ import time
 
 class QuizGenerator():
 
-    def __init__(self, debug=False) -> None:
+    def __init__(self, q_fraction = [0.7, 0.2, 0.1], debug=False) -> None:
         """
         Loads all models and intialize splitter.
         """
@@ -14,8 +15,11 @@ class QuizGenerator():
         if debug:    
             logging.basicConfig(level=logging.INFO)
 
-        logging.info("Loading models into RAM...")       
-        self.MCQ_model = MCQGenerator()
+        logging.info("Loading models into RAM...")
+        OPEN_AI_KEY = "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" 
+        language_model = ChatOpenAI(openai_api_key=OPEN_AI_KEY, temperature=0, model="gpt-3.5-turbo")      
+        self.MCQ_model = MCQGenerator(language_model)
+        
         logging.info("Models loaded succesfully")
         
         self.text_splitter = TextSplitter()
