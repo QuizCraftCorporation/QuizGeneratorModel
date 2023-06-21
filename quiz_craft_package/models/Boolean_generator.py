@@ -1,21 +1,22 @@
 from langchain.schema import HumanMessage, SystemMessage
 
 
-class MCQGenerator:
+class BooleanQGenerator:
     def __init__(self, language_model) -> None:
         self.llm = language_model
         self.instruction = """
-            You are multiple choice question generator. You will get text from user and you must create multiple choice questions based on text provided by user.
+            You are boolean question generator. You will get text from user and you must create true/false questions based on text provided by user.
             Questions should be based on what the text is about, not how the author writes it. Questions should test knowledge of what the text is trying to teach the reader.
-            Strictly respond in python array like style where first element is a question itself then subarray that contains options to answer and last element is a subarray that has indexes of right answers of options from first subarray.
+            Questions must have the simple answer like just true or false.
+            Strictly respond in python array like style where first element is a question itself, second elements is the answer to question which is True or False python boolean.
             Separate each your question arrays with one line break and make sure that each of them can be executed in python by eval()
             Example:
-            ["Question text", ["option A", "option B", "option C", "option D"], [0, 2]]
+            ["Question text", True]
         """
 
     def generate_question(self, text: str):
         output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])
-        #print(output.content)
+        print(output.content)
         output = output.content.replace("\n\n", "\n").split("\n")
         questions = []
         for question_raw in output:
