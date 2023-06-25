@@ -7,12 +7,10 @@ class MCQGenerator:
         OPEN_AI_KEY = "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" 
         self.llm = ChatOpenAI(openai_api_key=OPEN_AI_KEY, temperature=0, model="gpt-3.5-turbo")
         self.instruction = """
-            You are multiple choice question generator. You will get text from user and you must create multiple choice questions based on text provided by user.
-            Questions should be based on what the text is about, not how the author writes it. Questions should test knowledge of what the text is trying to teach the reader.
-            Strictly respond in python array like style where first element is a question itself then subarray that contains options to answer and last element is a subarray that has indexes of right answers of options from first subarray.
-            Separate each your question arrays with one line break and make sure that each of them can be executed in python by eval()
-            Example:
-            ["Question text", ["option A", "option B", "option C", "option D"], [0, 2]]
+            I want you to create several multiple choice questions based on text provided by user.
+            Strictly follow python-like format:
+            ["Which data types in C requires 4 bytes of memory?", ["int", "short int", "char", "float"], ["int", "float"]]
+            ["Who was the first astronaut?", ["Neil Armstrong", "Yuri Gagarin", "Elon Musk", "Xi Jinping"], ["Neil Armstrong"]]
         """
 
     def generate_question(self, text: str):
@@ -24,6 +22,8 @@ class MCQGenerator:
             try:
                 generated_question = eval(question_raw)
                 if self._check_if_question_is_valid(generated_question):
+                    index_array = [generated_question[1].index(answer) for answer in generated_question[2]]
+                    generated_question[2] = index_array
                     questions.append(generated_question)
                 else:
                     continue
@@ -36,6 +36,8 @@ class MCQGenerator:
             if len(question) == 3:
                 if type(question[0]) is str and type(question[1]) is list and type(question[2]) is list:
                     if len(question[1]) >= len(question[2]):
-                        if max(question[2]) < len(question[1]) and min(question[2]) > -1:
-                            return True
+                        for answer in question[2]:
+                            if answer not in question[1]:
+                                return False
+                        return True
         return False
