@@ -34,7 +34,7 @@ Once|Twice|Three times|He was not wounded
 
 
 What was the myth that Hitler believed caused Germany's defeat in World War I?
-The Allies had superior military tactics|The country lacked patriotic citizens|The country lacked resources|The country lacked a strong leader
+The Allies had superior military tactics|The country lacked patriotic traitors|The country lacked resources|The country lacked skilled soldiers
 [1]
 
 
@@ -43,18 +43,18 @@ German Workers' Party|National Socialist Party|Weimar Republic Party|Nazi Party
 [0]
 
 
-What was the significance of the swastika in the Nazi Party's emblem?
-It was a symbol of German nationalism|It was a symbol of Hinduism, Jainism, and Buddhism|It was a symbol of the Weimar Republic|It was a symbol of the Allies
-[1]
-
-
-What was the name of the group that Ernst Röhm recruited for the Nazi Party?
-The German Workers' Party|The Weimar Republic Party|The Sturmabteilung|The SA
+What was the symbol that the Nazi Party adopted as its emblem?
+A red circle on a white background|A black eagle on a yellow background|A white circle on a red background with a swastika|A black swan on a blue background
 [2]
 
 
-What event led to Hitler's arrest in 1923?
-The Beer Hall Putsch|The Munich Massacre|The Versailles Treaty|The National Revolution
+What was the name of the squad that Ernst Röhm recruited for the Nazi Party?
+Sturmabteilung|Weimar Republic Army|National Socialist Army|German Workers' Army
+[0]
+
+
+What happened on November 8, 1923, that involved Hitler and the Nazi Party?
+They forced their way into a beer hall and started a gun battle with police|They won a national election|They signed a peace treaty with the Allies|They launched a successful military coup
 [0]
 
 
@@ -91,5 +91,105 @@ The need for living space for Germany|The need for living space for Slavic peopl
 What did Hitler think of the Slavic peoples occupying the lands to the east?
 He believed they were superior to Germans|He believed they were equal to Germans|He believed they were inferior to Germans|He believed they were a threat to Germans
 [2]
+
+
+What are the two main functions of operating systems?
+providing abstractions to user programs and managing computer's resources|creating, writing, reading, and deleting files|managing user interactions and providing security measures|none of the above
+[0]
+
+
+What is the primary interface between user programs and the operating system?
+resource management|dealing with abstractions|system calls|underlying concepts
+[1]
+
+
+Why is it important to examine the system calls available in the interface?
+to understand what operating systems really do|to make the interface more user-friendly|to improve resource management|none of the above
+[0]
+
+
+What approach has been chosen to understand what operating systems really do?
+vague generalities|specific systems|machine-dependent mechanics|none of the above
+[1]
+
+
+What is the purpose of the procedure library provided for making system calls?
+to make it possible to make system calls from C programs and other languages|to provide security measures for user programs|to manage computer resources|none of the above
+[0]
+
+
+What is a system call?
+A special kind of procedure call that enters the kernel|A regular function call in C programs|A way to execute multiple instructions at once|A method to transfer control to the operating system
+[0]
+
+
+What happens when a process running a user program needs a system service?
+It executes a trap instruction to transfer control to the operating system|It continues running the user program|It terminates the program|It enters kernel mode
+[0]
+
+
+What is the purpose of a system call?
+To request a service from the operating system|To execute a series of instructions at once|To terminate a program|To enter kernel mode
+[0]
+
+
+How is a system call invoked from a C program?
+By calling a library procedure with the same name as the system call|By executing a trap instruction|By entering kernel mode|By calling a regular function in C programs
+[0]
+
+
+What happens if a system call cannot be carried out?
+Count is set to -1 and the error number is put in a global variable, errno|The program terminates|The system call is repeated|The operating system enters kernel mode
+[0]
+
+
+What is the purpose of pushing parameters onto the stack before making a system call?
+To prepare for calling the library procedure|To switch from user mode to kernel mode|To pass the contents of the buffer|To execute a TRAP instruction
+[0]
+
+
+Why is the second parameter passed by reference in the read call?
+To pass the address of the buffer|To pass the contents of the buffer|To switch from user mode to kernel mode|To execute a TRAP instruction
+[0]
+
+
+What is the purpose of the TRAP instruction in the read call?
+To switch from user mode to kernel mode|To pass the contents of the buffer|To execute a procedure-call instruction|To push parameters onto the stack
+[0]
+
+
+What is the purpose of the system-call number in the read call?
+To indicate which system call is being made|To pass the contents of the buffer|To switch from user mode to kernel mode|To execute a TRAP instruction
+[0]
+
+
+Why do C and C++ compilers push parameters onto the stack in reverse order?
+For historical reasons related to printf|To prepare for calling the library procedure|To switch from user mode to kernel mode|To pass the contents of the buffer
+[0]
+
+
+What is the purpose of the TRAP instruction in making a system call?
+To switch into kernel mode|To give an absolute address of the procedure|To jump to an arbitrary address|To save the return address on the stack
+[0]
+
+
+How does the TRAP instruction differ from a procedure call instruction?
+It switches into kernel mode as a side effect|It gives an absolute address of the procedure|It jumps to an arbitrary address|It does not save the return address on the stack
+[0]
+
+
+What does the kernel code do following the TRAP instruction?
+Examines the system-call number and dispatches to the correct system-call handler|Saves the return address on the stack|Switches into user mode|Returns control to the user-space library procedure
+[0]
+
+
+How is the correct system-call handler determined?
+Via a table of pointers to system-call handlers indexed on system-call number|By jumping to a single fixed location|By using an 8-bit field in the instruction|By examining the return address on the stack
+[0]
+
+
+What happens once the system-call handler completes its work?
+Control may be returned to the user-space library procedure at the instruction following the TRAP instruction|The kernel code switches into user mode|The return address is saved on the stack|The system-call number is examined
+[0]
 
 

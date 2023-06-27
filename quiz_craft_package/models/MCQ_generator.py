@@ -22,7 +22,7 @@ class MCQGenerator:
             ["Who was the first astronaut?", ["Neil Armstrong", "Yuri Gagarin", "Elon Musk", "Xi Jinping"], ["Neil Armstrong"]]
         """
 
-    def generate_question(self, text: str) -> list:
+    def generate_question_chunk(self, text: str) -> list:
         """
         Generate a chunk of questions.
         """
@@ -45,6 +45,10 @@ class MCQGenerator:
         return questions
 
     def _check_if_question_is_valid(self, question: list):
+        """
+        Check if the question format is correct.
+        """
+        
         if type(question) is list:
             if len(question) == 3:
                 if type(question[0]) is str and type(question[1]) is list and type(question[2]) is list:
