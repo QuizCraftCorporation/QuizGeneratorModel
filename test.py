@@ -1,12 +1,12 @@
 from pprint import pprint
 from quiz_craft_package.quiz_generator import QuizGenerator
 
-MATERIAL_TEXT_FILE_PATH = "./data/material.txt"
-MATERIAL_TEXT_FILE_PATH_2 = "./data/material_2.txt"
+MATERIAL_TEXT_FILE_PATH = "./data/hitler.txt"
+MATERIAL_TEXT_FILE_PATH_2 = "./data/material.txt"
 RESULT_FILE_PATH = "./output/result.txt"
 
 q_gen = QuizGenerator(debug=True)
-result = q_gen.create_questions_from_files([MATERIAL_TEXT_FILE_PATH, MATERIAL_TEXT_FILE_PATH_2])
+result = q_gen.create_questions_from_files([MATERIAL_TEXT_FILE_PATH])
 
 #pprint(result)
 

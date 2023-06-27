@@ -5,13 +5,19 @@ from .utils.file_reader import FileReader
 import time
 
 class QuizGenerator():
+    """
+    Class that have behaviour for quiz generation. It uses different models.
+    In this version of class it uses only ChatGPT.
+    """
 
-    def __init__(self, debug=False) -> None:
+    def __init__(self, debug=False, max_questions = -1) -> None:
         """
         Loads all models and intialize splitter.
         """
-        
-        if debug:    
+        self.max_questions = max_questions
+        self.questions_buffer = [] # Addition questions in case of failing to achieve 'max_questions' number.
+
+        if debug:
             logging.basicConfig(level=logging.INFO)
 
         logging.info("Loading models into RAM...")       

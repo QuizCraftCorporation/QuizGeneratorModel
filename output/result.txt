@@ -1,190 +1,95 @@
-What are the two main functions of operating systems?
-providing abstractions to user programs and managing computer's resources|creating, writing, reading, and deleting files|providing internet connectivity and managing user accounts|managing computer's hardware and software
+When and where was Adolf Hitler born?
+April 20, 1889 in Braunau am Inn|May 1, 1890 in Vienna|June 15, 1888 in Munich|July 4, 1891 in Berlin
 [0]
 
 
-What is the interface between user programs and operating systems primarily about?
-dealing with the abstractions|managing computer's resources|creating, writing, reading, and deleting files|providing internet connectivity
-[0]
-
-
-What is the difference between vague generalities and specific system approach in understanding operating systems?
-vague generalities give more insight into what operating systems really do|specific system approach is more work but gives more insight into what operating systems really do|both approaches are equally effective in understanding operating systems|none of the above
+What did Adolf Hitler pursue after his father's retirement?
+Civil service|Art|Medicine|Law
 [1]
 
 
-What is the purpose of a procedure library in making system calls?
-to provide internet connectivity|to manage computer's resources|to make it possible to make system calls from C programs and often from other languages as well|to create, write, read, and delete files
+Where did Adolf Hitler move after his mother's death?
+Munich|Berlin|Vienna|Linz
 [2]
 
 
-What is a system call?
-A special kind of procedure call that enters the kernel|A regular function call in C programs|A way to execute multiple instructions at once|A method to transfer control to the operating system
-[0]
-
-
-How does a process in user mode request a system service?
-By executing a trap instruction|By calling a library procedure|By sending a message to the operating system|By executing a system call
-[0]
-
-
-What is the purpose of a system call?
-To transfer control to the operating system and request a service|To execute multiple instructions at once|To call a library procedure|To return control to the instruction following the system call
-[0]
-
-
-What is the read system call?
-A system call used to read data from a file|A library procedure used to read data from a file|A method to execute multiple instructions at once|A way to transfer control to the operating system
-[0]
-
-
-What happens if a system call encounters an error?
-The count variable is set to -1 and the error number is put in a global variable|The count variable is set to 0 and the error number is put in a local variable|The count variable is set to the number of bytes read|The program terminates
-[0]
-
-
-What is the purpose of pushing parameters onto the stack before making a system call?
-To prepare the calling program for the read library procedure|To pass parameters by reference|To switch from user mode to kernel mode|To execute a TRAP instruction
-[0]
-
-
-Why is the second parameter passed by reference in the read call?
-To pass the contents of the buffer|For historical reasons|To indicate the address of the buffer|To switch from user mode to kernel mode
+What did Adolf Hitler become interested in during his years in Vienna?
+Art|Science|Politics|Music
 [2]
 
 
-What does the library procedure do before executing a TRAP instruction?
-Pushes the parameters onto the stack|Puts the system-call number in a place where the operating system expects it|Executes a procedure-call instruction|Switches from user mode to kernel mode
-[1]
-
-
-What is the purpose of the TRAP instruction in making a system call?
-To switch into kernel mode|To give an absolute address of the procedure|To jump to an arbitrary address|To save the return address on the stack
-[0]
-
-
-What is the difference between the TRAP instruction and a procedure call instruction?
-TRAP instruction changes the mode to kernel mode, while procedure call instruction does not|TRAP instruction gives an index into a table in memory containing jump addresses, while procedure call instruction gives an absolute or relative address of the procedure|TRAP instruction can jump to an arbitrary address, while procedure call instruction cannot|TRAP instruction saves the return address on the stack, while procedure call instruction does not
-[0]
-
-
-What does the kernel code do following the TRAP instruction?
-Examines the system-call number and dispatches to the correct system-call handler|Saves the return address on the stack|Switches into user mode|Jumps to an arbitrary address
-[0]
-
-
-What happens once the system-call handler completes its work?
-Control may be returned to the user-space library procedure at the instruction following the TRAP instruction|The kernel code switches into user mode|The system-call handler saves the return address on the stack|The system-call handler jumps to an arbitrary address
-[0]
-
-
-What is the purpose of the fork call in POSIX?
-To create a new process|To terminate process execution|To open a file|To get a file's status information
-[0]
-
-
-What happens to the original process and its copy after a fork call?
-They continue to run together|They go their separate ways|The copy becomes the new parent process|The original process terminates
-[1]
-
-
-What is the value returned by a fork call?
-The child's PID|The parent's PID|Zero in the child and the child's PID in the parent|The process' status
-[2]
-
-
-What is shared between the parent and child processes after a fork call?
-All variables|Program text|Registers|File descriptors
-[1]
-
-
-What is the purpose of the waitpid call in POSIX?
-To create a child process|To wait for a child process to terminate|To replace a process' core image|To get a file's status information
-[1]
-
-
-What is the purpose of the mkdir system call?
-To remove an empty directory|To create a new directory|To change the working directory|To mount a file system
-[1]
-
-
-What is the return code of system calls if an error has occurred?
--1|0|1|2
-[0]
-
-
-What is the purpose of the chdir system call?
-To remove a directory entry|To change a file's protection bits|To send a signal to a process|To change the working directory
+What was Adolf Hitler's military rank during World War I?
+General|Colonel|Sergeant|He was not an officer
 [3]
 
 
-What is the purpose of the waitpid system call?
-To wait for a child process to finish|To create a new directory|To mount a file system|To remove a directory entry
+What was the highest military decoration Adolf Hitler won during World War I?
+Iron Cross Second Class|Iron Cross First Class|Victoria Cross|Medal of Honor
+[1]
+
+
+How many times was Adolf Hitler wounded during World War I?
+Once|Twice|Three times|He was not wounded
+[1]
+
+
+What was the myth that Hitler believed caused Germany's defeat in World War I?
+The Allies had superior military tactics|The country lacked patriotic citizens|The country lacked resources|The country lacked a strong leader
+[1]
+
+
+What was the name of the party that Hitler joined in 1918?
+German Workers' Party|National Socialist Party|Weimar Republic Party|Nazi Party
 [0]
 
 
-What system call is used by the shell to execute a user command?
-fork|waitpid|execve
+What was the significance of the swastika in the Nazi Party's emblem?
+It was a symbol of German nationalism|It was a symbol of Hinduism, Jainism, and Buddhism|It was a symbol of the Weimar Republic|It was a symbol of the Allies
+[1]
+
+
+What was the name of the group that Ernst Röhm recruited for the Nazi Party?
+The German Workers' Party|The Weimar Republic Party|The Sturmabteilung|The SA
 [2]
 
 
-What is the purpose of waitpid in the shell's use of fork?
-to wait for the child process to exit|to execute the user command|to display the prompt on the screen
+What event led to Hitler's arrest in 1923?
+The Beer Hall Putsch|The Munich Massacre|The Versailles Treaty|The National Revolution
 [0]
 
 
-How many parameters does execve have in the most general case?
-1|2|3
+What was the name of Hitler's book that he wrote while in prison?
+Mein Kampf|The Zweites Buch|Hitler's Secret Book|My Struggle
+[0]
+
+
+What did Hitler believe was the natural order of races?
+The Aryan race was superior|All races were equal|The Jewish race was superior|The African race was superior
+[0]
+
+
+What did Hitler believe was the truest form of government?
+Democratic government|Parliamentary government|One supreme leader|Communism
 [2]
 
 
-What is the purpose of the exec system call?
-To execute a new program within a process|To create a new process|To terminate a process|To allocate memory for a process
-[0]
-
-
-What is the first parameter of the main function in C programs?
-argc|argv|envp|main
-[0]
-
-
-What is the second parameter of the main function in C programs?
-argc|argv|envp|main
+What was the name of Hitler's second book?
+Mein Kampf|The Zweites Buch|Hitler's Secret Book|My Struggle
 [1]
 
 
-What is the third parameter of the main function in C programs?
-argc|argv|envp|main
+Why was Hitler arrested after the Beer Hall Putsch?
+For treason|For theft|For murder|For fraud
+[0]
+
+
+What is the concept of Lebensraum in Mein Kampf?
+The need for living space for Germany|The need for living space for Slavic peoples|The need for living space for Austria|The need for living space for Russia
+[0]
+
+
+What did Hitler think of the Slavic peoples occupying the lands to the east?
+He believed they were superior to Germans|He believed they were equal to Germans|He believed they were inferior to Germans|He believed they were a threat to Germans
 [2]
-
-
-What is the purpose of the environment array in C programs?
-To pass information such as terminal type and home directory name to programs|To execute a new program within a process|To create a new process|To terminate a process
-[0]
-
-
-What is the purpose of the execve system call?
-To customize user tasks|To execute a new program|To allocate memory|To terminate a process
-[1]
-
-
-How many parameters does the exit system call have?
-0|1|2|3
-[1]
-
-
-What are the three segments of memory in a UNIX process?
-text, data, stack|heap, data, stack|text, heap, stack|text, data, heap
-[0]
-
-
-What is the purpose of the brk system call?
-To execute a new program|To allocate memory|To customize user tasks|To terminate a process
-[1]
-
-
-Why is the brk system call not defined by the POSIX standard?
-Programmers are encouraged to use malloc instead|It is too complex to standardize|It is not used frequently enough|It is not compatible with UNIX processes
-[0]
 
 

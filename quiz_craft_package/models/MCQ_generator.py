@@ -3,17 +3,30 @@ from langchain.chat_models import ChatOpenAI
 
 
 class MCQGenerator:
+    """
+    Class for models that generates MCQ questions.
+    """
+
     def __init__(self) -> None:
+        """
+        Initialize MCQ Generator model.
+        """
+        
         OPEN_AI_KEY = "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" 
         self.llm = ChatOpenAI(openai_api_key=OPEN_AI_KEY, temperature=0, model="gpt-3.5-turbo")
         self.instruction = """
             I want you to create several multiple choice questions based on text provided by user.
+            Send questions in order of importance and quality. The first questions are the most important for the given text and have good quality, and the last ones are not as good as the first ones.
             Strictly follow python-like format:
             ["Which data types in C requires 4 bytes of memory?", ["int", "short int", "char", "float"], ["int", "float"]]
             ["Who was the first astronaut?", ["Neil Armstrong", "Yuri Gagarin", "Elon Musk", "Xi Jinping"], ["Neil Armstrong"]]
         """
 
-    def generate_question(self, text: str):
+    def generate_question(self, text: str) -> list:
+        """
+        Generate a chunk of questions.
+        """
+        
         output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])
         #print(output.content)
         output = output.content.replace("\n\n", "\n").split("\n")
