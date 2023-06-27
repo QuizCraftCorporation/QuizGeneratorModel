@@ -28,8 +28,9 @@ from QuizGeneratorModel.quiz_craft_package.quiz_generator import QuizGenerator
 quiz_gen = QuizGenerator(debug=False)
 # Set debug=True if you want to see generation progress logs.
 
-result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text2.pdf"])
+result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text2.pdf"], max_questions=10)
 # Argument is a list of files
+# Max questions is an upper bound on number of questions inside a generated quiz.
 # Support .pdf and .txt at this moment.
 
 ```
