@@ -57,6 +57,9 @@ class QuizGenerator():
             logging.info(f"PROCESSING FILE {file_path}")
             text_data = FileReader(file_path).get_content()
             complex_quiz = complex_quiz.union(self._create_quiz(text_data, questions_per_file))
+            if max_questions != None and len(complex_quiz) >= max_questions:
+                logging.info(f"Complex quiz already has enough questions - {len(complex_quiz)} out of {max_questions}. Finish generation.")
+                return complex_quiz
         
         if max_questions != None and len(complex_quiz) < max_questions:
             logging.info("Not enough questions for complex quiz. Using buffer...")
