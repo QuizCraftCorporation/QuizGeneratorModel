@@ -28,10 +28,26 @@ class NagimQuestion:
         return "MCQ" # Not implemented yet.
 
     @staticmethod
-    def create_from_array(array: list):
+    def from_array(array: list):
         if len(array) != 3:
             raise Exception(f"Question can be created only from arrays of size 3! Not {len(array)}")
         return NagimQuestion(array[0], array[1], array[2])
+    
+    @staticmethod
+    def from_string(str_data: str):
+        lines = str_data.split('\n')
+        question_text = lines[0]
+        answers = []
+        index = 2
+        current_answer = lines[1]
+        while current_answer != "#####":
+            answers.append(current_answer)
+            current_answer = lines[index]
+            index += 1
+        right_answers = []
+        for i in range(index + 1, len(lines)):
+            right_answers.append(lines[i])
+        return NagimQuestion(question_text, answers, right_answers)
 
     def _check_is_valid(self) -> None:
         if type(self._question_text) != str:

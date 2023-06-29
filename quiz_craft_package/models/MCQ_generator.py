@@ -34,7 +34,7 @@ class MCQGenerator:
         for question_raw in output:
             try:
                 raw_question_list = eval(question_raw)
-                questions.append(NagimQuestion.create_from_array(raw_question_list))
+                questions.append(NagimQuestion.from_array(raw_question_list))
             except:
                 continue
         return questions

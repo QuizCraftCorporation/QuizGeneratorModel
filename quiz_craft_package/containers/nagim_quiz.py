@@ -5,8 +5,8 @@ class NagimQuiz:
     Class that quiz question and operations over it.
     """
     
-    def __init__(self) -> None:
-        self._questions: list[NagimQuestion] = []
+    def __init__(self, questions: list[NagimQuestion] = []) -> None:
+        self._questions = questions
 
     def get_question(self, index: int):
         return self._questions[index]
@@ -21,8 +21,14 @@ class NagimQuiz:
         return merged_quiz
     
     @staticmethod
-    def from_string():
-        pass
+    def from_string(str_data: str):
+        questions_raw = str_data.split("\n\n")
+        questions = []
+        for question in questions_raw:
+            if question == "":
+                break
+            questions.append(NagimQuestion.from_string(question))
+        return NagimQuiz(questions=questions)
 
     def __len__(self):
         return len(self._questions)
