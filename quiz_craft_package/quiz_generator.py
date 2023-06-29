@@ -41,10 +41,12 @@ class QuizGenerator():
             list: A list with questions. Check README.md to see format.
         """
         # Check for errors.
-        if type(max_questions) != int:
+
+        if max_questions != None and type(max_questions) != int:
             raise Exception("max_questions parameter must be int!")
         if max_questions != None and max_questions < 0:
             raise Exception(f"max_questions={max_questions} is invalid value!")
+        
 
         questions_per_file = None
         if max_questions != None:
@@ -54,9 +56,9 @@ class QuizGenerator():
         for file_path in file_paths:
             logging.info(f"PROCESSING FILE {file_path}")
             text_data = FileReader(file_path).get_content()
-            complex_quiz = complex_quiz.union(self.create_quiz(text_data, questions_per_file))
+            complex_quiz = complex_quiz.union(self._create_quiz(text_data, questions_per_file))
         
-        if len(complex_quiz) < max_questions:
+        if max_questions != None and len(complex_quiz) < max_questions:
             logging.info("Not enough questions for complex quiz. Using buffer...")
             n = max_questions - len(complex_quiz)
             complex_quiz.add_questions(self.questions_buffer.get_best_questions(n))
@@ -100,11 +102,12 @@ class QuizGenerator():
             if max_questions != None and len(quiz) >= max_questions:
                 logging.info(f"Quiz already has enough questions - {max_questions}. Finish generation.")
                 return quiz
+            
             if i < len(text_chunks) - 1:
                 time.sleep(10)
         
         # Adding questions from buffer.
-        if len(quiz) < max_questions:
+        if max_questions != None and len(quiz) < max_questions:
             logging.info(f"Not enough questions were generated. Using question buffer...")
             n = max_questions - len(quiz)
             quiz.add_questions(self.questions_buffer.get_best_questions(n))

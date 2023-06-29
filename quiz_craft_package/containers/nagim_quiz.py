@@ -19,6 +19,10 @@ class NagimQuiz:
         merged_questions = self._questions + quiz._questions
         merged_quiz.add_questions(merged_questions)
         return merged_quiz
+    
+    @staticmethod
+    def from_string():
+        pass
 
     def __len__(self):
         return len(self._questions)
@@ -28,8 +32,8 @@ class NagimQuiz:
             yield question
 
     def __str__(self):
-        str_quiz = []
+        str_quiz = ""
         for question in self._questions:
-            str_quiz.append(str(question))
-        return str(str_quiz)
+            str_quiz += str(question) + "\n"
+        return str_quiz
     

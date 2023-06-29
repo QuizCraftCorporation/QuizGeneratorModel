@@ -48,4 +48,12 @@ class NagimQuestion:
                 raise Exception(f"Right answer '{right_answer}' is not presented among answers")
     
     def __str__(self) -> str:
-        return str([self._question_text, self._answers, self._right_answers])
+        output_str = ""
+        output_str += self._question_text + "\n"
+        for answer in self._answers:
+            output_str += answer + "\n"
+        output_str += "#####\n"
+        for right_answer in self._right_answers:
+            output_str += right_answer + "\n"
+
+        return output_str
