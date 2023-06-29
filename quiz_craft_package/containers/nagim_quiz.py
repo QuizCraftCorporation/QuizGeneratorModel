@@ -27,6 +27,9 @@ class NagimQuiz:
         for question in self._questions:
             yield question
 
-    
-
+    def __str__(self):
+        str_quiz = []
+        for question in self._questions:
+            str_quiz.append(str(question))
+        return str(str_quiz)
     

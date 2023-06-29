@@ -22,7 +22,7 @@ class MCQGenerator:
             ["Who was the first astronaut?", ["Neil Armstrong", "Yuri Gagarin", "Elon Musk", "Xi Jinping"], ["Neil Armstrong"]]
         """
 
-    def generate_question_chunk(self, text: str) -> list:
+    def generate_question_chunk(self, text: str) -> list[NagimQuestion]:
         """
         Generate a chunk of questions.
         """

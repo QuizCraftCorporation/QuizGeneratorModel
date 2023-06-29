@@ -30,6 +30,13 @@ class QuestionBuffer:
         return self._flatten()[:k]
 
     def divide_chunk(self, question_chunk: list[NagimQuestion], extract_count: int) -> list[NagimQuestion]:
+        """
+        Divide chunk into buffer part and extract part.
+        """
+        
+        if len(question_chunk) < extract_count:
+            return question_chunk
+        
         return_questions = question_chunk[:extract_count]
         self._question_chunks.append(question_chunk[extract_count-len(question_chunk):])
 

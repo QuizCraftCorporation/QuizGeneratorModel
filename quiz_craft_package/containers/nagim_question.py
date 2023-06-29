@@ -46,3 +46,6 @@ class NagimQuestion:
         for right_answer in self._right_answers:
             if not right_answer in self._answers:
                 raise Exception(f"Right answer '{right_answer}' is not presented among answers")
+    
+    def __str__(self) -> str:
+        return str([self._question_text, self._answers, self._right_answers])

@@ -4,6 +4,8 @@ from .models.MCQ_generator import MCQGenerator
 from .utils.text_splitter import TextSplitter
 from .utils.file_reader import FileReader
 from .containers.nagim_quiz import NagimQuiz
+from .containers.nagim_question import NagimQuestion
+from .containers.question_buffer import QuestionBuffer
 
 class QuizGenerator():
     """
@@ -17,7 +19,7 @@ class QuizGenerator():
         """
 
         # Addition questions in case of failing to achieve 'max_questions' number.
-        self.questions_buffer = []
+        self.questions_buffer = QuestionBuffer()
 
         if debug:
             logging.basicConfig(level=logging.INFO)
@@ -27,7 +29,7 @@ class QuizGenerator():
 
         logging.info("Initialization complete.")
 
-    def create_quiz_from_files(self, file_paths: list[str], max_questions=-1) -> list:
+    def create_quiz_from_files(self, file_paths: list[str], max_questions: int = None) -> NagimQuiz:
         """
         Create quiz from specified files.
 
@@ -38,25 +40,31 @@ class QuizGenerator():
         Returns:
             list: A list with questions. Check README.md to see format.
         """
-        questions_per_file = -1
-        if max_questions != -1:
+        # Check for errors.
+        if type(max_questions) != int:
+            raise Exception("max_questions parameter must be int!")
+        if max_questions != None and max_questions < 0:
+            raise Exception(f"max_questions={max_questions} is invalid value!")
+
+        questions_per_file = None
+        if max_questions != None:
             questions_per_file = max_questions // len(file_paths)
 
-        complex_quiz = []
+        complex_quiz = NagimQuiz()
         for file_path in file_paths:
             logging.info(f"PROCESSING FILE {file_path}")
             text_data = FileReader(file_path).get_content()
-            complex_quiz += self.create_questions(text_data, questions_per_file)
+            complex_quiz = complex_quiz.union(self.create_quiz(text_data, questions_per_file))
         
         if len(complex_quiz) < max_questions:
             logging.info("Not enough questions for complex quiz. Using buffer...")
-            flat_buffer = self._flat_questions_buffer()
-            complex_quiz += flat_buffer[:max_questions-len(complex_quiz)]
+            n = max_questions - len(complex_quiz)
+            complex_quiz.add_questions(self.questions_buffer.get_best_questions(n))
         
-        self.questions_buffer = []
+        self.questions_buffer.clear()
         return complex_quiz
 
-    def create_questions(self, text: str, max_questions: int) -> list:
+    def _create_quiz(self, text: str, max_questions: int = None) -> NagimQuiz:
         """
         Create quiz from plain text.
 
@@ -67,12 +75,6 @@ class QuizGenerator():
         Returns:
             list: A list with questions. Check README.md to see format.
         """
-        
-        # Check for errors.
-        if type(max_questions) != int:
-            raise Exception("max_questions parameter must be int!")
-        if max_questions != -1 and max_questions < 0:
-            raise Exception(f"max_questions={max_questions} is invalid value!")
 
         #Splitting text
         logging.info("Splitting text")
@@ -80,20 +82,22 @@ class QuizGenerator():
         logging.info(f"Text splitted into {len(text_chunks)} chunks")
 
         # Calculating questions per chunk number.
-        questions_per_chunk = -1
-        if max_questions != -1:
+        questions_per_chunk = None
+        if max_questions != None:
             questions_per_chunk = max(max_questions // len(text_chunks), 1)
 
         logging.info(f"Start processing text chunks. Number of chunks is {len(text_chunks)}.")
 
         # Quiz generation.
-        quiz = []
+        quiz = NagimQuiz()
         for i in range(len(text_chunks)):
             questions = self._create_question_chunk(text_chunks[i], questions_per_chunk)
+            quiz.add_questions(questions)
+            
             logging.info(f"{i+1} of {len(text_chunks)} chunks scanned!")
             logging.info(f"Add {len(questions)} new questions!")
-            quiz += questions
-            if len(quiz) >= max_questions and max_questions != -1:
+            
+            if max_questions != None and len(quiz) >= max_questions:
                 logging.info(f"Quiz already has enough questions - {max_questions}. Finish generation.")
                 return quiz
             if i < len(text_chunks) - 1:
@@ -102,39 +106,18 @@ class QuizGenerator():
         # Adding questions from buffer.
         if len(quiz) < max_questions:
             logging.info(f"Not enough questions were generated. Using question buffer...")
-            flat_buffer = self._flat_questions_buffer()
-            quiz += flat_buffer[:max_questions-len(quiz)]
-            self.questions_buffer = []
+            n = max_questions - len(quiz)
+            quiz.add_questions(self.questions_buffer.get_best_questions(n))
         
         return quiz
     
-    def _create_question_chunk(self, text_chunk: str, number_of_questions: int):
+    def _create_question_chunk(self, text_chunk: str, number_of_questions: int = None) -> list[NagimQuestion]:
         """
         Create a single chunk of questions.
         """
         
         questions = self.MCQ_model.generate_question_chunk(text_chunk)
-        if number_of_questions != -1:
-            if len(questions) > number_of_questions:
-                logging.info(f"Saving {number_of_questions-len(questions)} questions into a buffer.")
-                self.questions_buffer.append(questions[number_of_questions-len(questions):])
-                questions = questions[:number_of_questions]
+        if number_of_questions != None:
+            questions = self.questions_buffer.divide_chunk(questions, number_of_questions)
                 
         return questions
-
-    def _flat_questions_buffer(self) -> list:
-        """
-        Converet 2D question buffer to 1D with follow of importance order.
-        """
-        if len(self.questions_buffer) == 0:
-            return []
-        
-        flat_buffer = []
-        max_chunk_size = max([len(question_chunk) for question_chunk in self.questions_buffer])
-
-        for j in range(0, max_chunk_size):
-            for question_chunk in self.questions_buffer:
-                if j < len(question_chunk):
-                    flat_buffer.append(question_chunk[j])
-        
-        return flat_buffer
