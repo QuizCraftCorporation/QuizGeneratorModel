@@ -2,16 +2,24 @@ from .nagim_question import NagimQuestion
 
 class NagimQuiz:
     """
-    Class that quiz question and operations over it.
+    Class that contain quiz questions and operations over it.
     """
     
     def __init__(self, questions: list[NagimQuestion] = []) -> None:
         self._questions = questions.copy()
 
     def get_question(self, index: int):
+        """
+        Get question by index.
+        """
+        
         return self._questions[index]
 
     def add_questions(self, questions: list[NagimQuestion]):
+        """
+        Add list of questions to quiz.
+        """
+        
         self._questions += questions.copy()
 
     def union(self, quiz):

@@ -42,7 +42,7 @@ result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text
 from quiz_craft_package.quiz_database import QuizDataBase
 
 # Creates database for quizzes that automaticly caches loaded quizzes. Required for cosine search.
-database = QuizDataBase("./path/to/vector_db_cache_saving")
+database = QuizDataBase("path/to/vector_db_cache_saving")
 
 # Save quizzes in vector database
 # quiz is 'NagimQuiz' object!
@@ -50,27 +50,33 @@ database.save_quiz(quiz1)
 database.save_quiz(quiz2)
 database.save_quiz(quiz3)
 
+# RESULT IS A LIST of 'NagimQuiz' objects
 result = database.search_quiz("German war", number_of_results=3)
 # First argument is a search query
 # Second is a number of top most similar quizzes to show.
 ```
 ## Quiz objects
-VERY IMPORTANT!!!
+### NagimQuiz
+Class that contain quiz questions and operations over it.
 ```python
-[
-    [
-        "Question text", 
-        ["option 1", "option 2", ...],
-        [0] #Indexes of true options
-    ],
-    [
-        "Question text", 
-        ["option 1", "option 2", ...],
-        [0, 2]
-    ],
-    ...
-]
-```
-Just python array
+from quiz_craft_package.containers.nagim_quiz import NagimQuiz
 
-### Questions are good. Nothing can be better than ChatGPT
+quiz = NagimQuiz.from_string("...")
+
+# Iterate through each question
+for question in quiz:
+    print(str(question)) # question is 'NagimQuestion' object
+
+# Get number of questions
+print(len(quiz))
+
+# Get specific question
+print(quiz.get_question(0))
+
+# Can be converted to simple string and vice versa
+str_data = str(quiz)
+quiz2 = NagimQuiz.from_string(str_data)
+
+# Very easy lol
+```
+[yeeeaaahhh!](https://www.youtube.com/watch?v=x98mHJHY-P0)
