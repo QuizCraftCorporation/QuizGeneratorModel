@@ -1,11 +1,11 @@
 from quiz_craft_package.quiz_generator import QuizGenerator
 
-MATERIAL_TEXT_FILE_PATH = "./data/hitler.txt"
-MATERIAL_TEXT_FILE_PATH_2 = "./data/material.txt"
+MATERIAL_TEXT_FILE_PATH = "./data/material.txt"
+MATERIAL_TEXT_FILE_PATH_2 = "./data/material_2.txt"
 RESULT_FILE_PATH = "./output/result.txt"
 
 q_gen = QuizGenerator(debug=True)
-result = q_gen.create_questions_from_files([MATERIAL_TEXT_FILE_PATH, MATERIAL_TEXT_FILE_PATH_2], max_questions=1000)
+result = q_gen.create_questions_from_files([MATERIAL_TEXT_FILE_PATH, MATERIAL_TEXT_FILE_PATH_2], max_questions=8)
 
 #pprint(result)
 

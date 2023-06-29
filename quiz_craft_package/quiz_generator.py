@@ -27,8 +27,6 @@ class QuizGenerator():
         
         self.text_splitter = TextSplitter()
 
-
-
     def create_questions_from_files(self, file_paths: list[str], max_questions=-1) -> list:
         """
         Create quiz from specified files.
@@ -61,6 +59,13 @@ class QuizGenerator():
     def create_questions(self, text: str, max_questions: int) -> list:
         """
         Create quiz from plain text.
+
+        Args:
+            text (list[str]): Text for quiz generation.
+            max_questions (int): Maximum number of questions in resulting quiz. If -1 then no upper bound for question number.
+
+        Returns:
+            list: A list with questions. Check README.md to see format.
         """
         
         # Check for errors.
