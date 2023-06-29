@@ -27,6 +27,12 @@ class NagimQuestion:
     def question_type():
         return "MCQ" # Not implemented yet.
 
+    @staticmethod
+    def create_from_array(array: list):
+        if len(array) != 3:
+            raise Exception(f"Question can be created only from arrays of size 3! Not {len(array)}")
+        return NagimQuestion(array[0], array[1], array[2])
+
     def _check_is_valid(self) -> None:
         if type(self._question_text) != str:
             raise Exception("Parameter 'question_text' must be string!")
