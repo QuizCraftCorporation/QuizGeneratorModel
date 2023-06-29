@@ -6,38 +6,6 @@ issuing system calls and using assembly code
 #####
 providing abstractions to user programs and managing the computer's resources
 
-What is the primary focus of the interface between user programs and the operating system?
-dealing with the abstractions
-managing the computer's resources
-making system calls
-using assembly code
-#####
-dealing with the abstractions
-
-Why is it important to examine the interface between user programs and the operating system?
-to understand what operating systems really do
-to learn about the underlying concepts
-to compare different operating systems
-to work with assembly code
-#####
-to understand what operating systems really do
-
-What is the purpose of system calls?
-to perform functions related to reading files
-to provide abstractions to user programs
-to manage the computer's resources
-to issue system calls
-#####
-to perform functions related to reading files
-
-What is the purpose of the procedure library provided in operating systems?
-to make it possible to make system calls from C programs and other languages
-to manage the computer's resources
-to provide abstractions to user programs
-to work with assembly code
-#####
-to make it possible to make system calls from C programs and other languages
-
 What is the purpose of a system call?
 To transfer control to the operating system
 To execute multiple instructions at a time
@@ -46,38 +14,6 @@ To make a special kind of procedure call
 #####
 To transfer control to the operating system
 
-How does a process make a system call?
-By executing a trap instruction
-By calling a library procedure
-By inspecting the parameters
-By returning control to the instruction following the system call
-#####
-By executing a trap instruction
-
-What are the parameters of a system call?
-The file, the buffer, and the number of bytes to read
-The file, the buffer, and the error number
-The file, the buffer, and the count
-The file, the buffer, and the library procedure
-#####
-The file, the buffer, and the number of bytes to read
-
-What does the read system call return?
-The number of bytes actually read
-The number of bytes to read
-The error number
-The count
-#####
-The number of bytes actually read
-
-What happens if a system call encounters an error?
-The count is set to -1 and the error number is put in a global variable
-The count is set to -1 and the error number is returned
-The count is set to 0 and the error number is put in a global variable
-The count is set to 0 and the error number is returned
-#####
-The count is set to -1 and the error number is put in a global variable
-
 What is the purpose of pushing parameters onto the stack before making a system call?
 To pass the parameters to the library procedure
 To switch from user mode to kernel mode
@@ -85,39 +21,6 @@ To execute a TRAP instruction
 To put the system-call number in a register
 #####
 To pass the parameters to the library procedure
-
-Why are the parameters pushed onto the stack in reverse order?
-For historical reasons
-To make the first parameter appear on top of the stack
-To pass the parameters by reference
-To pass the parameters by value
-#####
-For historical reasons
-
-What is the difference between passing a parameter by value and passing it by reference?
-Passing by value means passing the contents of the parameter
-Passing by reference means passing the address of the parameter
-Passing by value means passing the address of the parameter
-Passing by reference means passing the contents of the parameter
-#####
-Passing by value means passing the contents of the parameter
-Passing by reference means passing the address of the parameter
-
-What does the library procedure do before making the system call?
-Puts the system-call number in a place where the operating system expects it
-Executes a TRAP instruction
-Pushes the parameters onto the stack
-Switches from user mode to kernel mode
-#####
-Puts the system-call number in a place where the operating system expects it
-
-What does the TRAP instruction do?
-Switches from user mode to kernel mode
-Executes the library procedure
-Puts the system-call number in a register
-Pushes the parameters onto the stack
-#####
-Switches from user mode to kernel mode
 
 What are the 11 steps involved in making the system call read(fd, buffer, nbytes)?
 SPCall
@@ -144,35 +47,43 @@ indexing into a table of jump addresses
 dispatching to the correct system-call handler
 running the system-call handler
 
-What is the purpose of the TRAP instruction in making a system call?
-To switch into kernel mode
-To give the index into a table of jump addresses
-To save the return address on the stack
-To jump to an arbitrary address
+What is the purpose of the fork call in process management?
+To create a new process
+To terminate process execution
+To open a file
+To read data from a file
 #####
-To switch into kernel mode
+To create a new process
 
-How does the TRAP instruction differ from a procedure call instruction?
-It changes the mode to kernel mode
-It jumps to an arbitrary address
-It gives the index into a table of jump addresses
-It saves the return address on the stack
+What is the purpose of the mkdir() system call?
+To create a new directory
+To remove an empty directory
+To create a new entry pointing to another directory
+To change the working directory
 #####
-It changes the mode to kernel mode
+To create a new directory
 
-What does the system-call handler do?
-Switches into kernel mode
-Runs the user-space library procedure
-Dispatches to the correct system-call handler
-Indexes into a table of jump addresses
+What does the fork system call do?
+Creates a new child process
+Executes a user command
+Replaces the core image of a process
+Waits for a child process to exit
 #####
-Runs the user-space library procedure
+Creates a new child process
 
-What happens once the system-call handler has completed its work?
-Control is returned to the user-space library procedure
-The TRAP instruction is executed
-The system-call number is examined
-The return address is saved on the stack
+What is the purpose of the exec system call?
+To execute a new program within a process
+To create a new process
+To terminate a process
+To communicate between processes
 #####
-Control is returned to the user-space library procedure
+To execute a new program within a process
+
+What is the purpose of the interface between user programs and the operating system?
+to deal with the abstractions
+to manage the computer's resources
+to perform system calls
+to create, write, read, and delete files
+#####
+to deal with the abstractions
 

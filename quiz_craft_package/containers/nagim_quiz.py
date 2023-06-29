@@ -6,13 +6,13 @@ class NagimQuiz:
     """
     
     def __init__(self, questions: list[NagimQuestion] = []) -> None:
-        self._questions = questions
+        self._questions = questions.copy()
 
     def get_question(self, index: int):
         return self._questions[index]
 
     def add_questions(self, questions: list[NagimQuestion]):
-        self._questions += questions
+        self._questions += questions.copy()
 
     def union(self, quiz):
         merged_quiz = NagimQuiz()
