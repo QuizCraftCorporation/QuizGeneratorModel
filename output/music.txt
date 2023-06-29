@@ -1,0 +1,65 @@
+What is the deadline for Assignment 2?
+Week 14
+29.11.22 23:59
+30.11.22 23:59
+28.11.22 23:59
+#####
+29.11.22 23:59
+
+What is the goal of the given task?
+To generate an accompaniment for melodies using an evolutionary algorithm
+To modify the original melody
+To choose different instruments for the accompaniment
+To create a well-structured and informative report
+#####
+To generate an accompaniment for melodies using an evolutionary algorithm
+
+What does the time signature in music define?
+The number of beats in each bar
+The duration of each note
+The number of bars in a piece
+The tempo of the music
+#####
+The number of beats in each bar
+
+How many notes are there in Western music?
+7
+12
+4
+128
+#####
+7
+
+What are the two components that represent a key in music composition?
+scale and tonic
+chord and melody
+note and octave
+harmony and rhythm
+#####
+scale and tonic
+
+What is a scale in music?
+A set of musical notes ordered by pitch
+A set of musical notes ordered by duration
+A set of musical notes ordered by volume
+A set of musical notes ordered by timbre
+#####
+A set of musical notes ordered by pitch
+
+What do Figures 6 and 7 contain information about?
+Major keys
+Minor keys
+Chord sequences
+Notes in a key
+#####
+Major keys
+Minor keys
+
+What is the first inversion of a major or minor chord?
+Putting the lowest note of the chord one octave above
+Putting the highest note of the chord one octave above
+Putting the middle note of the chord one octave above
+Putting the root note of the chord one octave above
+#####
+Putting the lowest note of the chord one octave above
+

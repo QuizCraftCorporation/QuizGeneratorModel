@@ -6,3 +6,19 @@ issuing system calls and using assembly code
 #####
 providing abstractions to user programs and managing the computer's resources
 
+What is the purpose of a system call?
+To transfer control to the operating system
+To execute multiple instructions at a time
+To read data from a file
+To make a special kind of procedure call
+#####
+To transfer control to the operating system
+
+What is the purpose of pushing parameters onto the stack before making a system call?
+To pass the parameters to the library procedure
+To switch from user mode to kernel mode
+To execute a TRAP instruction
+To put the system-call number in a register
+#####
+To pass the parameters to the library procedure
+

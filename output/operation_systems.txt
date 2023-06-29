@@ -1,0 +1,395 @@
+What are the two main functions of operating systems?
+providing abstractions to user programs and managing the computer's resources
+creating, writing, reading, and deleting files
+dealing with vague generalities and specific systems
+issuing system calls and using assembly code
+#####
+providing abstractions to user programs and managing the computer's resources
+
+What is the primary focus of the interface between user programs and the operating system?
+dealing with the abstractions
+managing the computer's resources
+making system calls from C programs
+using assembly code
+#####
+dealing with the abstractions
+
+Why is it important to examine the interface between user programs and the operating system?
+to understand what operating systems really do
+to learn about the mechanics of issuing a system call
+to make system calls from C programs
+to manage the computer's resources
+#####
+to understand what operating systems really do
+
+What approach has been chosen to understand what operating systems really do?
+the specific system approach
+the vague generalities approach
+the assembly code approach
+the procedure library approach
+#####
+the specific system approach
+
+What is the purpose of the procedure library provided for making system calls?
+to make it possible to make system calls from C programs and other languages
+to manage the computer's resources
+to understand what operating systems really do
+to examine the interface between user programs and the operating system
+#####
+to make it possible to make system calls from C programs and other languages
+
+What is the purpose of a system call?
+To transfer control to the operating system
+To execute multiple instructions at a time
+To read data from a file
+To make a special kind of procedure call
+#####
+To transfer control to the operating system
+
+How does a process make a system call?
+By executing a trap instruction
+By calling a library procedure
+By inspecting the parameters
+By returning control to the instruction following the system call
+#####
+By executing a trap instruction
+
+What are the parameters of a system call?
+The file, the buffer, and the number of bytes to read
+The file, the buffer, and the error number
+The file, the buffer, and the count
+The file, the buffer, and the library procedure
+#####
+The file, the buffer, and the number of bytes to read
+
+What does the read system call return?
+The number of bytes actually read
+The number of bytes to read
+The error number
+The count
+#####
+The number of bytes actually read
+
+What happens if a system call encounters an error?
+The count is set to -1 and the error number is put in a global variable
+The count is set to -1 and the error number is returned
+The count is set to 0 and the error number is put in a global variable
+The count is set to 0 and the error number is returned
+#####
+The count is set to -1 and the error number is put in a global variable
+
+What is the purpose of pushing parameters onto the stack before making a system call?
+To pass the parameters to the library procedure
+To switch from user mode to kernel mode
+To execute a TRAP instruction
+To put the system-call number in a register
+#####
+To pass the parameters to the library procedure
+
+Why are the parameters pushed onto the stack in reverse order?
+For historical reasons
+To make the first parameter appear on top of the stack
+To pass the parameters by reference
+To pass the parameters by value
+#####
+For historical reasons
+
+What is the difference between passing a parameter by value and passing it by reference?
+Passing by value means passing the contents of the parameter
+Passing by reference means passing the address of the parameter
+Passing by value means passing the address of the parameter
+Passing by reference means passing the contents of the parameter
+#####
+Passing by value means passing the contents of the parameter
+Passing by reference means passing the address of the parameter
+
+What does the library procedure do before making the system call?
+Puts the system-call number in a place where the operating system expects it
+Executes a TRAP instruction
+Pushes the parameters onto the stack
+Switches from user mode to kernel mode
+#####
+Puts the system-call number in a place where the operating system expects it
+
+What does the TRAP instruction do?
+Switches from user mode to kernel mode
+Executes the library procedure
+Puts the system-call number in a register
+Pushes the parameters onto the stack
+#####
+Switches from user mode to kernel mode
+
+What are the 11 steps involved in making the system call read(fd, buffer, nbytes)?
+Increment SPCall readPush fdPush &bufferPush nbytes
+Figure 1-17
+Save return address on stack
+Switch to kernel mode
+Jump to fixed location or index into table
+Examine system-call number
+Dispatch to system-call handler
+Run system-call handler
+Return control to user-space library procedure
+Return to user program
+Procedure calls return
+#####
+Increment SPCall readPush fdPush &bufferPush nbytes
+Save return address on stack
+Switch to kernel mode
+Jump to fixed location or index into table
+Examine system-call number
+Dispatch to system-call handler
+Run system-call handler
+Return control to user-space library procedure
+Return to user program
+Procedure calls return
+
+What are the two fundamental ways in which the TRAP instruction differs from the procedure-call instruction?
+It switches into kernel mode
+It can jump to an arbitrary address
+It saves the return address on the stack
+It gives the index into a table in memory
+#####
+It switches into kernel mode
+It can jump to an arbitrary address
+
+What does the TRAP instruction do as a side effect?
+It switches into kernel mode
+It saves the return address on the stack
+It gives the index into a table in memory
+It jumps to a fixed location
+#####
+It switches into kernel mode
+
+How does the TRAP instruction determine where to jump?
+It jumps to a fixed location
+It gives the index into a table in memory
+It saves the return address on the stack
+It switches into kernel mode
+#####
+It jumps to a fixed location
+It gives the index into a table in memory
+
+What does the system-call handler do?
+Increments SPCall readPush fdPush &bufferPush nbytes
+Saves the return address on the stack
+Switches into kernel mode
+Runs the system-call handler
+#####
+Runs the system-call handler
+
+What is the purpose of the fork call in process management?
+To create a new process
+To terminate process execution
+To open a file
+To read data from a file
+#####
+To create a new process
+
+What does the fork call return?
+Zero in the child process and the child's PID in the parent process
+Zero in the parent process and the parent's PID in the child process
+The PID of the child process
+The PID of the parent process
+#####
+Zero in the child process and the child's PID in the parent process
+
+What is the purpose of the waitpid call in process management?
+To create a child process identical to the parent
+To wait for a child process to terminate
+To replace a process' core image
+To terminate process execution and return status
+#####
+To wait for a child process to terminate
+
+What is the purpose of the execve call in process management?
+To create a child process identical to the parent
+To wait for a child process to terminate
+To replace a process' core image
+To terminate process execution and return status
+#####
+To replace a process' core image
+
+What is the purpose of the mkdir() system call?
+To create a new directory
+To remove an empty directory
+To create a new entry pointing to another directory
+To change the working directory
+#####
+To create a new directory
+
+Which system call is used to remove an empty directory?
+mkdir()
+rmdir()
+link()
+unlink()
+#####
+rmdir()
+
+What does the link() system call do?
+Creates a new directory
+Removes an empty directory
+Creates a new entry pointing to another directory
+Removes a directory entry
+#####
+Creates a new entry pointing to another directory
+
+Which system call is used to unmount a file system?
+mount()
+umount()
+chdir()
+chmod()
+#####
+umount()
+
+What does the chdir() system call do?
+Changes the working directory
+Creates a new directory
+Removes an empty directory
+Changes a file's protection bits
+#####
+Changes the working directory
+
+What does the fork system call do?
+Creates a new process
+Terminates the current process
+Executes a command
+Waits for a child process to exit
+#####
+Creates a new process
+
+What does the waitpid system call do?
+Waits for a child process to exit
+Executes a command
+Terminates the current process
+Creates a new process
+#####
+Waits for a child process to exit
+
+What does the execve system call do?
+Executes a command
+Creates a new process
+Terminates the current process
+Waits for a child process to exit
+#####
+Executes a command
+
+How does the shell use the fork system call?
+It forks off a new process
+It terminates the current process
+It executes a command
+It waits for a child process to exit
+#####
+It forks off a new process
+
+What happens when the shell executes a command using execve?
+The entire core image of the child process is replaced by the file named in the first parameter
+The child process waits for a child process to exit
+The child process terminates
+The child process executes a command
+#####
+The entire core image of the child process is replaced by the file named in the first parameter
+
+What is the purpose of the exec system call?
+To execute a new program within the current process
+To create a new process
+To terminate the current process
+To allocate memory for a new process
+#####
+To execute a new program within the current process
+
+What are the parameters of the main function in C?
+argc, argv, envp
+file1, file2
+name, value
+cp, file1, file2
+#####
+argc, argv, envp
+
+What is the role of the argv parameter in the main function?
+It contains the number of items on the command line
+It contains the names of the source and target files
+It contains the environment variables
+It contains the program name and command line arguments
+#####
+It contains the program name and command line arguments
+
+What is the purpose of the envp parameter in the main function?
+To execute a new program within the current process
+To create a new process
+To pass information such as terminal type and home directory name
+To allocate memory for a new process
+#####
+To pass information such as terminal type and home directory name
+
+What is the purpose of the argc parameter in the main function?
+To execute a new program within the current process
+To create a new process
+To pass information such as terminal type and home directory name
+To count the number of items on the command line
+#####
+To count the number of items on the command line
+
+What is the purpose of the execve system call?
+To customize how a user performs certain tasks
+To pass environment to a child process
+To specify the default printer to use
+To divide memory into segments
+#####
+To pass environment to a child process
+
+Which system call is considered the most complex in POSIX?
+execve
+exit
+waitpid
+brk
+#####
+execve
+
+What is the purpose of the exit system call?
+To customize how a user performs certain tasks
+To pass environment to a child process
+To specify the default printer to use
+To indicate that a process has finished executing
+#####
+To indicate that a process has finished executing
+
+How many parameters does the exit system call have?
+0
+1
+2
+3
+#####
+1
+
+What are the three segments into which processes in UNIX have their memory divided?
+Text segment, data segment, stack segment
+Code segment, variable segment, memory segment
+Program segment, storage segment, address segment
+Segment A, Segment B, Segment C
+#####
+Text segment, data segment, stack segment
+
+Which segment grows upward in UNIX processes?
+Text segment
+Data segment
+Stack segment
+Gap segment
+#####
+Data segment
+
+Which system call is used to explicitly expand the data segment?
+execve
+exit
+waitpid
+brk
+#####
+brk
+
+Why is the brk system call not defined by the POSIX standard?
+Programmers are encouraged to use malloc instead
+It is too complex to standardize
+It is not commonly used by programmers
+It is not necessary for memory management
+#####
+Programmers are encouraged to use malloc instead
+
