@@ -1,7 +1,7 @@
 import os
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.chat_models import ChatOpenAI
-
+from ..containers.nagim_question import NagimQuestion
 
 class MCQGenerator:
     """
@@ -33,28 +33,8 @@ class MCQGenerator:
         questions = []
         for question_raw in output:
             try:
-                generated_question = eval(question_raw)
-                if self._check_if_question_is_valid(generated_question):
-                    index_array = [generated_question[1].index(answer) for answer in generated_question[2]]
-                    generated_question[2] = index_array
-                    questions.append(generated_question)
-                else:
-                    continue
+                raw_question_list = eval(question_raw)
+                questions.append(NagimQuestion.create_from_array(raw_question_list))
             except:
                 continue
         return questions
-
-    def _check_if_question_is_valid(self, question: list):
-        """
-        Check if the question format is correct.
-        """
-        
-        if type(question) is list:
-            if len(question) == 3:
-                if type(question[0]) is str and type(question[1]) is list and type(question[2]) is list:
-                    if len(question[1]) >= len(question[2]):
-                        for answer in question[2]:
-                            if answer not in question[1]:
-                                return False
-                        return True
-        return False
