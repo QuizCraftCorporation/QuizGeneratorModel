@@ -100,7 +100,7 @@ class QuizGenerator():
             logging.info(f"Add {len(questions)} new questions!")
             
             if max_questions != None and len(quiz) >= max_questions:
-                logging.info(f"Quiz already has enough questions - {max_questions} ({len(quiz)}). Finish generation.")
+                logging.info(f"Quiz already has enough questions - {len(quiz)} out of {max_questions}. Finish generation.")
                 return quiz
             
             if i < len(text_chunks) - 1:
