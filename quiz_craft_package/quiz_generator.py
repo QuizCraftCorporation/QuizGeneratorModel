@@ -50,7 +50,7 @@ class QuizGenerator():
         
         if len(complex_quiz) < max_questions:
             logging.info("Not enough questions for complex quiz. Using buffer...")
-            flat_buffer = flat_buffer = self._flat_questions_buffer()
+            flat_buffer = self._flat_questions_buffer()
             complex_quiz += flat_buffer[:max_questions-len(complex_quiz)]
         
         self.questions_buffer = []
