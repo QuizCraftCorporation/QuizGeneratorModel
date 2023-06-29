@@ -3,6 +3,7 @@ import time
 from .models.MCQ_generator import MCQGenerator
 from .utils.text_splitter import TextSplitter
 from .utils.file_reader import FileReader
+from .containers.nagim_quiz import NagimQuiz
 
 class QuizGenerator():
     """
@@ -20,14 +21,13 @@ class QuizGenerator():
 
         if debug:
             logging.basicConfig(level=logging.INFO)
-
-        logging.info("Loading models into RAM...")       
-        self.MCQ_model = MCQGenerator()
-        logging.info("Models loaded succesfully")
-        
+       
+        self.MCQ_model = MCQGenerator()        
         self.text_splitter = TextSplitter()
 
-    def create_questions_from_files(self, file_paths: list[str], max_questions=-1) -> list:
+        logging.info("Initialization complete.")
+
+    def create_quiz_from_files(self, file_paths: list[str], max_questions=-1) -> list:
         """
         Create quiz from specified files.
 

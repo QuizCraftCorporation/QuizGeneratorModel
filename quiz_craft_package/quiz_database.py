@@ -8,8 +8,7 @@ class QuizDataBase:
     """
 
     def __init__(self, save_folder_path: str) -> None:
-        OPEN_AI_KEY = "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"
-        self.embeddings = OpenAIEmbeddings(openai_api_key=OPEN_AI_KEY)
+        self.embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPEN_AI_TOKEN"])
         self.db = None
         self.save_folder_path = save_folder_path
         if os.path.exists(os.path.join(save_folder_path, "index.faiss")):
