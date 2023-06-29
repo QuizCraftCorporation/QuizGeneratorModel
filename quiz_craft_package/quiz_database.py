@@ -1,6 +1,7 @@
 import os
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
+from .containers.nagim_quiz import NagimQuiz
 
 class QuizDataBase:
     """
@@ -14,7 +15,7 @@ class QuizDataBase:
         if os.path.exists(os.path.join(save_folder_path, "index.faiss")):
             self.db = FAISS.load_local(save_folder_path, self.embeddings)
 
-    def save_quiz(self, quiz: list) -> None:
+    def save_quiz(self, quiz: NagimQuiz) -> None:
         """
         Save a quiz into vector database.
         """
@@ -27,13 +28,13 @@ class QuizDataBase:
         
         self.db.save_local(self.save_folder_path)
 
-    def search_quiz(self, query: str, number_of_results=4) -> list:
+    def search_quiz(self, query: str, number_of_results=4) -> list[NagimQuiz]:
         """
         Perform a search inside a vector database to retrieve quiz.
         """
         docs = self.db.similarity_search(query, k=number_of_results)
         the_most_similar_quizzes = []
-        for search_result in docs:
-            the_most_similar_quizzes = eval(search_result.page_content)
+        for doc in docs:
+            the_most_similar_quizzes.append(NagimQuiz.from_string(doc.page_content))
         return the_most_similar_quizzes
 
