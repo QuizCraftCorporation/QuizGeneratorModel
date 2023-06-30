@@ -100,11 +100,12 @@ print(quiestion.right_answers_indexes) # [2, 3]
 ```
 
 ## Fast documentation table
+Please only use the public methods described in this table.
 ### QuizGenerator
 | Method | Description |
 | --- | --- |
 | `create_quiz_from_files(file_paths: list[str], max_questions: int)` | Return NagimQuiz object generated from files that are specified by file_paths list. You can optionally set maximum number of questions in the quiz. |
-| `QuizGenerator(debug: bool)` | Create instance of QuizGenerator. If debug set to true, then show generation logs (default is False). |
+| `QuizGenerator(debug: bool)` | Create instance of QuizGenerator. If debug set to true, then it will show generation logs (default is False). |
 
 ### QuizDataBase
 
@@ -113,6 +114,17 @@ print(quiestion.right_answers_indexes) # [2, 3]
 | `save_quiz(quiz: NagimQuiz, unique_id: str)` | Save quiz in vector database with unique id. You can search among all saved quizzes. |
 | `search_quiz(query: str, number_of_results: int)` | Return 'number_of_results' number of quizzes that are the most suitable for search query 'query'. Return type is list[tuple [NagimQuiz,str]]. Second element of tuple is unique id that you specified during saving.|
 | `QuizDataBase(save_folder_path: str)` | Create quiz database instance. It will automaticly save and load quizzes in/from specified folder. So you do not need always re-save quizzes for search. If you want to erase quiz data, just delete content of specified folder (really do not forget to do it or say goodbye to your memory).|
+
+### NagimQuiz
+Use 'get_question(index)' or iterate through the instance in loop to access questions. Too easy. To get number of question just write 'len(quiz)'.
+
+### NagimQuestion
+| Parameter | Description |
+| --- | --- |
+| `question_text` | String that contains question sentence. |
+| `options` | Answer options (list[str]).|
+| `right_answers` | Right answers (list[str]).|
+| `right_answers_indexes` | Right answers indexes (list[**int**]).|
 
 [yeeeaaahhh!](https://www.youtube.com/watch?v=x98mHJHY-P0)
 [puke](https://www.youtube.com/watch?v=gWXzbZUiFwI)
