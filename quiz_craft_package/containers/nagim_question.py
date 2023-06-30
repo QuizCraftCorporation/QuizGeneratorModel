@@ -12,16 +12,20 @@ class NagimQuestion:
         self._right_answers_indexes = [answers.index(right_answer) for right_answer in right_answers]
 
     @property
+    def options(self) -> list[str]:
+        return self._answers.copy()
+
+    @property
     def question_text(self) -> str:
-        return self._question_text
+        return self._question_text.copy()
 
     @property
     def right_answers(self) -> list[str]:
-        return self._right_answers
+        return self._right_answers.copy()
 
     @property
     def right_answers_indexes(self) -> list[int]:
-        return self._right_answers_indexes
+        return self._right_answers_indexes.copy()
     
     @property
     def question_type():
@@ -45,7 +49,7 @@ class NagimQuestion:
             current_answer = lines[index]
             index += 1
         right_answers = []
-        for i in range(index + 1, len(lines)):
+        for i in range(index, len(lines)):
             right_answers.append(lines[i])
         return NagimQuestion(question_text, answers, right_answers)
 

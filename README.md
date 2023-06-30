@@ -79,4 +79,25 @@ quiz2 = NagimQuiz.from_string(str_data)
 
 # Very easy lol
 ```
+
+### NagimQuestion
+Class that contains question and operations over it.
+```python
+from quiz_craft_package.containers.nagim_question import NagimQuestion
+
+question = NagimQuestion.from_array(["What is the best programming language?", ["Python", "Rust", "KUMIR", "Scratch", "C++"], ["KUMIR", "Scratch"]])
+
+print(quiestion.question_text) # What is the best programming language?
+
+print(quiestion.options) # ["Python", "Rust", "KUMIR", "Scratch", "C++"]
+
+print(quiestion.right_answers) # ["KUMIR", "Scratch"]
+
+print(quiestion.right_answers_indexes) # [2, 3]
+
+# Very easy lol
+```
+
 [yeeeaaahhh!](https://www.youtube.com/watch?v=x98mHJHY-P0)
+[puke](https://www.youtube.com/watch?v=gWXzbZUiFwI)
+[raaawwwr!](https://www.youtube.com/watch?v=hzaV9BqLSuY)
