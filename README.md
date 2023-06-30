@@ -46,11 +46,12 @@ database = QuizDataBase("path/to/vector_db_cache_saving")
 
 # Save quizzes in vector database
 # quiz is 'NagimQuiz' object!
-database.save_quiz(quiz1)
-database.save_quiz(quiz2)
-database.save_quiz(quiz3)
+# The second argument is a unique string to distinguish the same quizzes form different authors.
+database.save_quiz(quiz1, "Author: Ivan, ID:123")
+database.save_quiz(quiz2, "Author: Ivan, ID:321")
+database.save_quiz(quiz3, "Author: Petya, ID:123")
 
-# RESULT IS A LIST of 'NagimQuiz' objects
+# RESULT IS A LIST of '(NagimQuiz, unique_id)' tuples
 result = database.search_quiz("German war", number_of_results=3)
 # First argument is a search query
 # Second is a number of top most similar quizzes to show.
