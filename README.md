@@ -125,7 +125,3 @@ Use 'get_question(index)' or iterate through the instance in loop to access ques
 | `options` | Answer options (list[str]).|
 | `right_answers` | Right answers (list[str]).|
 | `right_answers_indexes` | Right answers indexes (list[**int**]).|
-
-[yeeeaaahhh!](https://www.youtube.com/watch?v=x98mHJHY-P0)
-[puke](https://www.youtube.com/watch?v=gWXzbZUiFwI)
-[raaawwwr!](https://www.youtube.com/watch?v=hzaV9BqLSuY)
