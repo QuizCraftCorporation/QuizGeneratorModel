@@ -103,8 +103,16 @@ print(quiestion.right_answers_indexes) # [2, 3]
 ### QuizGenerator
 | Method | Description |
 | --- | --- |
-| `create_quiz_from_files(file_paths: list[str], max_questions: int` | Return NagimQuiz object generated from files that are specified by file_paths list. You can optionally set maximum number of questions in the quiz. |
+| `create_quiz_from_files(file_paths: list[str], max_questions: int)` | Return NagimQuiz object generated from files that are specified by file_paths list. You can optionally set maximum number of questions in the quiz. |
 | `QuizGenerator(debug: bool)` | Create instance of QuizGenerator. If debug set to true, then show generation logs (default is False). |
+
+### QuizDataBase
+
+| Method | Description |
+| --- | --- |
+| `save_quiz(quiz: NagimQuiz, unique_id: str)` | Save quiz in vector database with unique id. You can search among all saved quizzes. |
+| `search_quiz(query: str, number_of_results: int)` | Return 'number_of_results' number of quizzes that are the most suitable for search query 'query'. Return type is list[tuple [NagimQuiz,str]]. Second element of tuple is unique id that you specified during saving.|
+| `QuizDataBase(save_folder_path: str)` | Create quiz database instance. It will automaticly save and load quizzes in/from specified folder. So you do not need always re-save quizzes for search. If you want to erase quiz data, just delete content of specified folder (really do not forget to do it or say goodbye to your memory).|
 
 [yeeeaaahhh!](https://www.youtube.com/watch?v=x98mHJHY-P0)
 [puke](https://www.youtube.com/watch?v=gWXzbZUiFwI)

@@ -34,7 +34,7 @@ class QuizDataBase:
         
         self.db.save_local(self.save_folder_path)
 
-    def search_quiz(self, query: str, number_of_results=4) -> list[NagimQuiz]:
+    def search_quiz(self, query: str, number_of_results: int=4) -> list[tuple[NagimQuiz, str]]:
         """
         Perform a search inside a vector database to retrieve quiz.
 
