@@ -43,7 +43,7 @@ class QuizDataBase:
             number_of_results (int): Maximum number of quizzes to return.
 
         Returns:
-            list[NagimQuiz]: A list with quizzes that are the most appropriate to search query.
+            list[tuple[NagimQuiz,str]]: A list with quizzes that are the most appropriate to search query with unique id.
         """
         docs = self.db.similarity_search(query, k=number_of_results)
         the_most_similar_quizzes = []
