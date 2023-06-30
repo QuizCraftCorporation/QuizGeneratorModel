@@ -119,7 +119,7 @@ Please only use the public methods described in this table.
 Use 'get_question(index)' or iterate through the instance in loop to access questions. Too easy. To get number of question just write 'len(quiz)'.
 
 ### NagimQuestion
-| Parameter | Description |
+| Property | Description |
 | --- | --- |
 | `question_text` | String that contains question sentence. |
 | `options` | Answer options (list[str]).|
