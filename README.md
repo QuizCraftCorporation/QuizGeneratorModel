@@ -99,6 +99,13 @@ print(quiestion.right_answers_indexes) # [2, 3]
 # Very easy lol
 ```
 
+## Fast documentation table
+### QuizGenerator
+| Method | Description |
+| --- | --- |
+| `create_quiz_from_files(file_paths: list[str], max_questions: int` | Return NagimQuiz object generated from files that are specified by file_paths list. You can optionally set maximum number of questions in the quiz. |
+| `QuizGenerator(debug: bool)` | Create instance of QuizGenerator. If debug set to true, then show generation logs (default is False). |
+
 [yeeeaaahhh!](https://www.youtube.com/watch?v=x98mHJHY-P0)
 [puke](https://www.youtube.com/watch?v=gWXzbZUiFwI)
 [raaawwwr!](https://www.youtube.com/watch?v=hzaV9BqLSuY)
