@@ -12,7 +12,7 @@ class MCQGenerator:
         Initialize MCQ Generator model.
         """
         
-        OPEN_AI_KEY = "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" 
+        OPEN_AI_KEY = "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" 
         self.llm = ChatOpenAI(openai_api_key=OPEN_AI_KEY, temperature=0, model="gpt-3.5-turbo")
         self.instruction = """
             I want you to create several multiple choice questions based on text provided by user.
