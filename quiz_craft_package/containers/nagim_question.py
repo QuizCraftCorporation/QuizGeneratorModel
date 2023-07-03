@@ -66,6 +66,9 @@ class NagimQuestion:
         for right_answer in self._right_answers:
             if not right_answer in self._answers:
                 raise Exception(f"Right answer '{right_answer}' is not presented among answers")
+        
+        if len(self._answers) < 2:
+            raise Exception("Not enough questions!")
     
     def __str__(self) -> str:
         output_str = ""
