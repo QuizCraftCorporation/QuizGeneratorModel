@@ -10,6 +10,12 @@ class QuizDataBase:
     """
 
     def __init__(self, save_folder_path: str) -> None:
+        """
+        Creates QuizDatabase instance.
+
+        Args:
+            save_folder_path (str): Folder to save cache of quizzes.
+        """
         self.embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPEN_AI_TOKEN"])
         self.db = None
         self.save_folder_path = save_folder_path

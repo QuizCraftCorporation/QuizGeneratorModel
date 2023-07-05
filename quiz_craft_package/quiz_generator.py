@@ -16,6 +16,10 @@ class QuizGenerator():
     def __init__(self, debug=False) -> None:
         """
         Loads all models and intialize splitter.
+
+        Args:
+            debug (bool): If true, then enable logging.
+
         """
 
         # Addition questions in case of failing to achieve 'max_questions' number.

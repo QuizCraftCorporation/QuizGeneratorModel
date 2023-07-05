@@ -25,6 +25,12 @@ class QuizDescriber:
     def generate_description(self, quiz: NagimQuiz) -> NagimQuiz:
         """
         Generate a description for quiz.
+
+        Args:
+            quiz (NagimQuiz): Quiz for description generation.
+
+        Returns:
+            NagimQuiz: Quiz with description.
         """
 
         # To not allow large texts
