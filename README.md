@@ -59,7 +59,7 @@ result = database.search_quiz("German war", number_of_results=3)
 
 ### Description generation
 ```python
-from quiz_craft_package.quiz_describer import QuizDescriber
+from QuizGeneratorModel.quiz_craft_package.quiz_describer import QuizDescriber
 
 describer = QuizDescriber()
 
@@ -71,7 +71,7 @@ print(quiz.description) # Output description
 ### NagimQuiz
 Class that contain quiz questions and operations over it.
 ```python
-from quiz_craft_package.containers.nagim_quiz import NagimQuiz
+from QuizGeneratorModel.quiz_craft_package.containers.nagim_quiz import NagimQuiz
 
 quiz = NagimQuiz.from_string("...")
 
