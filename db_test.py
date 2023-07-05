@@ -6,6 +6,7 @@ database = QuizDataBase("vector_db")
 result_file = open("./output/hitler.txt", "r", encoding="utf8")
 hitler = NagimQuiz.from_string(result_file.read())
 result_file.close()
+hitler.set_description("Quiz about war!")
 
 result_file = open("./output/music.txt", "r", encoding="utf8")
 music = NagimQuiz.from_string(result_file.read())
@@ -23,4 +24,4 @@ result_file.close()
 # database.save_quiz(music, "music")
 
 result = database.search_quiz("war", number_of_results=3)
-print(str(result[0]))
+print(str(result[0][0].description))

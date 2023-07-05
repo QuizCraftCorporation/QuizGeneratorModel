@@ -45,6 +45,10 @@ class QuizDataBase:
         Returns:
             list[tuple[NagimQuiz,str]]: A list with quizzes that are the most appropriate to search query with unique id.
         """
+
+        if self.db == None:
+            raise Exception("Error: Cannot search in empty database.")
+
         docs = self.db.similarity_search(query, k=number_of_results)
         the_most_similar_quizzes = []
         for doc in docs:
