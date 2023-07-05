@@ -47,13 +47,35 @@ class NagimQuestion:
         return "MCQ" # Not implemented yet.
 
     @staticmethod
-    def from_array(array: list):
+    def from_array(array: list) -> object:
+        """
+        Create question from array where:
+        1. First element is a question text string
+        2. Second element is a list of answer options
+        3. Third element is a list of right answers
+
+        Args:
+            list (list): List with question data.
+
+        Returns:
+            NagimQuestion: Question created from array.
+        """
         if len(array) != 3:
             raise Exception(f"Question can be created only from arrays of size 3! Not {len(array)}")
         return NagimQuestion(array[0], array[1], array[2])
     
     @staticmethod
     def from_string(str_data: str):
+        """
+        Create question from string.
+
+        Args:
+            str_data (str): Question in string format.
+
+        Returns:
+            NagimQuestion: Question.
+        """
+        
         lines = str_data.split('\n')
         question_text = lines[0]
         answers = []
@@ -69,6 +91,10 @@ class NagimQuestion:
         return NagimQuestion(question_text, answers, right_answers)
 
     def _check_is_valid(self) -> None:
+        """
+        Check if question is valid. If question is not valid raise exception with error description.
+        """
+        
         if type(self._question_text) != str:
             raise Exception("Parameter 'question_text' must be string!")
         
