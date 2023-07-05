@@ -1,4 +1,5 @@
 import os
+import time
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.chat_models import ChatOpenAI
 from .containers.nagim_quiz import NagimQuiz
@@ -27,7 +28,10 @@ class QuizDescriber:
         """
 
         # To not allow large texts
+        start_time = time.time()
         text = self.text_splitter.cut_by_tokens(str(quiz), 3500)
         output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])
         quiz.set_description(output.content)
+        elapsed_time = time.time() - start_time
+        time.sleep(max(21-elapsed_time, 0.0))
         return quiz

@@ -7,26 +7,26 @@ Week 14
 29.11.22 23:59
 
 What is the goal of the given task?
-To generate an accompaniment for melodies using an evolutionary algorithm
-To modify the original melody
-To choose different instruments for the accompaniment
-To create a well-structured and informative report
+To generate an accompaniment for given melodies using an evolutionary algorithm
+To modify the original melody to create a new composition
+To analyze the structure and information of the given melodies
+To choose different instruments for the original melody and accompaniment
 #####
-To generate an accompaniment for melodies using an evolutionary algorithm
+To generate an accompaniment for given melodies using an evolutionary algorithm
 
 What does the time signature in music define?
-The number of beats in each bar and the note value equivalent to the beat
-The number of bars in each measure and the note value equivalent to the measure
-The number of notes in each bar and the note value equivalent to the note
-The number of beats in each measure and the note value equivalent to the measure
+The number of beats in each bar
+The duration of each note
+The number of bars in a piece
+The tempo of the music
 #####
-The number of beats in each bar and the note value equivalent to the beat
+The number of beats in each bar
 
 How many notes are there in Western music?
 7
 12
 4
-128
+8
 #####
 7
 
