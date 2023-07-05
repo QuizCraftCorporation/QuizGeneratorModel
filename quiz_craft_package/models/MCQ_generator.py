@@ -25,6 +25,12 @@ class MCQGenerator:
     def generate_question_chunk(self, text: str) -> list[NagimQuestion]:
         """
         Generate a chunk of questions.
+
+        Args:
+            text (str): Reference text.
+        
+        Returns:
+            list[NagimQuestion]: Question chunk.
         """
         
         output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])

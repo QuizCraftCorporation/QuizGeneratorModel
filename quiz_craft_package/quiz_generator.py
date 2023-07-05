@@ -125,6 +125,13 @@ class QuizGenerator():
     def _create_question_chunk(self, text_chunk: str, number_of_questions: int = None) -> list[NagimQuestion]:
         """
         Create a single chunk of questions.
+
+        Args:
+            text_chunk (str): Small chunk of text.
+            number_of_questions (int): How much question must be in question chunk.
+
+        Returns:
+            list[NagimQuestion]: Question chunk.
         """
         
         questions = self.MCQ_model.generate_question_chunk(text_chunk)
