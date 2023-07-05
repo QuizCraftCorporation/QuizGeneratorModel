@@ -56,6 +56,17 @@ result = database.search_quiz("German war", number_of_results=3)
 # First argument is a search query
 # Second is a number of top most similar quizzes to show.
 ```
+
+### Description generation
+```python
+from quiz_craft_package.quiz_describer import QuizDescriber
+
+describer = QuizDescriber()
+
+# quiz is NagimQuiz object
+describer.generate_description(quiz)
+print(quiz.description) # Output description
+```
 ## Quiz objects
 ### NagimQuiz
 Class that contain quiz questions and operations over it.

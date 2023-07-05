@@ -43,4 +43,7 @@ class QuestionBuffer:
         return return_questions
     
     def clear(self):
+        """
+        Clear question buffer.
+        """
         self._question_chunks = []

@@ -9,6 +9,12 @@ class NagimQuiz:
     """
     
     def __init__(self, questions: list[NagimQuestion] = []) -> None:
+        """
+        Create a quiz from list of questions. Description will be empty!
+
+        Args:
+            questions (list[Questions]): List of instances of NagimQuestion class.
+        """
         self._questions = questions.copy()
         self._description = ""
 

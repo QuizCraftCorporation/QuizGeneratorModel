@@ -1,9 +1,24 @@
 class NagimQuestion:
     """
     Class that contains question and operations over it.
+
+    Attributes:
+        options (list[str]): Answer options.
+        question_text (str): String that contains question sentence.
+        right_answers (list[str]): Right answers.
+        right_answers_indexes (list[str]): Right answers indexes.
     """
     
     def __init__(self, question_text: str, answers: list[str], right_answers: list[str]) -> None:
+        """
+        Create a question by specifying question text, options and right answers.
+
+        Args:
+            question_text (str): String that contains question sentence.
+            answers (list[str]): Answer options.
+            right_answers (list[str]): Right answers.
+        """
+        
         self._question_text = question_text
         self._answers = answers
         self._right_answers = right_answers
