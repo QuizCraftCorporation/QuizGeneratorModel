@@ -6,6 +6,30 @@ issuing system calls and using assembly code
 #####
 providing abstractions to user programs and managing the computer's resources
 
+What is the purpose of the interface between user programs and the operating system?
+to deal with the abstractions
+to manage the computer's resources
+to perform system calls
+to create, write, read, and delete files
+#####
+to deal with the abstractions
+
+Why is the latter approach of discussing specific systems chosen?
+because it gives more insight into what operating systems really do
+because it requires less work
+because it is more machine dependent
+because it is more general
+#####
+because it gives more insight into what operating systems really do
+
+What is the purpose of a procedure library in making system calls?
+to make it possible to make system calls from C programs and other languages
+to provide machine-dependent assembly code
+to manage the computer's resources
+to create, write, read, and delete files
+#####
+to make it possible to make system calls from C programs and other languages
+
 What is the purpose of a system call?
 To transfer control to the operating system
 To execute multiple instructions at a time
@@ -14,6 +38,38 @@ To make a special kind of procedure call
 #####
 To transfer control to the operating system
 
+How does a process in user mode request a system service?
+By executing a trap instruction
+By calling a library procedure
+By inspecting the parameters
+By returning control to the instruction following the system call
+#####
+By executing a trap instruction
+
+What are the parameters of a system call?
+The file, the buffer, and the number of bytes to read
+The file, the buffer, and the error number
+The file, the buffer, and the count
+The file, the buffer, and the library procedure
+#####
+The file, the buffer, and the number of bytes to read
+
+How is a system call invoked from a C program?
+By calling a library procedure with the same name as the system call
+By executing a trap instruction
+By inspecting the parameters
+By returning control to the instruction following the system call
+#####
+By calling a library procedure with the same name as the system call
+
+What does the system call 'read' return?
+The number of bytes actually read
+The number of bytes to read
+The error number
+The count
+#####
+The number of bytes actually read
+
 What is the purpose of pushing parameters onto the stack before making a system call?
 To pass the parameters to the library procedure
 To switch from user mode to kernel mode
@@ -21,4 +77,69 @@ To execute a TRAP instruction
 To put the system-call number in a register
 #####
 To pass the parameters to the library procedure
+
+Why are the parameters pushed onto the stack in reverse order?
+For historical reasons
+To make the first parameter appear on top of the stack
+To pass the parameters by reference
+To pass the parameters by value
+#####
+For historical reasons
+
+What is the difference between passing a parameter by value and passing it by reference?
+Passing by value means passing the contents of the parameter
+Passing by reference means passing the address of the parameter
+Passing by value means passing the address of the parameter
+Passing by reference means passing the contents of the parameter
+#####
+Passing by value means passing the contents of the parameter
+Passing by reference means passing the address of the parameter
+
+What does the library procedure do before making the system call?
+Puts the system-call number in a place where the operating system expects it
+Executes a TRAP instruction
+Pushes the parameters onto the stack
+Switches from user mode to kernel mode
+#####
+Puts the system-call number in a place where the operating system expects it
+
+What does the TRAP instruction do?
+Switches from user mode to kernel mode
+Executes the library procedure
+Puts the system-call number in a register
+Pushes the parameters onto the stack
+#####
+Switches from user mode to kernel mode
+
+What is the purpose of the TRAP instruction in making a system call?
+To switch into kernel mode
+To give the index into a table of jump addresses
+To save the return address on the stack
+To jump to an arbitrary address
+#####
+To switch into kernel mode
+
+How does the TRAP instruction differ from a procedure call instruction?
+It changes the mode to kernel mode
+It jumps to an arbitrary address
+It saves the return address on the stack
+It gives the index into a table of jump addresses
+#####
+It changes the mode to kernel mode
+
+What does the system-call handler do?
+Switches into kernel mode
+Runs the system-call handler
+Returns control to the user-space library procedure
+Dispatches to the correct system-call handler
+#####
+Runs the system-call handler
+
+How does the system-call handler return control to the user program?
+By switching into kernel mode
+By running the system-call handler
+By dispatching to the correct system-call handler
+By returning to the user-space library procedure
+#####
+By returning to the user-space library procedure
 
