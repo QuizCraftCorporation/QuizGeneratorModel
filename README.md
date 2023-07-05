@@ -39,7 +39,7 @@ result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text
 ```
 ### Quiz search
 ```python
-from quiz_craft_package.quiz_database import QuizDataBase
+from QuizGeneratorModel.quiz_craft_package.quiz_database import QuizDataBase
 
 # Creates database for quizzes that automaticly caches loaded quizzes. Required for cosine search.
 database = QuizDataBase("path/to/vector_db_cache_saving")
@@ -95,7 +95,7 @@ quiz2 = NagimQuiz.from_string(str_data)
 ### NagimQuestion
 Class that contains question and operations over it.
 ```python
-from quiz_craft_package.containers.nagim_question import NagimQuestion
+from QuizGeneratorModel.quiz_craft_package.containers.nagim_question import NagimQuestion
 
 question = NagimQuestion.from_array(["What is the best programming language?", ["Python", "Rust", "KUMIR", "Scratch", "C++"], ["KUMIR", "Scratch"]])
 
