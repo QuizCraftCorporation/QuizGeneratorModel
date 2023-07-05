@@ -69,6 +69,9 @@ class NagimQuestion:
         
         if len(self._answers) < 2:
             raise Exception("Not enough questions!")
+        
+        if len(self._answers) > 6:
+            raise Exception("Too much answers!")
     
     def __str__(self) -> str:
         output_str = ""
