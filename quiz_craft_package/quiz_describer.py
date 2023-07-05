@@ -2,6 +2,7 @@ import os
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.chat_models import ChatOpenAI
 from .containers.nagim_quiz import NagimQuiz
+from .utils.text_splitter import TextSplitter
 
 class QuizDescriber:
     """
@@ -18,13 +19,15 @@ class QuizDescriber:
             You will get the quiz text. Describe what this quiz is about.
             Maximum length of description is 5 sentences.
         """
+        self.text_splitter = TextSplitter()
 
     def generate_description(self, quiz: NagimQuiz) -> NagimQuiz:
         """
         Generate a description for quiz.
         """
 
-        text = str(quiz)
+        # To not allow large texts
+        text = self.text_splitter.cut_by_tokens(str(quiz), 3500)
         output = self.llm([SystemMessage(content=self.instruction), HumanMessage(content=text)])
-        print(output.content)
-        #quiz.set_description(output.content)
+        quiz.set_description(output.content)
+        return quiz

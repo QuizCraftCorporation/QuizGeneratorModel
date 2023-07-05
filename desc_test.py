@@ -17,3 +17,5 @@ result_file.close()
 describer = QuizDescriber()
 
 describer.generate_description(os_quiz)
+print("DESCRIPTION:")
+print(os_quiz.description)
