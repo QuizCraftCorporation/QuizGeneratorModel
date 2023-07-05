@@ -126,6 +126,12 @@ Please only use the public methods described in this table.
 | `search_quiz(query: str, number_of_results: int)` | Return 'number_of_results' number of quizzes that are the most suitable for search query 'query'. Return type is list[tuple [NagimQuiz,str]]. Second element of tuple is unique id that you specified during saving.|
 | `QuizDataBase(save_folder_path: str)` | Create quiz database instance. It will automaticly save and load quizzes in/from specified folder. So you do not need always re-save quizzes for search. If you want to erase quiz data, just delete content of specified folder (really do not forget to do it or say goodbye to your memory).|
 
+### QuizDescriber
+
+| Method | Description |
+| --- | --- |
+| `generate_description(quiz: NagimQuiz)` | Generate description for quiz. Return quiz with description. |
+
 ### NagimQuiz
 Use 'get_question(index)' or iterate through the instance in loop to access questions. Too easy. To get number of question just write 'len(quiz)'.
 
