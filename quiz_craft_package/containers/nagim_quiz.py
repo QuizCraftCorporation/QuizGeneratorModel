@@ -7,6 +7,7 @@ class NagimQuiz:
     
     def __init__(self, questions: list[NagimQuestion] = []) -> None:
         self._questions = questions.copy()
+        self._description = ""
 
     def get_question(self, index: int):
         """
@@ -28,6 +29,13 @@ class NagimQuiz:
         merged_quiz.add_questions(merged_questions)
         return merged_quiz
     
+    def set_description(self, description: str):
+        self._description = description
+        
+    @property
+    def description(self):
+        return self._description
+
     @staticmethod
     def from_string(str_data: str):
         questions_raw = str_data.split("\n\n")
