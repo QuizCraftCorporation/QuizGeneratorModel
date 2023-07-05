@@ -106,8 +106,7 @@ class QuizGenerator():
                 logging.info(f"Quiz already has enough questions - {len(quiz)} out of {max_questions}. Finish generation.")
                 return quiz
             
-            if i < len(text_chunks) - 1:
-                time.sleep(10)
+            time.sleep(10)
         
         # Adding questions from buffer.
         if max_questions != None and len(quiz) < max_questions:
