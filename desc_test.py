@@ -6,14 +6,14 @@ from quiz_craft_package.containers.nagim_quiz import NagimQuiz
 # hitler = NagimQuiz.from_string(result_file.read())
 # result_file.close()
 
-result_file = open("./output/music.txt", "r", encoding="utf8")
-music = NagimQuiz.from_string(result_file.read())
-result_file.close()
-
-# result_file = open("./output/operation_systems.txt", "r", encoding="utf8")
-# os_quiz = NagimQuiz.from_string(result_file.read())
+# result_file = open("./output/music.txt", "r", encoding="utf8")
+# music = NagimQuiz.from_string(result_file.read())
 # result_file.close()
+
+result_file = open("./output/operation_systems.txt", "r", encoding="utf8")
+os_quiz = NagimQuiz.from_string(result_file.read())
+result_file.close()
 
 describer = QuizDescriber()
 
-describer.generate_description(music)
+describer.generate_description(os_quiz)

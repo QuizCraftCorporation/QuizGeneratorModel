@@ -119,30 +119,6 @@ Pushes the parameters onto the stack
 #####
 Switches from user mode to kernel mode
 
-What are the 11 steps involved in making the system call read(fd, buffer, nbytes)?
-Increment SPCall readPush fdPush &bufferPush nbytes
-Figure 1-17
-Save return address on stack
-Switch to kernel mode
-Jump to fixed location or index into table
-Examine system-call number
-Dispatch to system-call handler
-Run system-call handler
-Return control to user-space library procedure
-Return to user program
-Procedure calls return
-#####
-Increment SPCall readPush fdPush &bufferPush nbytes
-Save return address on stack
-Switch to kernel mode
-Jump to fixed location or index into table
-Examine system-call number
-Dispatch to system-call handler
-Run system-call handler
-Return control to user-space library procedure
-Return to user program
-Procedure calls return
-
 What are the two fundamental ways in which the TRAP instruction differs from the procedure-call instruction?
 It switches into kernel mode
 It can jump to an arbitrary address
