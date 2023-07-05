@@ -15,12 +15,12 @@ To create a well-structured and informative report
 To generate an accompaniment for melodies using an evolutionary algorithm
 
 What does the time signature in music define?
-The number of beats in each bar
-The duration of each note
-The number of bars in a piece
-The tempo of the music
+The number of beats in each bar and the note value equivalent to the beat
+The number of bars in each measure and the note value equivalent to the measure
+The number of notes in each bar and the note value equivalent to the note
+The number of beats in each measure and the note value equivalent to the measure
 #####
-The number of beats in each bar
+The number of beats in each bar and the note value equivalent to the beat
 
 How many notes are there in Western music?
 7
