@@ -2,8 +2,8 @@ from quiz_craft_package.quiz_categorizer import QuizCategorizer
 from quiz_craft_package.containers.nagim_quiz import NagimQuiz
 
 
-result_file = open("./output/hitler.txt", "r", encoding="utf8")
-hitler = NagimQuiz.from_string(result_file.read())
+result_file = open("./output/fairy_tale.txt", "r", encoding="utf8")
+fairy_tale = NagimQuiz.from_string(result_file.read())
 result_file.close()
 
 # result_file = open("./output/music.txt", "r", encoding="utf8")
@@ -16,6 +16,6 @@ result_file.close()
 
 categorizer = QuizCategorizer()
 
-complexity = categorizer.classify_quiz(hitler)
+complexity = categorizer.classify_quiz(fairy_tale)
 print("COMPLEXITY:")
 print(complexity)
