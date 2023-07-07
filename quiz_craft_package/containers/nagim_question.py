@@ -32,7 +32,7 @@ class NagimQuestion:
 
     @property
     def question_text(self) -> str:
-        return self._question_text.copy()
+        return self._question_text
 
     @property
     def right_answers(self) -> list[str]:
