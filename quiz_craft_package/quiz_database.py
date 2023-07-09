@@ -52,6 +52,9 @@ class QuizDataBase:
             list[tuple[NagimQuiz,str]]: A list with quizzes that are the most appropriate to search query with unique id.
         """
 
+        if not os.path.exists(os.path.join(self.save_folder_path, "index.faiss")):
+            raise Exception("Cannot search database is empty")
+        
         self.db = FAISS.load_local(self.save_folder_path, self.embeddings)
 
         docs = self.db.similarity_search(query, k=number_of_results)
