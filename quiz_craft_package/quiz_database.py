@@ -53,7 +53,7 @@ class QuizDataBase:
         """
 
         if self.db == None:
-            raise Exception("Error: Cannot search in empty database.")
+            self.db = FAISS.load_local(self.save_folder_path, self.embeddings)
 
         docs = self.db.similarity_search(query, k=number_of_results)
         the_most_similar_quizzes = []
