@@ -100,4 +100,3 @@ class NagimQuiz:
         for question in self._questions:
             str_quiz += str(question) + "\n"
         return str_quiz
-    

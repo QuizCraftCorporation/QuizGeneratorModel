@@ -18,6 +18,7 @@ class QuizDescriber:
         self.llm = ChatOpenAI(openai_api_key=os.environ["OPEN_AI_TOKEN"], temperature=0, model="gpt-3.5-turbo")
         self.instruction = """
             You will get the quiz text. Describe what this quiz is about.
+            Also describe who this quiz is for
             Maximum length of description is 5 sentences.
         """
         self.text_splitter = TextSplitter()
