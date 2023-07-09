@@ -52,8 +52,7 @@ class QuizDataBase:
             list[tuple[NagimQuiz,str]]: A list with quizzes that are the most appropriate to search query with unique id.
         """
 
-        if self.db == None:
-            self.db = FAISS.load_local(self.save_folder_path, self.embeddings)
+        self.db = FAISS.load_local(self.save_folder_path, self.embeddings)
 
         docs = self.db.similarity_search(query, k=number_of_results)
         the_most_similar_quizzes = []
