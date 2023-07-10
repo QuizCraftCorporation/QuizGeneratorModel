@@ -120,6 +120,8 @@ class QuizGenerator():
             n = max_questions - len(quiz)
             quiz.add_questions(self.questions_buffer.get_best_questions(n))
         
+        if len(quiz) < 1:
+            raise Exception("Failed to generate quiz. Not enough information.")
         return quiz
     
     def _create_question_chunk(self, text_chunk: str, number_of_questions: int = None) -> list[NagimQuestion]:
