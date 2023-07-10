@@ -1,66 +1,50 @@
-What was the task given to Jack by his father?
-Sell a sheep skin
-Buy a sheep skin
-Find a sheep skin
-Make a sheep skin
+What was the name of the man in the story?
+Gubbon Seer
+Jack
+Neil Armstrong
+Yuri Gagarin
 #####
-Sell a sheep skin
+Gubbon Seer
 
-What did Jack's father ask him to bring back?
+What did Gubbon Seer send Jack to sell?
+A sheep skin
+A cow
+A horse
+A goat
+#####
+A sheep skin
+
+What did Gubbon Seer ask Jack to bring back?
 The skin and its value
 Only the skin
 Only the value
-A different item
+Nothing
 #####
 The skin and its value
 
-Why was Jack discouraged after his first attempt?
-He couldn't find anyone to buy the skin
-He lost the skin
-He couldn't find the value of the skin
-He didn't want to sell the skin
+Why was Jack discouraged after his first attempt to sell the sheep skin?
+He couldn't find anyone who would give him the skin's value
+He lost the sheep skin
+He couldn't find anyone to buy the sheep skin
+He got lost
 #####
-He couldn't find anyone to buy the skin
+He couldn't find anyone who would give him the skin's value
 
-What did Jack's father tell him to do after his first attempt?
-Try again tomorrow
-Give up
-Find a different item to sell
-Stay at home
+What did the girl do to help Jack?
+She washed the skin, took the wool from it, and paid him its value
+She bought the skin from him
+She ignored him
+She laughed at him
 #####
-Try again tomorrow
-
-What did the girl do with the skin?
-Washed it in the stream
-Sold it to someone else
-Gave it back to Jack
-Kept it for herself
-#####
-Washed it in the stream
-
-What did the girl give Jack in return for the skin?
-The value of the skin
-A different item
-Nothing
-A sheep
-#####
-The value of the skin
+She washed the skin, took the wool from it, and paid him its value
 
 What did Jack's father suggest about the girl?
 She would make a good wife for Jack
-She was a clever woman
 She was a bad person
-She should be avoided
+She was a thief
+She was a liar
 #####
 She would make a good wife for Jack
-
-What did Jack's father ask Jack to do?
-Tell the girl about the skin again
-Forget about the girl
-Find a different girl
-Stay away from the girl
-#####
-Tell the girl about the skin again
 
 What did Jack's father ask him to do?
 Go to the bridge
@@ -94,37 +78,53 @@ If she could tell a story
 #####
 If she would marry Jack
 
-What did Jack's father tell him to do when they were going to lay the foundation-stone?
-Shorten the road
+What did Jack's father ask him to do after the wedding?
 Build a castle
 Tell a story
 Go home
+Invite the girl for tea
 #####
-Shorten the road
+Build a castle
 
-What did Jack's wife suggest he should have done to shorten the road?
+What did Jack see when he looked ahead?
+A long road
+A castle
+His father
+Gubbon Seer
+#####
+A long road
+
+What did Jack's wife suggest he do to shorten the road?
 Tell a tale
 Build a castle
-Drink tea
 Go home
+Invite Gubbon Seer for tea
 #####
 Tell a tale
 
-What did Jack's wife say when he came back alone?
-Why did you come alone?
-Where is your father?
-What did your father say?
-Why are you so stupid?
+What did Jack do when his father told him he was no good to him?
+Turned back
+Built a castle
+Went home
+Invited Gubbon Seer for tea
 #####
-Why did you come alone?
+Turned back
 
-What did Jack's wife suggest he should do to catch up with Gubbon Seer?
-Tell him a story
-Build a castle
-Drink tea
-Go home
+What did Jack's wife call him?
+Stupid
+Witty
+Clever
+Brave
 #####
-Tell him a story
+Stupid
+
+What did Jack's wife suggest he do to catch up with Gubbon Seer?
+Tell a story
+Build a castle
+Go home
+Invite Gubbon Seer for tea
+#####
+Tell a story
 
 What did Jack and his father start building at the end of their journey?
 A castle

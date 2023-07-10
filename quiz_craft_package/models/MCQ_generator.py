@@ -13,7 +13,7 @@ class MCQGenerator:
         Initialize MCQ Generator model.
         """
  
-        self.llm = ChatOpenAI(openai_api_key=os.environ["OPEN_AI_TOKEN"], temperature=0, model="gpt-3.5-turbo", request_timeout=65)
+        self.llm = ChatOpenAI(openai_api_key=os.environ["OPEN_AI_TOKEN"], temperature=0, model="gpt-3.5-turbo", request_timeout=70, max_retries=2)
         self.instruction = """
             I want you to create several multiple choice questions based on text provided by user.
             Send questions in order of importance and quality. The first questions are the most important for the given text and have good quality, and the last ones are not as good as the first ones.

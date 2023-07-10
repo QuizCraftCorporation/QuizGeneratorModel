@@ -24,4 +24,4 @@ database = QuizDataBase("vector_db")
 # database.save_quiz(music, "music")
 
 result = database.search_quiz("war", number_of_results=3)
-print(str(result[0][0].description))
+print(result)
