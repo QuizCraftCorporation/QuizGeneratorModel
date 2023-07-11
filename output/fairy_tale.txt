@@ -23,28 +23,28 @@ Nothing
 The skin and its value
 
 Why was Jack discouraged after his first attempt to sell the sheep skin?
-He couldn't find anyone who would give him the skin's value
+He couldn't find anyone who would give him the skin and its value
 He lost the sheep skin
 He couldn't find anyone to buy the sheep skin
-He got lost
+He forgot the value of the sheep skin
 #####
-He couldn't find anyone who would give him the skin's value
+He couldn't find anyone who would give him the skin and its value
 
 What did the girl do to help Jack?
 She washed the skin, took the wool from it, and paid him its value
 She bought the skin from him
+She gave him a different skin
 She ignored him
-She laughed at him
 #####
 She washed the skin, took the wool from it, and paid him its value
 
-What did Jack's father suggest about the girl?
-She would make a good wife for Jack
-She was a bad person
-She was a thief
-She was a liar
+What did Gubbon Seer think of the girl?
+He thought she would make a good wife for Jack
+He thought she was foolish
+He thought she was a thief
+He didn't have an opinion about her
 #####
-She would make a good wife for Jack
+He thought she would make a good wife for Jack
 
 What did Jack's father ask him to do?
 Go to the bridge
@@ -82,49 +82,33 @@ What did Jack's father ask him to do after the wedding?
 Build a castle
 Tell a story
 Go home
-Invite the girl for tea
+Come with him
 #####
 Build a castle
 
-What did Jack see when he looked ahead?
-A long road
-A castle
-His father
-Gubbon Seer
+Why did Jack turn back on the way to lay the foundation-stone?
+Because he couldn't shorten the road
+Because he was tired
+Because he forgot something
+Because he didn't want to build a castle
 #####
-A long road
+Because he couldn't shorten the road
 
 What did Jack's wife suggest he do to shorten the road?
 Tell a tale
-Build a castle
-Go home
-Invite Gubbon Seer for tea
+Run faster
+Take a shortcut
+Ask for help
 #####
 Tell a tale
 
-What did Jack do when his father told him he was no good to him?
-Turned back
-Built a castle
-Went home
-Invited Gubbon Seer for tea
+What did Jack's wife say would happen by the time he finished telling the story?
+They would reach the foundation-stone
+They would find a shortcut
+They would meet Gubbon Seer
+They would build a castle
 #####
-Turned back
-
-What did Jack's wife call him?
-Stupid
-Witty
-Clever
-Brave
-#####
-Stupid
-
-What did Jack's wife suggest he do to catch up with Gubbon Seer?
-Tell a story
-Build a castle
-Go home
-Invite Gubbon Seer for tea
-#####
-Tell a story
+They would reach the foundation-stone
 
 What did Jack and his father start building at the end of their journey?
 A castle
@@ -154,7 +138,7 @@ Why did Gubbon tell the king that he couldn't complete the job?
 Because he needed a tool left at home
 Because he didn't want to finish it
 Because he was lazy
-Because he wanted more money
+Because he wanted to trick the king
 #####
 Because he needed a tool left at home
 
@@ -164,7 +148,7 @@ One of the men
 Gubbon
 The king's son
 #####
-The king's son
+Jack
 
 What did Gubbon send a message to Jack's wife?
 Crooked and Straight

@@ -7,7 +7,7 @@ from .containers.nagim_quiz import NagimQuiz
 from .containers.nagim_question import NagimQuestion
 from .containers.question_buffer import QuestionBuffer
 
-class QuizGenerator():
+class QuizStreamGenerator():
     """
     Class that have behaviour for quiz generation. It uses different models.
     In this version of class it uses only ChatGPT.
@@ -51,7 +51,14 @@ class QuizGenerator():
         if max_questions != None and max_questions < 0:
             raise Exception(f"max_questions={max_questions} is invalid value!")
         
-
+        total_number_of_chunks = 0
+        scanned_chunks = 0
+        logging.info("Calculating number of chunks in all files...")
+        for file_path in file_paths:
+            text_data = FileReader(file_path).get_content()
+            text_chunks = self.text_splitter.split_text(text_data)
+            total_number_of_chunks += len(text_chunks)
+        
         questions_per_file = None
         if max_questions != None:
             questions_per_file = max_questions // len(file_paths)
@@ -60,10 +67,16 @@ class QuizGenerator():
         for file_path in file_paths:
             logging.info(f"PROCESSING FILE {file_path}")
             text_data = FileReader(file_path).get_content()
-            complex_quiz = complex_quiz.union(self._create_quiz(text_data, questions_per_file))
+            temp_quiz = NagimQuiz()
+            for quiz in self._create_quiz(text_data, questions_per_file):
+                temp_quiz = quiz
+                scanned_chunks += 1
+                yield complex_quiz.union(temp_quiz), scanned_chunks, total_number_of_chunks
+            complex_quiz = complex_quiz.union(temp_quiz)
             if max_questions != None and len(complex_quiz) >= max_questions:
                 logging.info(f"Complex quiz already has enough questions - {len(complex_quiz)} out of {max_questions}. Finish generation.")
-                return complex_quiz
+                yield complex_quiz, scanned_chunks, total_number_of_chunks
+                return
         
         if max_questions != None and len(complex_quiz) < max_questions:
             logging.info("Not enough questions for complex quiz. Using buffer...")
@@ -71,11 +84,9 @@ class QuizGenerator():
             complex_quiz.add_questions(self.questions_buffer.get_best_questions(n))
         
         self.questions_buffer.clear()
-
         if len(complex_quiz) < 1:
             raise Exception("Failed to generate quiz. Not enough information.")
-        
-        return complex_quiz
+        yield complex_quiz, scanned_chunks, total_number_of_chunks
 
     def _create_quiz(self, text: str, max_questions: int = None) -> NagimQuiz:
         """
@@ -111,12 +122,15 @@ class QuizGenerator():
 
             logging.info(f"{i+1} of {len(text_chunks)} chunks scanned!")
             logging.info(f"Add {len(questions)} new questions!")
-            
+
             logging.info(f"Time required: {elapsed_time}")
             time.sleep(max(21-elapsed_time, 0.0))
+
             if max_questions != None and len(quiz) >= max_questions:
                 logging.info(f"Quiz already has enough questions - {len(quiz)} out of {max_questions}. Finish generation.")
-                return quiz
+                yield quiz
+                return
+            yield quiz
         
         # Adding questions from buffer.
         if max_questions != None and len(quiz) < max_questions:
@@ -124,7 +138,7 @@ class QuizGenerator():
             n = max_questions - len(quiz)
             quiz.add_questions(self.questions_buffer.get_best_questions(n))
         
-        return quiz
+        yield quiz
     
     def _create_question_chunk(self, text_chunk: str, number_of_questions: int = None) -> list[NagimQuestion]:
         """
