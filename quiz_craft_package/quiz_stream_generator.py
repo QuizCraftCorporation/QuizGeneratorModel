@@ -53,11 +53,12 @@ class QuizStreamGenerator():
         
         total_number_of_chunks = 0
         scanned_chunks = 0
+        gen_question_num = 0
         logging.info("Calculating number of chunks in all files...")
         for file_path in file_paths:
             text_data = FileReader(file_path).get_content()
             text_chunks = self.text_splitter.split_text(text_data)
-            total_number_of_chunks += len(text_chunks)
+            total_number_of_chunks += len(text_chunks) + 1
         
         questions_per_file = None
         if max_questions != None:
@@ -68,14 +69,23 @@ class QuizStreamGenerator():
             logging.info(f"PROCESSING FILE {file_path}")
             text_data = FileReader(file_path).get_content()
             temp_quiz = NagimQuiz()
+            temp_gen_question_num = 0
             for quiz in self._create_quiz(text_data, questions_per_file):
                 temp_quiz = quiz
                 scanned_chunks += 1
-                yield complex_quiz.union(temp_quiz), scanned_chunks, total_number_of_chunks
+                temp_gen_question_num = len(temp_quiz)
+                if max_questions != None:
+                    yield complex_quiz.union(temp_quiz), gen_question_num + temp_gen_question_num, max_questions
+                else:
+                    yield complex_quiz.union(temp_quiz), scanned_chunks, total_number_of_chunks
+            gen_question_num += temp_gen_question_num
             complex_quiz = complex_quiz.union(temp_quiz)
             if max_questions != None and len(complex_quiz) >= max_questions:
                 logging.info(f"Complex quiz already has enough questions - {len(complex_quiz)} out of {max_questions}. Finish generation.")
-                yield complex_quiz, scanned_chunks, total_number_of_chunks
+                if max_questions != None:
+                    yield complex_quiz.union(temp_quiz), gen_question_num, max_questions
+                else:
+                    yield complex_quiz.union(temp_quiz), scanned_chunks, total_number_of_chunks
                 return
         
         if max_questions != None and len(complex_quiz) < max_questions:
@@ -86,7 +96,11 @@ class QuizStreamGenerator():
         self.questions_buffer.clear()
         if len(complex_quiz) < 1:
             raise Exception("Failed to generate quiz. Not enough information.")
-        yield complex_quiz, scanned_chunks, total_number_of_chunks
+        
+        if max_questions != None:
+            yield complex_quiz.union(temp_quiz), gen_question_num, max_questions
+        else:
+            yield complex_quiz.union(temp_quiz), scanned_chunks, total_number_of_chunks
 
     def _create_quiz(self, text: str, max_questions: int = None) -> NagimQuiz:
         """

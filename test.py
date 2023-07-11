@@ -6,7 +6,7 @@ RESULT_FILE_PATH = "./output/fairy_tale.txt"
 q_gen = QuizStreamGenerator(debug=False)
 
 result = None
-for quiz, i, n in q_gen.create_quiz_from_files([MATERIAL_TEXT_FILE_PATH]):
+for quiz, i, n in q_gen.create_quiz_from_files([MATERIAL_TEXT_FILE_PATH], max_questions=3):
     result = quiz
     print(f"Scanned {i} out of {n}")
 

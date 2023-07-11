@@ -6,46 +6,6 @@ Yuri Gagarin
 #####
 Gubbon Seer
 
-What did Gubbon Seer send Jack to sell?
-A sheep skin
-A cow
-A horse
-A goat
-#####
-A sheep skin
-
-What did Gubbon Seer ask Jack to bring back?
-The skin and its value
-Only the skin
-Only the value
-Nothing
-#####
-The skin and its value
-
-Why was Jack discouraged after his first attempt to sell the sheep skin?
-He couldn't find anyone who would give him the skin and its value
-He lost the sheep skin
-He couldn't find anyone to buy the sheep skin
-He forgot the value of the sheep skin
-#####
-He couldn't find anyone who would give him the skin and its value
-
-What did the girl do to help Jack?
-She washed the skin, took the wool from it, and paid him its value
-She bought the skin from him
-She gave him a different skin
-She ignored him
-#####
-She washed the skin, took the wool from it, and paid him its value
-
-What did Gubbon Seer think of the girl?
-He thought she would make a good wife for Jack
-He thought she was foolish
-He thought she was a thief
-He didn't have an opinion about her
-#####
-He thought she would make a good wife for Jack
-
 What did Jack's father ask him to do?
 Go to the bridge
 Build a castle
@@ -53,62 +13,6 @@ Drink tea
 Tell a story
 #####
 Go to the bridge
-
-Why did Jack's father want to meet the girl?
-To invite her for tea
-To ask her to marry Jack
-To build a castle
-To tell her a story
-#####
-To invite her for tea
-
-What did the girl say when Jack asked her to drink tea with them?
-Yes, she could come the next day
-No, she was too busy
-Yes, but not now
-No, she didn't like tea
-#####
-Yes, she could come the next day
-
-What did Gubbon Seer ask the girl?
-If she would marry Jack
-If she could shorten the road
-If she could build a castle
-If she could tell a story
-#####
-If she would marry Jack
-
-What did Jack's father ask him to do after the wedding?
-Build a castle
-Tell a story
-Go home
-Come with him
-#####
-Build a castle
-
-Why did Jack turn back on the way to lay the foundation-stone?
-Because he couldn't shorten the road
-Because he was tired
-Because he forgot something
-Because he didn't want to build a castle
-#####
-Because he couldn't shorten the road
-
-What did Jack's wife suggest he do to shorten the road?
-Tell a tale
-Run faster
-Take a shortcut
-Ask for help
-#####
-Tell a tale
-
-What did Jack's wife say would happen by the time he finished telling the story?
-They would reach the foundation-stone
-They would find a shortcut
-They would meet Gubbon Seer
-They would build a castle
-#####
-They would reach the foundation-stone
 
 What did Jack and his father start building at the end of their journey?
 A castle
@@ -118,75 +22,27 @@ A tower
 #####
 A castle
 
-Why did Jack and his father become intimate with the servants?
-Because they were advised to by Jack's wife
-Because they wanted to make friends
-Because they were bored
-Because they were told to by the king
-#####
-Because they were advised to by Jack's wife
-
-What did Gubbon, the wise man, tell Jack when the housekeeper warned them about the king's plan?
-To keep a good heart
-To run away
-To fight the king
-To hide in the castle
-#####
-To keep a good heart
-
-Why did Gubbon tell the king that he couldn't complete the job?
-Because he needed a tool left at home
-Because he didn't want to finish it
-Because he was lazy
-Because he wanted to trick the king
-#####
-Because he needed a tool left at home
-
-Who did the king suggest to send to fetch the tool?
+What was the name of the man in the story?
+Gubbon Seer
 Jack
-One of the men
-Gubbon
-The king's son
+Neil Armstrong
+Yuri Gagarin
 #####
-Jack
+Gubbon Seer
 
-What did Gubbon send a message to Jack's wife?
-Crooked and Straight
-Pen and ink
+What did Jack's father ask him to do?
+Go to the bridge
+Build a castle
+Drink tea
+Tell a story
+#####
+Go to the bridge
+
+What did Jack and his father start building at the end of their journey?
 A castle
-A chest
+A house
+A bridge
+A tower
 #####
-Crooked and Straight
-
-Why did Jack's wife ask the king's son for help?
-Because his arms were longest
-Because she couldn't reach the chest
-Because she didn't trust him
-Because he was the strongest
-#####
-Because his arms were longest
-
-What did Jack's wife do to the king's son?
-Caught him by the two heels and threw him into the chest
-Asked him to help her reach the chest
-Gave him pen and ink
-Bored holes for him to breathe
-#####
-Caught him by the two heels and threw him into the chest
-
-What did Jack beg for?
-Pen and ink
 A castle
-Crooked and Straight
-A chest
-#####
-Pen and ink
-
-What did the king see when he received the letter?
-He must settle for the building
-He must let Jack and Gubbon come home
-He must build a castle
-He must let Jack's wife go
-#####
-He must settle for the building
 
