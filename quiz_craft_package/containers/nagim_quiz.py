@@ -63,7 +63,7 @@ class NagimQuiz:
         Args:
             description (str): Description for quiz.
         """
-        self._description = description
+        self._description = description.replace("\n", "")
         
     @property
     def description(self):
@@ -80,13 +80,18 @@ class NagimQuiz:
         Returns:
             NagimQuiz: Quiz.
         """
+        lines_str = str_data.split("\n")
+        raw_description = lines_str[0]
+        str_data = "\n".join(lines_str[1:])
         questions_raw = str_data.split("\n\n")
         questions = []
         for question in questions_raw:
             if question == "":
                 break
             questions.append(NagimQuestion.from_string(question))
-        return NagimQuiz(questions=questions)
+        temp_quiz = NagimQuiz(questions=questions)
+        temp_quiz.set_description(raw_description)
+        return temp_quiz
 
     def __len__(self):
         return len(self._questions)
@@ -96,7 +101,7 @@ class NagimQuiz:
             yield question
 
     def __str__(self):
-        str_quiz = ""
+        str_quiz = f"{self._description}\n"
         for question in self._questions:
             str_quiz += str(question) + "\n"
         return str_quiz

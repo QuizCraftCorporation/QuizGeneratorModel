@@ -31,7 +31,7 @@ class QuizDataBase:
             unique_id (str): Some unique string to identify your quiz while search.
         """
         quiz_full_text = str(quiz)
-        new_doc = Document(page_content=quiz_full_text, metadata=dict(unique_id=unique_id, description=quiz.description))
+        new_doc = Document(page_content=quiz_full_text, metadata=dict(unique_id=unique_id))
 
         if self.db == None:
             self.db = FAISS.from_documents([new_doc], self.embeddings)
@@ -61,7 +61,6 @@ class QuizDataBase:
         the_most_similar_quizzes = []
         for doc in docs:
             quiz = NagimQuiz.from_string(doc.page_content)
-            quiz.set_description(doc.metadata["description"])
             the_most_similar_quizzes.append((quiz, doc.metadata["unique_id"]))
         return the_most_similar_quizzes
 

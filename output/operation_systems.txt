@@ -1,3 +1,4 @@
+Big quiz about operating system
 What are the two main functions of operating systems?
 providing abstractions to user programs and managing the computer's resources
 creating, writing, reading, and deleting files

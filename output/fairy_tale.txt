@@ -1,26 +1,3 @@
-What was the name of the man in the story?
-Gubbon Seer
-Jack
-Neil Armstrong
-Yuri Gagarin
-#####
-Gubbon Seer
-
-What did Jack's father ask him to do?
-Go to the bridge
-Build a castle
-Drink tea
-Tell a story
-#####
-Go to the bridge
-
-What did Jack and his father start building at the end of their journey?
-A castle
-A house
-A bridge
-A tower
-#####
-A castle
 
 What was the name of the man in the story?
 Gubbon Seer
@@ -30,6 +7,46 @@ Yuri Gagarin
 #####
 Gubbon Seer
 
+What did Gubbon Seer send Jack out to sell?
+A sheep skin
+A cow skin
+A goat skin
+A pig skin
+#####
+A sheep skin
+
+What did Gubbon Seer tell Jack to bring back?
+The skin and its value
+Only the skin
+Only the value
+Nothing
+#####
+The skin and its value
+
+Why was Jack discouraged after his first attempt to sell the skin?
+He couldn't find anyone who would give him the skin's value
+He lost the skin
+He couldn't find anyone to buy the skin
+He got lost
+#####
+He couldn't find anyone who would give him the skin's value
+
+What did the girl do to help Jack?
+She washed the skin, took the wool from it, and paid him its value
+She bought the skin from him
+She ignored him
+She laughed at him
+#####
+She washed the skin, took the wool from it, and paid him its value
+
+What did Gubbon Seer think of the girl?
+He thought she would make a good wife for Jack
+He thought she was foolish
+He thought she was a thief
+He thought she was a liar
+#####
+He thought she would make a good wife for Jack
+
 What did Jack's father ask him to do?
 Go to the bridge
 Build a castle
@@ -38,6 +55,62 @@ Tell a story
 #####
 Go to the bridge
 
+Why did Jack's father want to meet the girl?
+To have tea with her
+To marry her
+To build a castle
+To tell a story
+#####
+To have tea with her
+
+What did the girl say when Jack asked her to drink tea with them?
+Yes, she could come the next day
+No, she was too busy
+Yes, but not now
+No, she didn't like tea
+#####
+Yes, she could come the next day
+
+What did Gubbon Seer ask the girl?
+If she would marry Jack
+If she would build a castle
+If she would drink tea
+If she would tell a story
+#####
+If she would marry Jack
+
+Why did Jack turn back?
+Because he couldn't break a bit off the road
+Because he didn't want to build a castle
+Because he was tired
+Because his wife told him to
+#####
+Because he couldn't break a bit off the road
+
+What did Jack's wife suggest he do to shorten the road?
+Tell a tale
+Build a castle
+Drink tea
+Go home
+#####
+Tell a tale
+
+What did Jack's wife say when he returned alone?
+Why did you come alone?
+Where is your father?
+What happened to the road?
+Why didn't you build the castle?
+#####
+Why did you come alone?
+
+What did Jack's wife say he should do to catch up with Gubbon Seer?
+Tell a story
+Build a castle
+Drink tea
+Run faster
+#####
+Tell a story
+
 What did Jack and his father start building at the end of their journey?
 A castle
 A house
@@ -45,4 +118,300 @@ A bridge
 A tower
 #####
 A castle
+
+Why did Jack and his father become intimate with the servants?
+Because they were advised to by Jack's wife
+Because they wanted to make friends
+Because they were bored
+Because they were told to by the king
+#####
+Because they were advised to by Jack's wife
+
+What did Gubbon, the wise man, have left to finish in the castle?
+A ceiling in an upper lobby
+A wall in the courtyard
+A staircase
+A window
+#####
+A ceiling in an upper lobby
+
+Why did the housekeeper warn Gubbon and Jack?
+Because she wanted to help them
+Because she was afraid they would leave and build another castle
+Because she didn't like the king
+Because she was bored
+#####
+Because she was afraid they would leave and build another castle
+
+What did Gubbon tell Jack when the housekeeper warned them?
+To keep a good heart
+To run away
+To fight the king
+To hide in the castle
+#####
+To keep a good heart
+
+Why did Gubbon tell the king that Jack had to go get the tool?
+Because the men couldn't make themselves understood
+Because Jack was the only one who knew where the tool was
+Because the king wanted to test Jack's loyalty
+Because Gubbon didn't want to go himself
+#####
+Because the men couldn't make themselves understood
+
+What did the king suggest as an alternative to sending Jack?
+Sending his own son
+Sending one of the men
+Sending the housekeeper
+Sending Gubbon
+#####
+Sending his own son
+
+What did Gubbon send a message to Jack's wife?
+Crooked and Straight
+Pen and ink
+A castle
+A chest
+#####
+Crooked and Straight
+
+Why did Jack's wife ask the king's son for help?
+Because his arms were longest
+Because she couldn't reach the chest
+Because she didn't trust him
+Because he was the strongest
+#####
+Because his arms were longest
+
+What did Jack's wife do to the king's son?
+Caught him by the two heels and threw him into the chest
+Asked him to help her reach the chest
+Gave him pen and ink
+Bored holes for him to breathe
+#####
+Caught him by the two heels and threw him into the chest
+
+What did Jack beg for?
+Pen and ink
+A castle
+Crooked and Straight
+A chest
+#####
+Pen and ink
+
+What did the king see when he received the letter?
+He must settle for the building
+He must let Jack and Gubbon come home
+He must build a castle
+He must let Jack's wife go
+#####
+He must settle for the building
+
+What was the name of the man in the story?
+Gubbon Seer
+Jack
+Neil Armstrong
+Yuri Gagarin
+#####
+Gubbon Seer
+
+What did Gubbon Seer send Jack out to sell?
+A sheep skin
+A cow skin
+A goat skin
+A pig skin
+#####
+A sheep skin
+
+What did Gubbon Seer tell Jack to bring back?
+The skin and its value
+Only the skin
+Only the value
+Nothing
+#####
+The skin and its value
+
+Why was Jack discouraged after his first attempt to sell the skin?
+He couldn't find anyone who would give him the skin's value
+He lost the skin
+He couldn't find anyone to buy the skin
+He got lost
+#####
+He couldn't find anyone who would give him the skin's value
+
+What did the girl do to help Jack?
+She washed the skin, took the wool from it, and paid him its value
+She bought the skin from him
+She ignored him
+She laughed at him
+#####
+She washed the skin, took the wool from it, and paid him its value
+
+What did Gubbon Seer think of the girl?
+He thought she would make a good wife for Jack
+He thought she was foolish
+He thought she was a thief
+He thought she was a liar
+#####
+He thought she would make a good wife for Jack
+
+What did Jack's father ask him to do?
+Go to the bridge
+Build a castle
+Drink tea
+Tell a story
+#####
+Go to the bridge
+
+Why did Jack's father want to meet the girl?
+To have tea with her
+To marry her
+To build a castle
+To tell a story
+#####
+To have tea with her
+
+What did the girl say when Jack asked her to drink tea with them?
+Yes, she could come the next day
+No, she was too busy
+Yes, but not now
+No, she didn't like tea
+#####
+Yes, she could come the next day
+
+What did Gubbon Seer ask the girl?
+If she would marry Jack
+If she would build a castle
+If she would drink tea
+If she would tell a story
+#####
+If she would marry Jack
+
+Why did Jack turn back?
+Because he couldn't break a bit off the road
+Because he didn't want to build a castle
+Because he was tired
+Because his wife told him to
+#####
+Because he couldn't break a bit off the road
+
+What did Jack's wife suggest he do to shorten the road?
+Tell a tale
+Build a castle
+Drink tea
+Go home
+#####
+Tell a tale
+
+What did Jack's wife say when he returned alone?
+Why did you come alone?
+Where is your father?
+What happened to the road?
+Why didn't you build the castle?
+#####
+Why did you come alone?
+
+What did Jack's wife say he should do to catch up with Gubbon Seer?
+Tell a story
+Build a castle
+Drink tea
+Run faster
+#####
+Tell a story
+
+What did Jack and his father start building at the end of their journey?
+A castle
+A house
+A bridge
+A tower
+#####
+A castle
+
+Why did Jack and his father become intimate with the servants?
+Because they were advised to by Jack's wife
+Because they wanted to make friends
+Because they were bored
+Because they were told to by the king
+#####
+Because they were advised to by Jack's wife
+
+What did Gubbon, the wise man, have left to finish in the castle?
+A ceiling in an upper lobby
+A wall in the courtyard
+A staircase
+A window
+#####
+A ceiling in an upper lobby
+
+Why did the housekeeper warn Gubbon and Jack?
+Because she wanted to help them
+Because she was afraid they would leave and build another castle
+Because she didn't like the king
+Because she was bored
+#####
+Because she was afraid they would leave and build another castle
+
+What did Gubbon tell Jack when the housekeeper warned them?
+To keep a good heart
+To run away
+To fight the king
+To hide in the castle
+#####
+To keep a good heart
+
+Why did Gubbon tell the king that Jack had to go get the tool?
+Because the men couldn't make themselves understood
+Because Jack was the only one who knew where the tool was
+Because the king wanted to test Jack's loyalty
+Because Gubbon didn't want to go himself
+#####
+Because the men couldn't make themselves understood
+
+What did the king suggest as an alternative to sending Jack?
+Sending his own son
+Sending one of the men
+Sending the housekeeper
+Sending Gubbon
+#####
+Sending his own son
+
+What did Gubbon send a message to Jack's wife?
+Crooked and Straight
+Pen and ink
+A castle
+A chest
+#####
+Crooked and Straight
+
+Why did Jack's wife ask the king's son for help?
+Because his arms were longest
+Because she couldn't reach the chest
+Because she didn't trust him
+Because he was the strongest
+#####
+Because his arms were longest
+
+What did Jack's wife do to the king's son?
+Caught him by the two heels and threw him into the chest
+Asked him to help her reach the chest
+Gave him pen and ink
+Bored holes for him to breathe
+#####
+Caught him by the two heels and threw him into the chest
+
+What did Jack beg for?
+Pen and ink
+A castle
+Crooked and Straight
+A chest
+#####
+Pen and ink
+
+What did the king see when he received the letter?
+He must settle for the building
+He must let Jack and Gubbon come home
+He must build a castle
+He must let Jack's wife go
+#####
+He must settle for the building
 
