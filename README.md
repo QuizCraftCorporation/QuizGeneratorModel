@@ -37,6 +37,24 @@ result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text
 # Support .pdf and .txt at this moment.
 
 ```
+
+### Stream quiz generation
+
+```python
+from QuizGeneratorModel.quiz_craft_package.quiz_stream_generator import QuizStreamGenerator
+
+q_gen = QuizStreamGenerator(debug=False)
+
+result = None
+for quiz, i, n in q_gen.create_quiz_from_files([MATERIAL_TEXT_FILE_PATH]):
+    result = quiz
+    # Quiz is partially generated but you can make some actions before next set of questions will be generated!
+    print(f"Scanned {i} out of {n}")
+# If max question was specified then return current number of question and max question in 'i' and 'n'
+# If not specified then current number of scanned chunks and maximum number of chunks
+
+```
+
 ### Quiz search
 ```python
 from QuizGeneratorModel.quiz_craft_package.quiz_database import QuizDataBase
