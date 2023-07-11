@@ -1,9 +1,20 @@
-from langchain.document_loaders import PyPDFLoader
+from langchain.document_loaders import PyPDFLoader, BSHTMLLoader, Docx2txtLoader
 
 class FileReader:
-    def __init__(self, filepath) -> None:
+    """
+    Class to read different file extensions.
+    """
+    
+    def __init__(self, filepath: str) -> None:
+        """
+        Read file using FileReader.
+
+        Args:
+            filepath (str): Path to file.
+        """
+        
         ext = filepath.split('.')[-1]
-        if not ext in ['txt', 'pdf']:
+        if not ext in ['txt', 'pdf', 'html', 'doc', 'docx', 'pptx']:
             raise Exception(f"Unsupported file format: {ext}")
         if ext == 'txt':
             input_file = open(filepath, "r", encoding="utf-8")
@@ -13,7 +24,29 @@ class FileReader:
             loader = PyPDFLoader(filepath)
             data = loader.load()
             self._content = ' '.join([page.page_content for page in data])
-
+        elif ext == 'html':
+            loader = BSHTMLLoader(filepath)
+            data = loader.load()
+            self._content = data[0].page_content
+        elif ext == 'doc':
+            loader = Docx2txtLoader(filepath)
+            data = loader.load()
+            self._content = data[0].page_content
+        elif ext == 'docx':
+            loader = Docx2txtLoader(filepath)
+            data = loader.load()
+            self._content = data[0].page_content
+        elif ext == 'pptx':
+            pass
 
     def get_content(self) -> str:
+        """
+        Extract content from a file.
+
+        Returns:
+            str: Text content of a file.
+        """
         return self._content
+
+# test = FileReader("./data/capstone.html")
+# print(test.get_content())
