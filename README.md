@@ -124,8 +124,8 @@ print(question.right_answers) # ["KUMIR", "Scratch"]
 print(question.right_answers_indexes) # [2, 3]
 ```
 
-## Fast documentation table
-Please only use the public methods described in this table.
+## Quick documentation
+Please only use the public methods described in these tables.
 ### QuizGenerator
 | Method | Description |
 | --- | --- |
