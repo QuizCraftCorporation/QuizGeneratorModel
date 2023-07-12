@@ -34,7 +34,7 @@ quiz_gen = QuizGenerator(debug=False)
 result = quiz_gen.create_questions_from_file(["path/to/text1.txt", "path/to/text2.pdf"], max_questions=10)
 # Argument is a list of files
 # Max questions is an upper bound on number of questions inside a generated quiz.
-# Support .pdf and .txt at this moment.
+# Support .pdf, .txt, .pptx, .html, .docx
 
 ```
 
@@ -106,8 +106,6 @@ print(quiz.get_question(0))
 # Can be converted to simple string and vice versa
 str_data = str(quiz)
 quiz2 = NagimQuiz.from_string(str_data)
-
-# Very easy lol
 ```
 
 ### NagimQuestion
@@ -124,8 +122,6 @@ print(question.options) # ["Python", "Rust", "KUMIR", "Scratch", "C++"]
 print(question.right_answers) # ["KUMIR", "Scratch"]
 
 print(question.right_answers_indexes) # [2, 3]
-
-# Very easy lol
 ```
 
 ## Fast documentation table
@@ -151,7 +147,11 @@ Please only use the public methods described in this table.
 | `generate_description(quiz: NagimQuiz)` | Generate description for quiz. Return quiz with description. |
 
 ### NagimQuiz
-Use 'get_question(index)' or iterate through the instance in loop to access questions. Too easy. To get number of question just write 'len(quiz)'.
+| Method | Description |
+| --- | --- |
+| `get_questions(index: int)` | Return question by index. Questions is NagimQuestion object. |
+| `set_description(description: str)` | Set decscription in quiz. |
+| `from_string(str_data: str)` | Restore quiz from string. |
 
 ### NagimQuestion
 | Property | Description |
