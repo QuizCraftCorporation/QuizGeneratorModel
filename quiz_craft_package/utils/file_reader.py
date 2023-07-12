@@ -1,4 +1,5 @@
 from langchain.document_loaders import PyPDFLoader, BSHTMLLoader, Docx2txtLoader
+from pptx import Presentation
 
 class FileReader:
     """
@@ -28,17 +29,19 @@ class FileReader:
             loader = BSHTMLLoader(filepath)
             data = loader.load()
             self._content = data[0].page_content
-        elif ext == 'doc':
-            loader = Docx2txtLoader(filepath)
-            data = loader.load()
-            self._content = data[0].page_content
         elif ext == 'docx':
             loader = Docx2txtLoader(filepath)
             data = loader.load()
             self._content = data[0].page_content
         elif ext == 'pptx':
-            pass
-
+            data = ""
+            data_file = Presentation(filepath)
+            for slide in data_file.slides:
+                for shapes in slide.shapes:
+                    if shapes.has_text_frame:
+                        data += shapes.text + "\n"
+            self._content = data
+        
     def get_content(self) -> str:
         """
         Extract content from a file.
@@ -47,6 +50,3 @@ class FileReader:
             str: Text content of a file.
         """
         return self._content
-
-# test = FileReader("./data/capstone.html")
-# print(test.get_content())

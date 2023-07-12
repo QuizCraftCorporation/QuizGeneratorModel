@@ -1,7 +1,7 @@
 from quiz_craft_package.quiz_stream_generator import QuizStreamGenerator
-MATERIAL_TEXT_FILE_PATH = "./data/fairy_tale.txt"
+MATERIAL_TEXT_FILE_PATH = "./data/project.pptx"
 MATERIAL_TEXT_FILE_PATH_2 = "./data/material_2.txt"
-RESULT_FILE_PATH = "./output/fairy_tale.txt"
+RESULT_FILE_PATH = "./output/project.txt"
 
 q_gen = QuizStreamGenerator(debug=False)
 

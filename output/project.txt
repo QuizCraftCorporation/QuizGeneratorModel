@@ -1,0 +1,91 @@
+
+What is the problem that this project aims to solve?
+Lack of familiarity with sign language
+Difficulty in communication for deaf or hard of hearing individuals
+Lack of time to learn sign language
+Inability to write and read regular letters
+#####
+Lack of familiarity with sign language
+Difficulty in communication for deaf or hard of hearing individuals
+
+What is the proposed solution for this problem?
+An application or website with machine learning models
+Translation of sign language to text in real-time
+Catering to the needs of those who require fast and accurate translation
+#####
+An application or website with machine learning models
+Translation of sign language to text in real-time
+Catering to the needs of those who require fast and accurate translation
+
+What dataset will be used to train the model?
+WLASL (World Level American Sign Language) dataset
+Custom dataset recorded by the project team
+MediaPipe dataset
+No dataset mentioned
+#####
+WLASL (World Level American Sign Language) dataset
+Custom dataset recorded by the project team
+
+What are the components of the model pipeline?
+Hands and pose recognition by MediaPipe
+LSTM for sequence analysis
+ANN for classification
+CNN for image recognition
+#####
+Hands and pose recognition by MediaPipe
+LSTM for sequence analysis
+ANN for classification
+
+What will be demonstrated in the current result?
+The current result of the project
+The final result of the project
+The dataset used for training
+The process of developing the model
+#####
+The current result of the project
+
+What is the problem that this project aims to solve?
+Lack of familiarity with sign language
+Difficulty in communication for deaf or hard of hearing individuals
+Lack of time to learn sign language
+Inability to write and read regular letters
+#####
+Lack of familiarity with sign language
+Difficulty in communication for deaf or hard of hearing individuals
+
+What is the proposed solution for this problem?
+An application or website with machine learning models
+Translation of sign language to text in real-time
+Catering to the needs of those who require fast and accurate translation
+#####
+An application or website with machine learning models
+Translation of sign language to text in real-time
+Catering to the needs of those who require fast and accurate translation
+
+What dataset will be used to train the model?
+WLASL (World Level American Sign Language) dataset
+Custom dataset recorded by the project team
+MediaPipe dataset
+No dataset mentioned
+#####
+WLASL (World Level American Sign Language) dataset
+Custom dataset recorded by the project team
+
+What are the components of the model pipeline?
+Hands and pose recognition by MediaPipe
+LSTM for sequence analysis
+ANN for classification
+CNN for image recognition
+#####
+Hands and pose recognition by MediaPipe
+LSTM for sequence analysis
+ANN for classification
+
+What will be demonstrated in the current result?
+The current result of the project
+The final result of the project
+The dataset used for training
+The process of developing the model
+#####
+The current result of the project
+
