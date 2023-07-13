@@ -138,13 +138,14 @@ class QuizStreamGenerator():
             logging.info(f"Add {len(questions)} new questions!")
 
             logging.info(f"Time required: {elapsed_time}")
-            time.sleep(max(21-elapsed_time, 0.0))
 
             if max_questions != None and len(quiz) >= max_questions:
                 logging.info(f"Quiz already has enough questions - {len(quiz)} out of {max_questions}. Finish generation.")
                 yield quiz
+                time.sleep(max(21-elapsed_time, 0.0))
                 return
             yield quiz
+            time.sleep(max(21-elapsed_time, 0.0))
         
         # Adding questions from buffer.
         if max_questions != None and len(quiz) < max_questions:
