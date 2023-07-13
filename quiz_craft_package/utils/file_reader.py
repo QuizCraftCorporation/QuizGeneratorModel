@@ -15,7 +15,7 @@ class FileReader:
         """
         
         ext = filepath.split('.')[-1]
-        if not ext in ['txt', 'pdf', 'html', 'doc', 'docx', 'pptx']:
+        if not ext in ['txt', 'pdf', 'html', 'docx', 'pptx']:
             raise Exception(f"Unsupported file format: {ext}")
         if ext == 'txt':
             input_file = open(filepath, "r", encoding="utf-8")
