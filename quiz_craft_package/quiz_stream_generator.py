@@ -83,9 +83,9 @@ class QuizStreamGenerator():
             if max_questions != None and len(complex_quiz) >= max_questions:
                 logging.info(f"Complex quiz already has enough questions - {len(complex_quiz)} out of {max_questions}. Finish generation.")
                 if max_questions != None:
-                    yield complex_quiz.union(temp_quiz), gen_question_num, max_questions
+                    yield complex_quiz, gen_question_num, max_questions
                 else:
-                    yield complex_quiz.union(temp_quiz), scanned_chunks, total_number_of_chunks
+                    yield complex_quiz, scanned_chunks, total_number_of_chunks
                 return
         
         if max_questions != None and len(complex_quiz) < max_questions:
@@ -98,9 +98,9 @@ class QuizStreamGenerator():
             raise Exception("Failed to generate quiz. Not enough information.")
         
         if max_questions != None:
-            yield complex_quiz.union(temp_quiz), gen_question_num, max_questions
+            yield complex_quiz, gen_question_num, max_questions
         else:
-            yield complex_quiz.union(temp_quiz), scanned_chunks, total_number_of_chunks
+            yield complex_quiz, scanned_chunks, total_number_of_chunks
 
     def _create_quiz(self, text: str, max_questions: int = None) -> NagimQuiz:
         """

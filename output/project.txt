@@ -20,29 +20,20 @@ Catering to the needs of those who require fast and accurate translation
 What dataset will be used to train the model?
 WLASL (World Level American Sign Language) dataset
 Custom dataset recorded by the project team
-MediaPipe dataset
-No dataset mentioned
+Both WLASL dataset and custom dataset
 #####
 WLASL (World Level American Sign Language) dataset
 Custom dataset recorded by the project team
+Both WLASL dataset and custom dataset
 
 What are the components of the model pipeline?
 Hands and pose recognition by MediaPipe
 LSTM for sequence analysis
 ANN for classification
-CNN for image recognition
 #####
 Hands and pose recognition by MediaPipe
 LSTM for sequence analysis
 ANN for classification
-
-What will be demonstrated in the current result?
-The current result of the project
-The final result of the project
-The dataset used for training
-The process of developing the model
-#####
-The current result of the project
 
 What is the problem that this project aims to solve?
 Lack of familiarity with sign language
@@ -65,27 +56,18 @@ Catering to the needs of those who require fast and accurate translation
 What dataset will be used to train the model?
 WLASL (World Level American Sign Language) dataset
 Custom dataset recorded by the project team
-MediaPipe dataset
-No dataset mentioned
+Both WLASL dataset and custom dataset
 #####
 WLASL (World Level American Sign Language) dataset
 Custom dataset recorded by the project team
+Both WLASL dataset and custom dataset
 
 What are the components of the model pipeline?
 Hands and pose recognition by MediaPipe
 LSTM for sequence analysis
 ANN for classification
-CNN for image recognition
 #####
 Hands and pose recognition by MediaPipe
 LSTM for sequence analysis
 ANN for classification
-
-What will be demonstrated in the current result?
-The current result of the project
-The final result of the project
-The dataset used for training
-The process of developing the model
-#####
-The current result of the project
 
