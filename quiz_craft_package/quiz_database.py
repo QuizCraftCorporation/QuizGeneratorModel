@@ -19,8 +19,6 @@ class QuizDataBase:
         self.embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPEN_AI_TOKEN"])
         self.db = None
         self.save_folder_path = save_folder_path
-        if os.path.exists(os.path.join(save_folder_path, "index.faiss")):
-            self.db = FAISS.load_local(save_folder_path, self.embeddings)
 
     def save_quiz(self, quiz: NagimQuiz, unique_id: str) -> None:
         """
@@ -30,13 +28,15 @@ class QuizDataBase:
             quiz (NagimQuiz): Quiz to save.
             unique_id (str): Some unique string to identify your quiz while search.
         """
+        if not os.path.exists(os.path.join(self.save_folder_path, "index.faiss")):
+            raise Exception("Cannot search database is empty")
+        
+        self.db = FAISS.load_local(self.save_folder_path, self.embeddings)
+
         quiz_full_text = str(quiz)
         new_doc = Document(page_content=quiz_full_text, metadata=dict(unique_id=unique_id))
 
-        if self.db == None:
-            self.db = FAISS.from_documents([new_doc], self.embeddings)
-        else:    
-            self.db.add_documents([new_doc])
+        self.db.add_documents([new_doc])
         
         self.db.save_local(self.save_folder_path)
 
