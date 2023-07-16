@@ -1,24 +1,20 @@
+import json
 import os
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.schema import Document
+import requests
 from .containers.nagim_quiz import NagimQuiz
 
 class QuizDataBase:
     """
     Class for searching quizzes among saved ones.
     """
-
-    def __init__(self, save_folder_path: str) -> None:
+    def __init__(self, database_address: str) -> None:
         """
         Creates QuizDatabase instance.
 
         Args:
-            save_folder_path (str): Folder to save cache of quizzes.
+            database_address (str): Address to remote database.
         """
-        self.embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPEN_AI_TOKEN"])
-        self.db = None
-        self.save_folder_path = save_folder_path
+        self.db_address = database_address
 
     def save_quiz(self, quiz: NagimQuiz, unique_id: str) -> None:
         """
@@ -28,17 +24,13 @@ class QuizDataBase:
             quiz (NagimQuiz): Quiz to save.
             unique_id (str): Some unique string to identify your quiz while search.
         """
-        if not os.path.exists(os.path.join(self.save_folder_path, "index.faiss")):
-            raise Exception("Cannot search database is empty")
-        
-        self.db = FAISS.load_local(self.save_folder_path, self.embeddings)
-
         quiz_full_text = str(quiz)
-        new_doc = Document(page_content=quiz_full_text, metadata=dict(unique_id=unique_id))
-
-        self.db.add_documents([new_doc])
-        
-        self.db.save_local(self.save_folder_path)
+        quiz_data = {}
+        quiz_data["raw_quiz_data"] = quiz_full_text
+        quiz_data["unique_id"] = unique_id
+        result = requests.post(self.db_address + "/save", json=quiz_data)
+        if json.loads(result.text)["operation"] != "SUCCESS":
+            raise Exception("Failed to save quiz. Error in database")
 
     def search_quiz(self, query: str, number_of_results: int=4) -> list[tuple[NagimQuiz, str]]:
         """
@@ -51,16 +43,17 @@ class QuizDataBase:
         Returns:
             list[tuple[NagimQuiz,str]]: A list with quizzes that are the most appropriate to search query with unique id.
         """
+        top_similar_quizzes = []
 
-        if not os.path.exists(os.path.join(self.save_folder_path, "index.faiss")):
-            raise Exception("Cannot search database is empty")
+        search_query = {}
+        search_query["query"] = query
+        search_query["number_of_results"] = number_of_results
+        result = requests.post(self.db_address + "/search", json=search_query)
+        response = json.loads(result.text)
+        if response["operation"] == "EMPTY":
+            raise Exception("Cannot search in empty database")
         
-        self.db = FAISS.load_local(self.save_folder_path, self.embeddings)
+        for quiz_raw in response["payload"]:
+            top_similar_quizzes.append((NagimQuiz.from_string(quiz_raw["raw_quiz_data"]), quiz_raw["unique_id"]))
 
-        docs = self.db.similarity_search(query, k=number_of_results)
-        the_most_similar_quizzes = []
-        for doc in docs:
-            quiz = NagimQuiz.from_string(doc.page_content)
-            the_most_similar_quizzes.append((quiz, doc.metadata["unique_id"]))
-        return the_most_similar_quizzes
-
+        return top_similar_quizzes

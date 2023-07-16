@@ -1,7 +1,7 @@
 from quiz_craft_package.quiz_database import QuizDataBase
 from quiz_craft_package.containers.nagim_quiz import NagimQuiz
 
-database = QuizDataBase("vector_db")
+database = QuizDataBase("http://127.0.0.1:1234")
 
 # result_file = open("./output/hitler.txt", "r", encoding="utf8")
 # hitler = NagimQuiz.from_string(result_file.read())
@@ -19,7 +19,7 @@ database = QuizDataBase("vector_db")
 # database.save_quiz(os_quiz, "os")
 # database.save_quiz(music, "music")
 
-result = database.search_quiz("music", number_of_results=3)
+result = database.search_quiz("computer", number_of_results=3)
 print(result[0][0].description)
 
-print(result[0][0])
+#print(result[0][0])
