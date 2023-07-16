@@ -20,6 +20,6 @@ database = QuizDataBase("http://127.0.0.1:1234")
 # database.save_quiz(music, "music")
 
 result = database.search_quiz("computer", number_of_results=3)
-print(result[0][0].description)
+print(result)
 
 #print(result[0][0])

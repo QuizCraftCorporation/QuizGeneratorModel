@@ -60,7 +60,8 @@ for quiz, i, n in q_gen.create_quiz_from_files([MATERIAL_TEXT_FILE_PATH]):
 from QuizGeneratorModel.quiz_craft_package.quiz_database import QuizDataBase
 
 # Creates database for quizzes that automaticly caches loaded quizzes. Required for cosine search.
-database = QuizDataBase("path/to/vector_db_cache_saving")
+database = QuizDataBase("http://127.0.0.1:1234")
+# FOLLOW EXACTLY THE SAME URL PATTERN (do not add / at the end)
 
 # Save quizzes in vector database
 # quiz is 'NagimQuiz' object!
@@ -138,7 +139,7 @@ Please only use the public methods described in these tables.
 | --- | --- |
 | `save_quiz(quiz: NagimQuiz, unique_id: str)` | Save quiz in vector database with unique id. You can search among all saved quizzes. |
 | `search_quiz(query: str, number_of_results: int)` | Return 'number_of_results' number of quizzes that are the most suitable for search query 'query'. Return type is list[tuple [NagimQuiz,str]]. Second element of tuple is unique id that you specified during saving.|
-| `QuizDataBase(save_folder_path: str)` | Create quiz database instance. It will automaticly save and load quizzes in/from specified folder. So you do not need always re-save quizzes for search. If you want to erase quiz data, just delete content of specified folder (really do not forget to do it or say goodbye to your memory).|
+| `QuizDataBase(database_address: str)` | Create quiz database instance. It wiil communicate with remote database server specified by 'database_address'.|
 
 ### QuizDescriber
 
