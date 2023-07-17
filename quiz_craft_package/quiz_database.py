@@ -54,6 +54,6 @@ class QuizDataBase:
             raise Exception("Cannot search in empty database")
         
         for quiz_raw in response["payload"]:
-            top_similar_quizzes.append((NagimQuiz.from_string(quiz_raw["raw_quiz_data"]), quiz_raw["unique_id"]))
+            top_similar_quizzes.append(("", quiz_raw["unique_id"]))
 
         return top_similar_quizzes
